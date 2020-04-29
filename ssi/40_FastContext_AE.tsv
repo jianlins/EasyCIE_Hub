@@ -1,0 +1,3191 @@
+#Define which features will be assigned values in an annotation type (Concept in this case)														
+@CONCEPT_FEATURES	ABD_O_INF	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Operative	Healed	Depth	Surgery			
+@CONCEPT_FEATURES	ABD_O_INF_24H	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Operative	Healed	Depth	Surgery			
+#@CONCEPT_FEATURES	CHEST_INFECTION	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Operative	Healed	Depth	Surgery			
+#@CONCEPT_FEATURES	EXTRE_INFECTION	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Operative	Healed	Depth	Surgery			
+@CONCEPT_FEATURES	BL_INFECTION	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Operative	Healed	Depth	Surgery			
+@CONCEPT_FEATURES	SITE_INFECTION	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Operative	Healed	Depth	Surgery	Anatomic		
+@CONCEPT_FEATURES	S_INFECTION	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Operative	Healed	Depth	Surgery	Anatomic		
+@CONCEPT_FEATURES	ADJ_INFECTION	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Operative	Healed	Depth	Surgery	Anatomic		
+@CONCEPT_FEATURES	OTHER_INFECTION	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Operative	Healed	Depth	Surgery	Anatomic		
+														
+@CONCEPT_FEATURES	INFECTION	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Operative	Healed	Depth	Surgery	Anatomic
+@CONCEPT_FEATURES	POSS_INFECTION	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Anatomic	Surgery	Wound
+@CONCEPT_FEATURES	POSS_ABD_O_INF	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Operative	Healed	Depth	Surgery	Anatomic
+@CONCEPT_FEATURES	POSS_SIGN_S_INF	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Operative	Healed	Depth	Surgery	Anatomic	Wound	Cause
+@CONCEPT_FEATURES	POSS_S_INF	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Operative	Healed	Depth	Surgery	Anatomic
+@CONCEPT_FEATURES	SSI	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Operative	Healed	Depth	Surgery	Anatomic
+@CONCEPT_FEATURES	S_SSI	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Operative	Healed	Depth	Surgery	Anatomic
+
+@CONCEPT_FEATURES	PERFORATION	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Operative	Healed	Depth	Surgery	Anatomic
+@CONCEPT_FEATURES	DEHISCENCE	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Operative	Healed	Depth	Surgery	Anatomic
+
+
+@CONCEPT_FEATURES	SIGN_SUP_INF	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Operative	Healed	Depth	Surgery	Anatomic	Wound	Cause
+
+@CONCEPT_FEATURES	DRAINAGE	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Operative	Healed	Depth	Surgery	Anatomic	Infected
+@CONCEPT_FEATURES	FISTULA	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Operative	Healed	Depth	Surgery	Anatomic	Otherfistula
+@CONCEPT_FEATURES	INCISION	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Operative	Healed	Depth	Surgery	Anatomic	Dehiscence	Infected
+@CONCEPT_FEATURES	PAIN	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Operative	Healed	Depth	Surgery	Anatomic	Action	PainCause
+@CONCEPT_FEATURES	STITCHING	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Operative	Healed	Depth	Surgery	Anatomic	Dehiscence	Infected
+
+@CONCEPT_FEATURES	ABD_SURGERY	Concept	Negation	Certainty	Temporality	Experiencer
+@CONCEPT_FEATURES	CHEST_SURGERY	Concept	Negation	Certainty	Temporality	Experiencer
+@CONCEPT_FEATURES	CHEST_SURGERY	Concept	Negation	Certainty	Temporality	Experiencer
+@CONCEPT_FEATURES	SURGERY	Concept	Negation	Certainty	Temporality	Experiencer	Anatomic
+
+
+@CONCEPT_FEATURES	ANTIBIOTICS	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	SSI_Purpose	OtherInfection_Purpose	Completion
+@CONCEPT_FEATURES	BT	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Anatomic	Surgery
+@CONCEPT_FEATURES	TREATMENT	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	SSI_Purpose	OtherInfection_Purpose
+
+
+@CONCEPT_FEATURES	UTI	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Anatomic	Surgery
+@CONCEPT_FEATURES	SIGN_SUP_UTI	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Operative	Healed	Surgery	Anatomic	Depth
+@CONCEPT_FEATURES	PNEUMONIA	Concept	Negation	Certainty	Temporality	Experiencer	Relevance
+@CONCEPT_FEATURES	OTHER_INFECTION	Concept	Negation	Certainty	Temporality	Experiencer	Relevance
+@CONCEPT_FEATURES	OTHER_PAIN	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	PainCause
+
+#need to take away historical anatomic site, because document level inference may unintentionally catch them.
+@CONCEPT_FEATURES	CHEST	Concept	Negation	Certainty	Temporality	Experiencer
+@CONCEPT_FEATURES	ABDOMEN	Concept	Negation	Certainty	Temporality	Experiencer
+@CONCEPT_FEATURES	SKIN	Concept	Negation	Certainty	Temporality	Experiencer
+@CONCEPT_FEATURES	EXTREMITIES	Concept	Negation	Certainty	Temporality	Experiencer
+
+@CONCEPT_FEATURES	EXT_INCISION	Concept	Negation	Certainty	Temporality	Experiencer	Closure
+@CONCEPT_FEATURES	FASCIA	Concept	Negation	Certainty	Temporality	Experiencer	Closure
+@CONCEPT_FEATURES	SKINGRAFT	Concept	Negation	Certainty	Temporality	Experiencer	Suture
+
+#Define the values that a feature can have, the 1st value is the default value
+#The following definitions will be used as an index for FastContext to find the corresponding Feature to assign the modifier
+#value, once a modifier value is available.
+#In this case the Negation feature has two values: affirm and negated, affirm is the default value.
+@FEATURE_VALUES	Negation	affirm	negated
+@FEATURE_VALUES	Certainty	certain	uncertain	concerned
+@FEATURE_VALUES	Temporality	present	historical	plan	hypothetical	in30d	dayone	after30d	current
+@FEATURE_VALUES	Experiencer	patient	nonpatient
+@FEATURE_VALUES	Relevance	relevant	irrelevant
+@FEATURE_VALUES	Anatomic	notspecified	abdomen	chest	extremities	notsurgsite
+@FEATURE_VALUES	Surgery	notmentioned	surgery
+@FEATURE_VALUES	Depth	unknown	superficial	deep
+@FEATURE_VALUES	Operative	notdescribed	operative	preoperative	postoperative
+@FEATURE_VALUES	Dehiscence	notopen	open
+@FEATURE_VALUES	Action	nottaken	taken
+@FEATURE_VALUES	Infected	unknowninfected	mayinfected	infected	notinfected
+@FEATURE_VALUES	SSI_Purpose	ssi_purpose_unknown	ssi_purpose	no_ssi_purpose
+@FEATURE_VALUES	OtherInfection_Purpose	other_infection_purpose_unknown	other_infection_purpose	no_other_infection_purpose
+@FEATURE_VALUES	Otherfistula	inflammatory	notinflammatory
+#to exclude other reasons causes the  SIGN_SUP_INF
+@FEATURE_VALUES	Cause	unknowncause	othercause
+#to exclude other reasons causes the  pain
+@FEATURE_VALUES	PainCause	unknownpaincause	otherpaincause
+@FEATURE_VALUES	Healed	unknownhealed	healed	nothealed
+@FEATURE_VALUES	Completion	unknowncompletion	notcompleted	completed
+
+#differentiate if SIGN_SUP_INF, POSS_SIGN_S_INF is wound related
+@FEATURE_VALUES	Wound	notwound	wound
+@FEATURE_VALUES	Closure	unknowclosed	closed	notclosed
+@FEATURE_VALUES	Suture	unknowsuture	sutured	removed
+
+
+#rule string	direction	trigger type	modifier	window size
+\> 0 -month of	forward	trigger	historical	30
+\> 0 -months of	forward	trigger	historical	30
+\> 0 -year of	forward	trigger	historical	30
+\> 0 -years of	forward	trigger	historical	30
+\> 0 month ago	backward	trigger	historical	30
+\> 0 month of	forward	trigger	historical	30
+\> 0 months ago	backward	trigger	historical	30
+\> 0 months of	forward	trigger	historical	30
+\> 0 year ago	backward	trigger	historical	30
+\> 0 year of	forward	trigger	historical	30
+\> 0 years ago	backward	trigger	historical	30
+\> 0 years of	forward	trigger	historical	30
+\> 0 yrs ago	backward	trigger	historical	30
+\> 4 -week of	forward	trigger	historical	30
+\> 4 -weeks of	forward	trigger	historical	30
+\> 4 week ago	backward	trigger	historical	30
+\> 4 week of	forward	trigger	historical	30
+\> 4 weeks ago	backward	trigger	historical	30
+\> 4 weeks of	forward	trigger	historical	30
+
+\> 30 - days of	forward	trigger	historical	30
+\> 30 day of	forward	trigger	historical	30
+\> 30 days of	forward	trigger	historical	30
+: no	backward	trigger	negated	10
+absence of a	backward	termination	negated	10
+absence of a	forward	trigger	negated	10
+absence of	backward	termination	negated	10
+absence of	forward	trigger	negated	10
+adequate to rule her out for	backward	termination	negated	10
+adequate to rule her out for	forward	trigger	negated	10
+adequate to rule her out	backward	termination	negated	10
+adequate to rule her out	forward	trigger	negated	10
+adequate to rule him out for	backward	termination	negated	10
+adequate to rule him out for	forward	trigger	negated	10
+adequate to rule him out	backward	termination	negated	10
+adequate to rule him out	forward	trigger	negated	10
+adequate to rule out for	backward	termination	negated	10
+adequate to rule out for	forward	trigger	negated	10
+adequate to rule out	backward	termination	negated	10
+adequate to rule out	forward	trigger	negated	10
+adequate to rule the patient out against	backward	termination	negated	10
+adequate to rule the patient out against	forward	trigger	negated	10
+adequate to rule the patient out for	backward	termination	negated	10
+adequate to rule the patient out for	forward	trigger	negated	10
+adequate to rule the patient out	backward	termination	negated	10
+adequate to rule the patient out	forward	trigger	negated	10
+after	both	pseudo	uncertain	30
+although	forward	termination	negated	10
+#Shock, resolved unknown etiology, Patient presents with encephalopathy, non focal neurologic exam, CN nerve exam WNL.
+presents with	forward	termination	negated	10
+presented with	forward	termination	negated	10
+presents with	forward	termination	historical	10
+presented with	forward	termination	historical	10
+
+and \w+ \w+ shown	forward	termination	negated	10
+and \w+ \w+ shows	forward	termination	negated	10
+and \w+ \w+ show	forward	termination	negated	10
+and \w+ shown	forward	termination	negated	10
+and \w+ shows	forward	termination	negated	10
+and \w+ show	forward	termination	negated	10
+and did	forward	termination	negated	10
+and he had	forward	termination	negated	10
+and he was noted to have	forward	termination	negated	10
+and he was	forward	termination	negated	10
+and noted to have	forward	termination	negated	10
+and she had	forward	termination	negated	10
+and she was noted to have	forward	termination	negated	10
+and she was	forward	termination	negated	10
+and the patient had	forward	termination	negated	10
+and the patient was	forward	termination	negated	10
+and with only	forward	termination	negated	10
+any other	backward	termination	negated	10
+any other	forward	trigger	negated	10
+#window size
+#any	forward	trigger	negated	13
+apart from	forward	termination	negated	10
+appears to	forward	trigger	uncertain	30
+are negative	backward	trigger	negated	10
+are negative	forward	termination	negated	10
+are no longer	backward	trigger	negated	10
+are no longer	forward	termination	negated	10
+are ruled out	backward	trigger	negated	10
+are ruled out	forward	termination	negated	10
+are stopped	backward	trigger	negated	10
+are stopped	forward	termination	negated	10
+as a  for	forward	termination	negated	10
+as a cause for	forward	termination	negated	10
+as a cause of	forward	termination	negated	10
+as a etiology for	forward	termination	negated	10
+as a etiology of	forward	termination	negated	10
+as a reason for	forward	termination	negated	10
+as a reason of	forward	termination	negated	10
+as a secondary cause for	forward	termination	negated	10
+as a secondary cause of	forward	termination	negated	10
+as a secondary etiology for	forward	termination	negated	10
+as a secondary etiology of	forward	termination	negated	10
+as a secondary origin for	forward	termination	negated	10
+as a secondary origin of	forward	termination	negated	10
+as a secondary reason for	forward	termination	negated	10
+as a secondary reason of	forward	termination	negated	10
+as a secondary source for	forward	termination	negated	10
+as a secondary source of	forward	termination	negated	10
+as a source for	forward	termination	negated	10
+as a source of	forward	termination	negated	10
+as an cause for	forward	termination	negated	10
+as an cause of	forward	termination	negated	10
+as an etiology for	forward	termination	negated	10
+as an etiology of	forward	termination	negated	10
+as an origin for	forward	termination	negated	10
+as an origin of	forward	termination	negated	10
+as an reason for	forward	termination	negated	10
+as an reason of	forward	termination	negated	10
+as an secondary cause for	forward	termination	negated	10
+as an secondary cause of	forward	termination	negated	10
+as an secondary etiology for	forward	termination	negated	10
+as an secondary etiology of	forward	termination	negated	10
+as an secondary origin for	forward	termination	negated	10
+as an secondary origin of	forward	termination	negated	10
+as an secondary reason for	forward	termination	negated	10
+as an secondary reason of	forward	termination	negated	10
+as an secondary source for	forward	termination	negated	10
+as an secondary source of	forward	termination	negated	10
+as an source for	forward	termination	negated	10
+as an source of	forward	termination	negated	10
+as has	forward	termination	negated	10
+as needed	forward	trigger	hypothetical	30
+as the cause for	forward	termination	negated	10
+as the cause of	forward	termination	negated	10
+as the etiology for	forward	termination	negated	10
+as the etiology of	forward	termination	negated	10
+as the origin for	forward	termination	negated	10
+as the origin of	forward	termination	negated	10
+as the reason for	forward	termination	negated	10
+as the reason of	forward	termination	negated	10
+as the secondary cause for	forward	termination	negated	10
+as the secondary cause of	forward	termination	negated	10
+as the secondary etiology for	forward	termination	negated	10
+as the secondary etiology of	forward	termination	negated	10
+as the secondary origin for	forward	termination	negated	10
+as the secondary origin of	forward	termination	negated	10
+as the secondary reason for	forward	termination	negated	10
+as the secondary reason of	forward	termination	negated	10
+as the secondary source for	forward	termination	negated	10
+as the secondary source of	forward	termination	negated	10
+as the source for	forward	termination	negated	10
+as the source of	forward	termination	negated	10
+as well as any	backward	termination	negated	10
+as well as any	forward	trigger	negated	10
+aside from	forward	termination	negated	10
+#as	both	pseudo	uncertain	30
+at that time	both	pseudo	uncertain	30
+at this time	both	pseudo	uncertain	30
+attempted	both	termination	historical	30
+attempted	both	termination	nonpatient	30
+attempt	both	termination	historical	30
+attempt	both	termination	nonpatient	30
+aunt's	forward	trigger	nonpatient	30
+aunt	forward	trigger	nonpatient	30
+be ruled out for	forward	trigger	uncertain	30
+be ruled out	backward	trigger	uncertain	30
+be stopped	backward	trigger	negated	10
+be stopped	forward	termination	negated	10
+because	both	termination	hypothetical	30
+being ruled out	backward	trigger	uncertain	30
+beyond	forward	termination	negated	10
+biopsy of	forward	termination	negated	10
+borderline	forward	trigger	uncertain	30
+brother's	forward	trigger	nonpatient	30
+brothers	forward	trigger	nonpatient	30
+brother	forward	trigger	nonpatient	30
+but	forward	termination	negated	10
+##
+but	backward	termination	negated	10
+by \w+ family	both	termination	historical	30
+by \w+ family	both	termination	nonpatient	30
+by family	both	termination	historical	30
+by family	both	termination	nonpatient	30
+by the	forward	termination	negated	10
+c w	both	pseudo	uncertain	30
+can be ruled out for	forward	trigger	uncertain	30
+can be ruled out	backward	trigger	uncertain	30
+can rule her out against	backward	termination	negated	10
+can rule her out against	forward	trigger	negated	10
+can rule her out for	backward	termination	negated	10
+can rule her out for	forward	trigger	negated	10
+can rule her out	backward	termination	negated	10
+can rule her out	forward	trigger	negated	10
+can rule him out against	backward	termination	negated	10
+can rule him out against	forward	trigger	negated	10
+can rule him out for	backward	termination	negated	10
+can rule him out for	forward	trigger	negated	10
+can rule him out	backward	termination	negated	10
+can rule him out	forward	trigger	negated	10
+can rule out against	backward	termination	negated	10
+can rule out against	forward	trigger	negated	10
+can rule out for	backward	termination	negated	10
+can rule out for	forward	trigger	negated	10
+can rule out	backward	termination	negated	10
+can rule out	forward	trigger	negated	10
+can rule the patient out	backward	termination	negated	10
+can rule the patient out	forward	trigger	negated	10
+can rule the patinet out against	backward	termination	negated	10
+can rule the patinet out against	forward	trigger	negated	10
+can rule the patinet out for	backward	termination	negated	10
+can rule the patinet out for	forward	trigger	negated	10
+cannot be completely excluded	backward	trigger	uncertain	30
+cannot be excluded	backward	trigger	uncertain	30
+cannot be fully excluded	backward	trigger	uncertain	30
+cannot see	backward	termination	negated	10
+cannot see	forward	trigger	negated	10
+cannot	backward	termination	negated	10
+cannot	forward	trigger	negated	10
+cause for	forward	termination	negated	10
+cause of	forward	termination	negated	10
+causes for	forward	termination	negated	10
+causes of	forward	termination	negated	10
+checked for	backward	termination	negated	10
+checked for	forward	trigger	negated	10
+clear of	backward	termination	negated	10
+clear of	forward	trigger	negated	10
+come back for	forward	trigger	hypothetical	30
+come back to	forward	trigger	hypothetical	30
+complains	both	termination	historical	30
+complains	both	termination	nonpatient	30
+concern for	forward	trigger	uncertain	30
+concerns of	forward	trigger	uncertain	30
+concerned of	forward	trigger	uncertain	30
+concerned about	forward	trigger	uncertain	30
+concerned for	forward	trigger	uncertain	30
+concerning for	forward	trigger	uncertain	30
+consistent with	both	pseudo	uncertain	30
+could be either	forward	trigger	uncertain	30
+could be ruled out for	forward	trigger	uncertain	30
+could be due to	forward	trigger	uncertain	30
+could be	backward	trigger	uncertain	30
+could be ruled out	termination	trigger	uncertain	30
+currently	both	termination	historical	30
+currently	both	termination	nonpatient	30
+dad called	both	termination	historical	30
+dad called	both	termination	nonpatient	30
+dad's	forward	trigger	nonpatient	30
+dad	forward	trigger	nonpatient	30
+daughter called	both	termination	historical	30
+daughter called	both	termination	nonpatient	30
+daughter reported	both	termination	historical	30
+daughter reported	both	termination	nonpatient	30
+daughter reports	both	termination	historical	30
+daughter reports	both	termination	nonpatient	30
+daughters	forward	trigger	nonpatient	30
+daughter	forward	trigger	nonpatient	30
+decided	both	termination	historical	30
+decided	both	termination	nonpatient	30
+decides	both	termination	historical	30
+decides	both	termination	nonpatient	30
+decide	both	termination	historical	30
+decide	both	termination	nonpatient	30
+declined	backward	termination	negated	10
+declined	forward	trigger	negated	10
+declines	backward	termination	negated	10
+declines	forward	trigger	negated	10
+denied active	backward	termination	negated	10
+denied active	forward	trigger	negated	10
+denied any abnormal	backward	termination	negated	10
+denied any abnormal	forward	trigger	negated	10
+denied any change in the	backward	termination	negated	10
+denied any change in the	forward	trigger	negated	10
+denied any changes in the	backward	termination	negated	10
+denied any changes in the	forward	trigger	negated	10
+denied any current	backward	termination	negated	10
+denied any current	forward	trigger	negated	10
+denied any high risk	backward	termination	negated	10
+denied any high risk	forward	trigger	negated	10
+denied any high-risk	backward	termination	negated	10
+denied any high-risk	forward	trigger	negated	10
+denied any history of	backward	termination	negated	10
+denied any history of	forward	trigger	negated	10
+denied any other	backward	termination	negated	10
+denied any other	forward	trigger	negated	10
+denied any problems of	backward	termination	negated	10
+denied any problems of	forward	trigger	negated	10
+denied any problems	backward	termination	negated	10
+denied any problems	forward	trigger	negated	10
+denied any recent	backward	termination	negated	10
+denied any recent	forward	trigger	negated	10
+denied any significant	backward	termination	negated	10
+denied any significant	forward	trigger	negated	10
+denied any symptom of	backward	termination	negated	10
+denied any symptom of	forward	trigger	negated	10
+denied any symptoms of	backward	termination	negated	10
+denied any symptoms of	forward	trigger	negated	10
+denied any	backward	termination	negated	10
+denied any	forward	trigger	negated	10
+denied current	backward	termination	negated	10
+denied current	forward	trigger	negated	10
+denied ever	backward	termination	negated	10
+denied ever	forward	trigger	negated	10
+denied other symptoms of	backward	termination	negated	10
+denied other symptoms of	forward	trigger	negated	10
+denied problems with	backward	termination	negated	10
+denied problems with	forward	trigger	negated	10
+denied symptoms of	backward	termination	negated	10
+denied symptoms of	forward	trigger	negated	10
+denied that there was any current	backward	termination	negated	10
+denied that there was any current	forward	trigger	negated	10
+denied that there was any history of	backward	termination	negated	10
+denied that there was any history of	forward	trigger	negated	10
+denied that there was any	backward	termination	negated	10
+denied that there was any	forward	trigger	negated	10
+denied that there was ever history of	backward	termination	negated	10
+denied that there was ever history of	forward	trigger	negated	10
+denied that there was ever	backward	termination	negated	10
+denied that there was ever	forward	trigger	negated	10
+denied that there was history of	backward	termination	negated	10
+denied that there was history of	forward	trigger	negated	10
+denied that there was problems of	backward	termination	negated	10
+denied that there was problems of	forward	trigger	negated	10
+denied that there was problems	backward	termination	negated	10
+denied that there was problems	forward	trigger	negated	10
+denied that there were any history of	backward	termination	negated	10
+denied that there were any history of	forward	trigger	negated	10
+denied that there were any	backward	termination	negated	10
+denied that there were any	forward	trigger	negated	10
+denied that there were ever history of	backward	termination	negated	10
+denied that there were ever history of	forward	trigger	negated	10
+denied that there were ever	backward	termination	negated	10
+denied that there were ever	forward	trigger	negated	10
+denied that there were history of	backward	termination	negated	10
+denied that there were history of	forward	trigger	negated	10
+denied that there were problems of	backward	termination	negated	10
+denied that there were problems of	forward	trigger	negated	10
+denied that there were problems	backward	termination	negated	10
+denied that there were problems	forward	trigger	negated	10
+denied this	backward	termination	negated	10
+denied this	forward	trigger	negated	10
+denied use of other	backward	termination	negated	10
+denied use of other	forward	trigger	negated	10
+denied use of	backward	termination	negated	10
+denied use of	forward	trigger	negated	10
+denied	backward	termination	negated	10
+denied	forward	trigger	negated	10
+denies active	backward	termination	negated	10
+denies active	forward	trigger	negated	10
+denies any abnormal	backward	termination	negated	30
+denies any abnormal	forward	trigger	negated	30
+denies any change in the	backward	termination	negated	30
+denies any change in the	forward	trigger	negated	30
+denies any changes in the	backward	termination	negated	30
+denies any changes in the	forward	trigger	negated	30
+denies any current	backward	termination	negated	30
+denies any current	forward	trigger	negated	30
+denies any high risk	backward	termination	negated	30
+denies any high risk	forward	trigger	negated	30
+denies any high-risk	backward	termination	negated	30
+denies any high-risk	forward	trigger	negated	30
+denies any history of	backward	termination	negated	30
+denies any history of	forward	trigger	negated	30
+denies any other	backward	termination	negated	30
+denies any other	forward	trigger	negated	30
+denies any problems of	backward	termination	negated	30
+denies any problems of	forward	trigger	negated	30
+denies any problems with	backward	termination	negated	30
+denies any problems with	forward	trigger	negated	30
+denies any problems	backward	termination	negated	30
+denies any problems	forward	trigger	negated	30
+denies any recent	backward	termination	negated	30
+denies any recent	forward	trigger	negated	30
+denies any significant	backward	termination	negated	30
+denies any significant	forward	trigger	negated	30
+denies any symptom of	backward	termination	negated	30
+denies any symptom of	forward	trigger	negated	30
+denies any symptoms of	backward	termination	negated	30
+denies any symptoms of	forward	trigger	negated	30
+denies any undue	backward	termination	negated	30
+denies any undue	forward	trigger	negated	30
+denies any	backward	termination	negated	30
+denies any	forward	trigger	negated	30
+denies current	backward	termination	negated	30
+denies current	forward	trigger	negated	30
+denies ever	backward	termination	negated	30
+denies ever	forward	trigger	negated	30
+denies problems with	backward	termination	negated	10
+denies problems with	forward	trigger	negated	10
+denies significant	backward	termination	negated	10
+denies significant	forward	trigger	negated	10
+denies symptoms of	backward	termination	negated	10
+denies symptoms of	forward	trigger	negated	10
+denies there was any current	backward	termination	negated	10
+denies there was any current	forward	trigger	negated	10
+denies there was any history of	backward	termination	negated	10
+denies there was any history of	forward	trigger	negated	10
+denies there was any recent	backward	termination	negated	10
+denies there was any recent	forward	trigger	negated	10
+denies there was any	backward	termination	negated	10
+denies there was any	forward	trigger	negated	10
+denies there was ever history of	backward	termination	negated	10
+denies there was ever history of	forward	trigger	negated	10
+denies there was ever	backward	termination	negated	10
+denies there was ever	forward	trigger	negated	10
+denies there was history of	backward	termination	negated	10
+denies there was history of	forward	trigger	negated	10
+denies there was problems of	backward	termination	negated	10
+denies there was problems of	forward	trigger	negated	10
+denies there was problems	backward	termination	negated	10
+denies there was problems	forward	trigger	negated	10
+denies there were any history of	backward	termination	negated	10
+denies there were any history of	forward	trigger	negated	10
+denies there were any	backward	termination	negated	10
+denies there were any	forward	trigger	negated	10
+denies there were ever history of	backward	termination	negated	10
+denies there were ever history of	forward	trigger	negated	10
+denies there were ever	backward	termination	negated	10
+denies there were ever	forward	trigger	negated	10
+denies there were history of	backward	termination	negated	10
+denies there were history of	forward	trigger	negated	10
+denies there were problems of	backward	termination	negated	10
+denies there were problems of	forward	trigger	negated	10
+denies there were problems	backward	termination	negated	10
+denies there were problems	forward	trigger	negated	10
+denies this	backward	termination	negated	10
+denies this	forward	trigger	negated	10
+denies true	backward	termination	negated	10
+denies true	forward	trigger	negated	10
+denies use of other	backward	termination	negated	10
+denies use of other	forward	trigger	negated	10
+denies use of	backward	termination	negated	10
+denies use of	forward	trigger	negated	10
+denies	backward	termination	negated	10
+##
+denies	forward	trigger	negated	30
+denise	backward	termination	negated	10
+denise	forward	trigger	negated	10
+denying	backward	termination	negated	10
+denying	forward	trigger	negated	10
+deny	backward	termination	negated	10
+deny	forward	trigger	negated	10
+did have	forward	termination	negated	10
+did not have any episodes of	backward	termination	negated	10
+did not have any episodes of	forward	trigger	negated	10
+did not have any more episodes of	backward	termination	negated	10
+did not have any more episodes of	forward	trigger	negated	10
+did not have any problems with	backward	termination	negated	10
+did not have any problems with	forward	trigger	negated	10
+did not observe a	backward	termination	negated	10
+did not observe a	forward	trigger	negated	10
+did not rule out	backward	trigger	uncertain	30
+did rule her out against	backward	termination	negated	10
+did rule her out against	forward	trigger	negated	10
+did rule her out for	backward	termination	negated	10
+did rule her out for	forward	trigger	negated	10
+did rule her out	backward	termination	negated	10
+did rule her out	forward	trigger	negated	10
+did rule him out against	backward	termination	negated	10
+did rule him out against	forward	trigger	negated	10
+did rule him out for	backward	termination	negated	10
+did rule him out for	forward	trigger	negated	10
+did rule him out	backward	termination	negated	10
+did rule him out	forward	trigger	negated	10
+did rule out against	backward	termination	negated	10
+did rule out against	forward	trigger	negated	10
+did rule out for	backward	termination	negated	10
+did rule out for	forward	trigger	negated	10
+did rule out	backward	termination	negated	10
+did rule out	forward	trigger	negated	10
+did rule the patient out against	backward	termination	negated	10
+did rule the patient out against	forward	trigger	negated	10
+did rule the patient out for	backward	termination	negated	10
+did rule the patient out for	forward	trigger	negated	10
+did rule the patient out	backward	termination	negated	10
+did rule the patient out	forward	trigger	negated	10
+did show	forward	termination	negated	10
+didn't express any	backward	termination	negated	10
+didn't express any	forward	trigger	negated	10
+didn't expressed any	backward	termination	negated	10
+didn't expressed any	forward	trigger	negated	10
+didn't have any problems with	backward	termination	negated	10
+didn't have any problems with	forward	trigger	negated	10
+didn't report any problems with	backward	termination	negated	10
+didn't report any problems with	forward	trigger	negated	10
+didn't report any	backward	termination	negated	10
+didn't report any	forward	trigger	negated	10
+does have	forward	termination	negated	10
+does not seem to	backward	termination	negated	15
+does not seem to	forward	trigger	negated	30
+does not appear	backward	termination	negated	15
+does not appear	forward	trigger	negated	30
+does not express	backward	termination	negated	15
+does not express	forward	trigger	negated	15
+does not use	backward	termination	negated	15
+does not use	forward	trigger	negated	15
+does not usually	backward	termination	negated	15
+does not usually	forward	trigger	negated	15
+does not	forward	trigger	negated	15
+doesn't look like	backward	termination	negated	10
+doesn't look like	forward	trigger	negated	10
+doubt	forward	trigger	uncertain	30
+due to	forward	termination	negated	10
+ecchymoses to	forward	termination	negated	10
+ed	both	termination	historical	30
+emergency department	both	termination	historical	30
+etiology for	forward	termination	negated	10
+etiology of	forward	termination	negated	10
+exacerbation from	forward	termination	negated	10
+exam to assess	forward	trigger	uncertain	30
+examination assess	forward	trigger	uncertain	30
+examination to assess	forward	trigger	uncertain	30
+examinations to assess	forward	trigger	uncertain	30
+exams to assess	forward	trigger	uncertain	30
+except	forward	termination	negated	10
+f/h	forward	trigger	nonpatient	30
+fails to reveal	backward	termination	negated	10
+fails to reveal	forward	trigger	negated	10
+false negative	both	pseudo	negated	10
+fam hx	forward	trigger	nonpatient	30
+family found	both	termination	historical	30
+family found	both	termination	nonpatient	30
+family history	forward	trigger	nonpatient	30
+family said	both	termination	historical	30
+family said	both	termination	nonpatient	30
+family stated	both	termination	historical	30
+family stated	both	termination	nonpatient	30
+family told	both	termination	historical	30
+family told	both	termination	nonpatient	30
+family	forward	trigger	nonpatient	30
+father called	both	termination	historical	30
+father called	both	termination	nonpatient	30
+father's	forward	trigger	nonpatient	30
+father	forward	trigger	nonpatient	30
+fh	forward	trigger	nonpatient	30
+fhx of	forward	trigger	nonpatient	30
+final report indication	both	pseudo	uncertain	30
+for presumed	forward	trigger	uncertain	30
+free air	both	pseudo	negated	10
+free fluid	both	pseudo	negated	10
+free of	backward	termination	negated	10
+free of	forward	trigger	negated	10
+free t	both	pseudo	negated	10
+free wall	both	pseudo	negated	10
+free water	both	pseudo	negated	10
+free	backward	trigger	negated	10
+#from	both	pseudo	uncertain	30
+given \w+ history	both	pseudo	uncertain	30
+given her history	forward	termination	negated	10
+given his history	forward	termination	negated	10
+given patient s history	both	pseudo	uncertain	30
+given that	forward	termination	negated	10
+given the fact	forward	termination	negated	10
+given the history	forward	termination	negated	10
+given the severity of	forward	termination	negated	10
+gram negative	both	pseudo	negated	10
+grandfather's	forward	trigger	nonpatient	30
+grandfather	forward	trigger	nonpatient	30
+grandmother's	forward	trigger	nonpatient	30
+grandmother	forward	trigger	nonpatient	30
+#h o	forward	trigger	historical	30
+h o	forward	trigger	nonpatient	30
+had a negative \w+ for	backward	termination	negated	10
+had a negative \w+ for	forward	trigger	negated	10
+has a negative \w+ for	backward	termination	negated	10
+has a negative \w+ for	forward	trigger	negated	10
+has been negative	backward	trigger	negated	10
+has been negative	forward	termination	negated	10
+has been ruled out	backward	trigger	negated	10
+has been ruled out	forward	termination	negated	10
+has not had any problems with	backward	termination	negated	10
+has not had any problems with	forward	trigger	negated	10
+has not had any problems	backward	termination	negated	10
+has not had any problems	forward	trigger	negated	10
+has not had any	backward	termination	negated	10
+has not had any	forward	trigger	negated	10
+have a negative \w+ for	backward	termination	negated	10
+have a negative \w+ for	forward	trigger	negated	10
+have been ruled out	backward	trigger	negated	10
+have been ruled out	forward	termination	negated	10
+he continued to	forward	termination	negated	10
+her old	forward	termination	negated	10
+his old	forward	termination	negated	10
+history and examination	both	pseudo	historical	30
+history and physical	both	pseudo	historical	30
+history and	both	pseudo	historical	30
+history for	both	pseudo	historical	30
+history of	forward	trigger	historical	10
+history of chief complaint	both	pseudo	historical	30
+history of present illness	both	pseudo	historical	30
+history physical	both	pseudo	historical	30
+history taking	both	pseudo	historical	30
+
+hx and examination	both	pseudo	historical	30
+hx and physical	both	pseudo	historical	30
+hx and	both	pseudo	historical	30
+hx for	both	pseudo	historical	30
+hx of	forward	trigger	historical	10
+hx of chief complaint	both	pseudo	historical	30
+hx of present illness	both	pseudo	historical	30
+hx physical	both	pseudo	historical	30
+hx taking	both	pseudo	historical	30
+
+##
+#history	forward	trigger	historical	30
+however	forward	termination	negated	10
+#ho	forward	trigger	historical	30
+#hx	forward	trigger	historical	30
+if negative	both	pseudo	hypothetical	30
+if	forward	trigger	hypothetical	30
+in her	both	pseudo	uncertain	30
+in his	both	pseudo	uncertain	30
+in the past	both	trigger	historical	30
+in the setting of	forward	termination	negated	10
+inconsistent with	backward	termination	negated	10
+inconsistent with	forward	trigger	negated	10
+indication	forward	trigger	uncertain	30
+is negative	backward	trigger	negated	10
+is negative	forward	termination	negated	10
+is neg	backward	trigger	negated	10
+is neg	forward	termination	negated	10
+is no longer	backward	trigger	negated	10
+is no longer	forward	termination	negated	10
+is not	backward	termination	negated	10
+is not	forward	trigger	negated	10
+is ruled out	backward	trigger	negated	10
+is ruled out	forward	termination	negated	10
+is stopped	backward	trigger	negated	10
+is stopped	forward	termination	negated	10
+is to be ruled out for	forward	trigger	uncertain	30
+is to be ruled out	backward	trigger	uncertain	30
+isn't	backward	termination	negated	10
+isn't	forward	trigger	negated	10
+lack of	backward	termination	negated	10
+lack of	forward	trigger	negated	10
+lacked	backward	termination	negated	10
+lacked	forward	trigger	negated	10
+last \> 0 month ago	backward	trigger	historical	30
+last \> 0 months ago	backward	trigger	historical	30
+last \> 0 year ago	backward	trigger	historical	30
+last \> 0 years ago	backward	trigger	historical	30
+last \> 0 yrs ago	backward	trigger	historical	30
+last \> 4 week ago	backward	trigger	historical	30
+last \> 4 weeks ago	backward	trigger	historical	30
+last april	backward	trigger	historical	30
+last august	backward	trigger	historical	30
+last december	backward	trigger	historical	30
+last fall	backward	trigger	historical	30
+last february	backward	trigger	historical	30
+last january	backward	trigger	historical	30
+last july	backward	trigger	historical	30
+last june	backward	trigger	historical	30
+last march	backward	trigger	historical	30
+last may	backward	trigger	historical	30
+last november	backward	trigger	historical	30
+last october	backward	trigger	historical	30
+last september	backward	trigger	historical	30
+last spring	backward	trigger	historical	30
+last summer	backward	trigger	historical	30
+last winter	backward	trigger	historical	30
+likely component of	forward	termination	negated	10
+likely contributors to	forward	termination	negated	10
+likely from	forward	termination	negated	10
+likely in setting of	forward	termination	negated	10
+likely reflecting	both	pseudo	uncertain	30
+likely	forward	trigger	uncertain	30
+look for any	forward	trigger	hypothetical	30
+look for	forward	trigger	hypothetical	30
+markedly	both	pseudo	uncertain	30
+may be \w+ underestimated	both	pseudo	uncertain	30
+may be contributing	both	pseudo	uncertain	30
+may be due to	forward	trigger	uncertain	30
+may be related to	both	pseudo	uncertain	30
+may be ruled out for	forward	trigger	uncertain	30
+may be ruled out	backward	trigger	uncertain	30
+may be underestimated	both	pseudo	uncertain	30
+may be unmasking	both	pseudo	uncertain	30
+may be	forward	trigger	uncertain	30
+may be consistent with	forward	trigger	uncertain	30
+may have been preceded by	forward	trigger	uncertain	30
+may have	forward	trigger	uncertain	30
+may represent	forward	trigger	uncertain	30
+might be ruled out for	forward	trigger	uncertain	30
+might be ruled out	backward	trigger	uncertain	30
+might be	forward	trigger	uncertain	30
+#mildly	forward	termination	negated	10
+#mild	forward	termination	negated	10
+mom called	both	termination	historical	30
+mom called	both	termination	nonpatient	30
+mom's	forward	trigger	nonpatient	30
+mom	forward	trigger	nonpatient	30
+monitor \w+ for	forward	trigger	hypothetical	30
+monitor \w+ \w+ for	forward	trigger	hypothetical	30
+monitor the \w+ for	forward	trigger	hypothetical	30
+mother called	both	termination	historical	30
+mother called	both	termination	nonpatient	30
+mother's	forward	trigger	nonpatient	30
+mother	forward	trigger	nonpatient	30
+must be ruled out for	forward	trigger	uncertain	30
+must be ruled out	backward	trigger	uncertain	30
+n o	backward	termination	negated	10
+n o	forward	trigger	negated	10
+neg for	backward	termination	negated	10
+neg for	forward	trigger	negated	10
+neg.	backward	trigger	negated	10
+neg.	forward	termination	negated	10
+negative for	backward	termination	negated	10
+negative for	forward	trigger	negated	10
+neg	backward	trigger	negated	10
+neg	forward	termination	negated	10
+neighbor called	both	termination	historical	30
+neighbor called	both	termination	nonpatient	30
+neighbors called	both	termination	historical	30
+neighbors called	both	termination	nonpatient	30
+neighbors	forward	trigger	nonpatient	30
+neighbor	forward	trigger	nonpatient	30
+neighbour called	both	termination	historical	30
+neighbour called	both	termination	nonpatient	30
+neighbours called	both	termination	historical	30
+neighbours called	both	termination	nonpatient	30
+neighbours	forward	trigger	nonpatient	30
+neighbour	forward	trigger	nonpatient	30
+never any	backward	termination	negated	10
+never any	forward	trigger	negated	10
+never developed	backward	termination	negated	10
+never developed	forward	trigger	negated	10
+never had	backward	termination	negated	10
+never had	forward	trigger	negated	10
+nevertheless	forward	termination	negated	10
+no \w+ evid of	backward	termination	negated	10
+no \w+ evid of	forward	trigger	negated	10
+no \w+ evid to suggest	backward	termination	negated	10
+no \w+ evid to suggest	forward	trigger	negated	10
+no \w+ evid to	backward	termination	negated	10
+no \w+ evid to	forward	trigger	negated	10
+no \w+ evidence of	backward	termination	negated	10
+no \w+ evidence of	forward	trigger	negated	10
+no \w+ evidence to suggest	backward	termination	negated	10
+no \w+ evidence to suggest	forward	trigger	negated	10
+no \w+ evidence to	backward	termination	negated	10
+no \w+ evidence to	forward	trigger	negated	10
+no \w+ evidence	backward	termination	negated	10
+no \w+ evidence	forward	trigger	negated	10
+no \w+ evid	backward	termination	negated	10
+no \w+ evid	forward	trigger	negated	10
+no \w+ was given	forward	termination	negated	10
+no abnormal	backward	termination	negated	10
+no abnormal	forward	trigger	negated	10
+no acute	backward	termination	negated	10
+no acute	forward	trigger	negated	10
+no additional significant	backward	termination	negated	10
+no additional significant	forward	trigger	negated	10
+no apparent	backward	termination	negated	10
+no apparent	forward	trigger	negated	10
+no cause of	backward	termination	negated	10
+no cause of	forward	trigger	negated	10
+no change	both	pseudo	negated	10
+no complaints of	backward	termination	negated	10
+no complaints of	forward	trigger	negated	10
+no current	backward	termination	negated	10
+no current	forward	trigger	negated	10
+no definite change	both	pseudo	negated	10
+no e/o	backward	termination	negated	10
+no e/o	forward	trigger	negated	10
+no e o	backward	termination	negated	10
+no e o	forward	trigger	negated	10
+no evidence of	backward	termination	negated	10
+no evidence of	forward	trigger	negated	10
+no evidence to suggest	backward	termination	negated	10
+no evidence to suggest	forward	trigger	negated	10
+no evidence	backward	termination	negated	10
+no evidence	forward	trigger	negated	10
+no findings of	backward	termination	negated	10
+no findings of	forward	trigger	negated	10
+no findings to indicate	backward	termination	negated	10
+no findings to indicate	forward	trigger	negated	10
+no findings to suggest	backward	termination	negated	10
+no findings to suggest	forward	trigger	negated	10
+no h o	backward	termination	negated	10
+no h o	forward	trigger	negated	10
+no history of	backward	termination	negated	10
+no history of	forward	trigger	negated	10
+no hx of	backward	termination	negated	10
+no hx of	forward	trigger	negated	10
+no increase	both	pseudo	negated	10
+no indication of	backward	termination	negated	10
+no indication of	forward	trigger	negated	10
+no indications of	backward	termination	negated	10
+no indications of	forward	trigger	negated	10
+no interval change	both	pseudo	negated	10
+no known history of	backward	termination	negated	10
+no known history of	forward	trigger	negated	10
+no known hx of	backward	termination	negated	10
+no known hx of	forward	trigger	negated	10
+no longer present	backward	trigger	negated	10
+no longer present	forward	termination	negated	10
+no longer	backward	termination	negated	10
+no longer	forward	trigger	negated	10
+no major	backward	termination	negated	10
+no major	forward	trigger	negated	10
+no mammographic evidence of	backward	termination	negated	10
+no mammographic evidence of	forward	trigger	negated	10
+no mention of	backward	termination	negated	10
+no mention of	forward	trigger	negated	10
+no new evidence	backward	termination	negated	10
+no new evidence	forward	trigger	negated	10
+no new	backward	termination	negated	10
+no new	forward	trigger	negated	10
+no other evidence	backward	termination	negated	10
+no other evidence	forward	trigger	negated	10
+no other symptoms of	backward	termination	negated	10
+no other symptoms of	forward	trigger	negated	10
+no other	backward	termination	negated	10
+no other	forward	trigger	negated	10
+no problems with '	backward	termination	negated	10
+no problems with '	forward	trigger	negated	10
+no radiographic evidence of	backward	termination	negated	10
+no radiographic evidence of	forward	trigger	negated	10
+no recurrent	backward	termination	negated	10
+no recurrent	forward	trigger	negated	10
+no reported mention	backward	termination	negated	10
+no reported mention	forward	trigger	negated	10
+no reported	backward	termination	negated	10
+no reported	forward	trigger	negated	10
+no residual	backward	termination	negated	10
+no residual	forward	trigger	negated	10
+no sign of	backward	termination	negated	10
+no sign of	forward	trigger	negated	10
+no significant change	both	pseudo	negated	10
+no significant interval change	both	pseudo	negated	10
+no significant	backward	termination	negated	10
+no significant	forward	trigger	negated	10
+no signs of	backward	termination	negated	10
+no signs of	forward	trigger	negated	10
+no signs or symptoms of	backward	termination	negated	10
+no signs or symptoms of	forward	trigger	negated	10
+no sign	backward	termination	negated	10
+no sign	forward	trigger	negated	10
+no suggestion of	backward	termination	negated	10
+no suggestion of	forward	trigger	negated	10
+no suspicious change	both	pseudo	negated	10
+no suspicious	backward	termination	negated	10
+no suspicious	forward	trigger	negated	10
+no sxs of	backward	termination	negated	10
+no sxs of	forward	trigger	negated	10
+no visable	backward	termination	negated	10
+no visable	forward	trigger	negated	10
+non diagnostic	backward	trigger	negated	10
+non diagnostic	forward	termination	negated	10
+none	backward	termination	negated	10
+none	forward	trigger	negated	10
+: none	forward	pseudo	negated	10
+: none	backward	trigger	negated	10
+nor all	backward	termination	negated	10
+nor all	forward	trigger	negated	10
+nor any	backward	termination	negated	10
+nor any	forward	trigger	negated	10
+nor	backward	termination	negated	10
+nor	forward	trigger	negated	10
+not a current	backward	termination	negated	10
+not a current	forward	trigger	negated	10
+#not appear	backward	termination	negated	10
+not appear	forward	trigger	negated	10
+not appreciate	backward	termination	negated	10
+not appreciate	forward	trigger	negated	10
+not associated with	backward	termination	negated	10
+not associated with	forward	trigger	negated	10
+not attempted given	forward	termination	negated	10
+not been ruled out	backward	trigger	uncertain	30
+not cause	both	pseudo	negated	10
+not certain if	both	pseudo	negated	10
+not certain whether	both	pseudo	negated	10
+not complain of	backward	termination	negated	10
+not complain of	forward	trigger	negated	10
+not current	backward	termination	negated	10
+not current	forward	trigger	negated	10
+not demonstrate	backward	termination	negated	10
+not demonstrate	forward	trigger	negated	10
+not drain	both	pseudo	negated	10
+not exhibit	backward	termination	negated	10
+not exhibit	forward	trigger	negated	10
+not extend	both	pseudo	negated	10
+not feel	backward	termination	negated	10
+not feel	forward	trigger	negated	10
+not had	backward	termination	negated	10
+not had	forward	trigger	negated	10
+not have evidence of	backward	termination	negated	10
+not have evidence of	forward	trigger	negated	10
+not have	backward	termination	negated	10
+not have	forward	trigger	negated	10
+not in acute	backward	termination	negated	10
+not in acute	forward	trigger	negated	10
+not interested	both	pseudo	negated	10
+not in	backward	termination	negated	10
+not in	forward	trigger	negated	10
+not know of	backward	termination	negated	10
+not know of	forward	trigger	negated	10
+not known to have	backward	termination	negated	10
+not known to have	forward	trigger	negated	10
+not necessarily	both	pseudo	negated	10
+not only	both	pseudo	negated	10
+not on	both	pseudo	negated	10
+not reveal	backward	termination	negated	10
+not reveal	forward	trigger	negated	10
+not ruled out	backward	trigger	uncertain	30
+not see	backward	termination	negated	10
+not see	forward	trigger	negated	10
+not solve	both	pseudo	negated	10
+not to be	backward	termination	negated	10
+not to be	forward	trigger	negated	10
+noted	both	termination	historical	30
+noted	both	termination	nonpatient	30
+not	forward	trigger	negated	30
+not a source \w+	forward	trigger	negated	30
+now resolved	backward	trigger	negated	10
+now resolved	forward	termination	negated	10
+#no	backward	termination	negated	10
+no	forward	trigger	negated	30
+no concern	forward	trigger	negated	30
+origin for	forward	termination	negated	10
+origin of	forward	termination	negated	10
+origins for	forward	termination	negated	10
+origins of	forward	termination	negated	10
+other possibilities of	forward	termination	negated	10
+ought to be ruled out for	forward	trigger	uncertain	30
+ought to be ruled out	backward	trigger	uncertain	30
+past history	forward	trigger	historical	30
+past medical history	forward	trigger	historical	30
+patient continued to	forward	termination	negated	10
+patient was not	backward	termination	negated	10
+patient was not	forward	trigger	negated	10
+patient's	both	termination	historical	30
+patient's	both	termination	nonpatient	30
+patient	both	termination	historical	30
+patient	both	termination	nonpatient	30
+poor history	both	pseudo	historical	30
+possibility of	forward	trigger	uncertain	30
+possible	forward	trigger	uncertain	30
+possibly	forward	trigger	uncertain	30
+possible	backward	trigger	uncertain	8
+poss	forward	trigger	uncertain	30
+presenting	both	termination	historical	30
+presenting	both	termination	nonpatient	30
+presents	both	termination	historical	30
+presents	both	termination	nonpatient	30
+presumably	forward	trigger	uncertain	30
+presumed to	forward	trigger	uncertain	30
+prior to	forward	termination	negated	10
+prn	forward	trigger	hypothetical	30
+probable	forward	trigger	uncertain	30
+probably	forward	trigger	uncertain	30
+prophylaxis	backward	trigger	hypothetical	10
+prophylaxis for	forward	trigger	hypothetical	10
+pt	both	termination	historical	30
+pt	both	termination	nonpatient	30
+question was	forward	trigger	uncertain	30
+questioned	forward	trigger	uncertain	30
+r o	forward	trigger	uncertain	30
+rather than	backward	termination	negated	10
+rather than	forward	trigger	negated	10
+reason for	forward	termination	negated	10
+reason of	forward	termination	negated	10
+reasons for	forward	termination	negated	10
+reasons of	forward	termination	negated	10
+reported	both	termination	historical	30
+reported	both	termination	nonpatient	30
+reports	both	termination	historical	30
+reports	both	termination	nonpatient	30
+#resolved	backward	trigger	negated	10
+#resolved	forward	trigger	negated	10
+#return	forward	trigger	hypothetical	30
+roommate called	both	termination	historical	30
+roommate called	both	termination	nonpatient	30
+roommates called	both	termination	historical	30
+roommates called	both	termination	nonpatient	30
+roommates	forward	trigger	nonpatient	30
+roommate	forward	trigger	nonpatient	30
+ro	forward	trigger	uncertain	30
+rule her out for	forward	trigger	uncertain	30
+rule her out	forward	trigger	uncertain	30
+rule him out for	forward	trigger	uncertain	30
+rule him out	forward	trigger	uncertain	30
+rule out for	forward	trigger	uncertain	30
+rule out	forward	trigger	uncertain	30
+rule the patient out	forward	trigger	uncertain	30
+rule the patinet out for	forward	trigger	uncertain	30
+ruled her out against	backward	termination	negated	10
+ruled her out against	forward	trigger	negated	10
+ruled her out for	backward	termination	negated	10
+ruled her out for	forward	trigger	negated	10
+ruled her out	backward	termination	negated	10
+ruled her out	forward	trigger	negated	10
+ruled him out against	backward	termination	negated	10
+ruled him out against	forward	trigger	negated	10
+ruled him out for	backward	termination	negated	10
+ruled him out for	forward	trigger	negated	10
+ruled him out	backward	termination	negated	10
+ruled him out	forward	trigger	negated	10
+ruled out against	backward	termination	negated	10
+ruled out against	forward	trigger	negated	10
+ruled out for	backward	termination	negated	10
+ruled out for	forward	trigger	negated	10
+ruled out	backward	termination	negated	10
+ruled out	forward	trigger	negated	10
+ruled the patient out against	backward	termination	negated	10
+ruled the patient out against	forward	trigger	negated	10
+ruled the patient out for	backward	termination	negated	10
+ruled the patient out for	forward	trigger	negated	10
+ruled the patient out	backward	termination	negated	10
+ruled the patient out	forward	trigger	negated	10
+rules her out for	backward	termination	negated	10
+rules her out for	forward	trigger	negated	10
+rules her out	backward	termination	negated	10
+rules her out	forward	trigger	negated	10
+rules him out for	backward	termination	negated	10
+rules him out for	forward	trigger	negated	10
+rules him out	backward	termination	negated	10
+rules him out	forward	trigger	negated	10
+rules out for	backward	termination	negated	10
+rules out for	forward	trigger	negated	10
+rules out	backward	termination	negated	10
+rules out	forward	trigger	negated	10
+rules the patient out for	backward	termination	negated	10
+rules the patient out for	forward	trigger	negated	10
+rules the patient out	backward	termination	negated	10
+rules the patient out	forward	trigger	negated	10
+s p	both	pseudo	uncertain	30
+secondary to	forward	termination	negated	10
+secondary	forward	termination	negated	10
+she continued to	forward	termination	negated	10
+should be ruled out for	forward	trigger	uncertain	30
+should be ruled out	backward	trigger	uncertain	30
+should he	forward	trigger	hypothetical	30
+should she	forward	trigger	hypothetical	30
+should the patient	forward	trigger	hypothetical	30
+should there	forward	trigger	hypothetical	30
+show a question of	forward	trigger	uncertain	30
+shown a question of	forward	trigger	uncertain	30
+since april	backward	trigger	historical	30
+since august	backward	trigger	historical	30
+since december	backward	trigger	historical	30
+since fall	backward	trigger	historical	30
+since february	backward	trigger	historical	30
+since january	backward	trigger	historical	30
+since july	backward	trigger	historical	30
+since june	backward	trigger	historical	30
+since march	backward	trigger	historical	30
+since may	backward	trigger	historical	30
+since november	backward	trigger	historical	30
+since october	backward	trigger	historical	30
+since september	backward	trigger	historical	30
+since spring	backward	trigger	historical	30
+since summer	backward	trigger	historical	30
+since winter	backward	trigger	historical	30
+sister's	forward	trigger	nonpatient	30
+sisters	forward	trigger	nonpatient	30
+sister	forward	trigger	nonpatient	30
+sister called	both	termination	historical	30
+sister called	both	termination	nonpatient	30
+sister reported	both	termination	historical	30
+sister reported	both	termination	nonpatient	30
+sister reports	both	termination	historical	30
+sister reports	both	termination	nonpatient	30
+social history	both	pseudo	historical	30
+son called	both	termination	historical	30
+son called	both	termination	nonpatient	30
+son reported	both	termination	historical	30
+son reported	both	termination	nonpatient	30
+son reports	both	termination	historical	30
+son reports	both	termination	nonpatient	30
+sons	forward	trigger	nonpatient	30
+son	forward	trigger	nonpatient	30
+source for	forward	termination	negated	10
+source of	forward	termination	negated	10
+sources for	forward	termination	negated	10
+sources of	forward	termination	negated	10
+
+r / o \w+ sources of	forward	trigger	negated	10
+rule out \w+ sources of	forward	trigger	negated	10
+
+speaking with family	both	termination	historical	30
+speaking with family	both	termination	nonpatient	30
+spoke with family	both	termination	historical	30
+spoke with family	both	termination	nonpatient	30
+states	both	termination	historical	30
+states	both	termination	nonpatient	30
+status post	both	pseudo	uncertain	30
+
+#male with PMH significant for colon ca (30 years ago), hypothyroidism and neuroendocrine tumor of pancreas s/p Whipple procedure on 9/18/14
+s / p	both	termination	historical	30
+
+still	forward	termination	negated	10
+stopped taking	both	pseudo	negated	10
+studies to assess	forward	trigger	uncertain	30
+study to assess	forward	trigger	uncertain	30
+sudden onset of	both	pseudo	historical	30
+sufficient to rule her out against	backward	termination	negated	10
+sufficient to rule her out against	forward	trigger	negated	10
+sufficient to rule her out for	backward	termination	negated	10
+sufficient to rule her out for	forward	trigger	negated	10
+sufficient to rule her out	backward	termination	negated	10
+sufficient to rule her out	forward	trigger	negated	10
+sufficient to rule him out against	backward	termination	negated	10
+sufficient to rule him out against	forward	trigger	negated	10
+sufficient to rule him out for	backward	termination	negated	10
+sufficient to rule him out for	forward	trigger	negated	10
+sufficient to rule him out	backward	termination	negated	10
+sufficient to rule him out	forward	trigger	negated	10
+sufficient to rule out against	backward	termination	negated	10
+sufficient to rule out against	forward	trigger	negated	10
+sufficient to rule out for	backward	termination	negated	10
+sufficient to rule out for	forward	trigger	negated	10
+sufficient to rule out	backward	termination	negated	10
+sufficient to rule out	forward	trigger	negated	10
+sufficient to rule the patient out against	backward	termination	negated	10
+sufficient to rule the patient out against	forward	trigger	negated	10
+sufficient to rule the patient out for	backward	termination	negated	10
+sufficient to rule the patient out for	forward	trigger	negated	10
+sufficient to rule the patient out	backward	termination	negated	10
+sufficient to rule the patient out	forward	trigger	negated	10
+suggestive of	forward	trigger	uncertain	30
+suggest	forward	trigger	uncertain	30
+suspected	forward	trigger	uncertain	30
+suspicion for	forward	trigger	uncertain	30
+suspicious for	forward	trigger	uncertain	30
+talked with family	both	termination	historical	30
+talked with family	both	termination	nonpatient	30
+talking with family	both	termination	historical	30
+talking with family	both	termination	nonpatient	30
+the presumed	forward	trigger	uncertain	30
+though	forward	termination	negated	10
+to evaluate for any	forward	trigger	uncertain	30
+evaluate for	forward	trigger	uncertain	30
+to exclude	backward	termination	negated	10
+to exclude	forward	trigger	negated	10
+to prevent	forward	trigger	hypothetical	30
+today	both	termination	historical	30
+today	both	termination	nonpatient	30
+treatment of	both	pseudo	uncertain	30
+trigger event for	forward	termination	negated	10
+uncle's	forward	trigger	nonpatient	30
+unclear dose	both	pseudo	uncertain	30
+unclear	both	trigger	uncertain	30
+uncle	forward	trigger	nonpatient	30
+unlikely	backward	trigger	negated	10
+unlikely	forward	termination	negated	10
+unremarkable	both	trigger	negated	10
+unremarkable for	backward	termination	negated	10
+unremarkable for	forward	trigger	negated	10
+#use	forward	trigger	hypothetical	30
+w/o evidence of	backward	termination	negated	10
+w/o evidence of	forward	trigger	negated	10
+w/o evidence	backward	termination	negated	10
+w/o evidence	forward	trigger	negated	10
+w/o	backward	termination	negated	10
+w/o	forward	trigger	negated	10
+w o evidence of	backward	termination	negated	10
+w o evidence of	forward	trigger	negated	10
+w o evidence	backward	termination	negated	10
+w o evidence	forward	trigger	negated	10
+w o	backward	termination	negated	10
+w o	forward	trigger	negated	10
+wants to	forward	trigger	hypothetical	30
+was found negative	backward	trigger	negated	10
+was found negative	forward	termination	negated	10
+was found	both	termination	historical	30
+was found	both	termination	nonpatient	30
+was initially suspected	backward	trigger	uncertain	30
+was instructed	both	termination	historical	30
+was instructed	both	termination	nonpatient	30
+was negative	backward	trigger	negated	10
+was negative	forward	termination	negated	10
+was noted to be negative	backward	trigger	negated	10
+was noted to be negative	forward	termination	negated	10
+was not	backward	termination	negated	10
+was not	forward	trigger	negated	10
+was ruled out	backward	trigger	negated	10
+was ruled out	forward	termination	negated	10
+was stopped by	forward	termination	negated	10
+was stopped due to	forward	termination	negated	10
+was stopped	backward	trigger	negated	10
+was stopped	forward	termination	negated	10
+was suspected	backward	trigger	uncertain	30
+wasn't	backward	termination	negated	10
+wasn't	forward	trigger	negated	10
+were instructed	both	termination	historical	30
+were instructed	both	termination	nonpatient	30
+were stopped	backward	trigger	negated	10
+were stopped	forward	termination	negated	10
+were totally	forward	termination	negated	10
+what must be ruled out is	forward	trigger	uncertain	30
+whether or not	forward	trigger	uncertain	30
+whether or not	forward	pseudo	negated	30
+which	both	termination	historical	30
+which	both	termination	nonpatient	30
+while	forward	termination	negated	10
+who are not present	forward	termination	negated	10
+will be ruled out for	forward	trigger	uncertain	30
+will be ruled out	backward	trigger	uncertain	30
+with \w+ dad	both	termination	historical	30
+with \w+ dad	both	termination	nonpatient	30
+with \w+ daughter	both	termination	historical	30
+with \w+ daughter	both	termination	nonpatient	30
+with \w+ father	both	termination	historical	30
+with \w+ father	both	termination	nonpatient	30
+with \w+ mom	both	termination	historical	30
+with \w+ mom	both	termination	nonpatient	30
+with \w+ mother	both	termination	historical	30
+with \w+ mother	both	termination	nonpatient	30
+with \w+ son	both	termination	historical	30
+with \w+ son	both	termination	nonpatient	30
+with a question of	forward	trigger	uncertain	30
+with no	backward	termination	negated	10
+with no	forward	trigger	negated	10
+
+without \w+ evidence	backward	termination	negated	10
+without \w+ evidence	forward	trigger	negated	10
+without abnormal	backward	termination	negated	10
+without abnormal	forward	trigger	negated	10
+without active	backward	termination	negated	10
+without active	forward	trigger	negated	10
+without additional	backward	termination	negated	10
+without additional	forward	trigger	negated	10
+without any evidence of	backward	termination	negated	10
+without any evidence of	forward	trigger	negated	10
+without any	backward	termination	negated	10
+without any	forward	trigger	negated	10
+without an	backward	termination	negated	10
+without an	forward	trigger	negated	10
+without apparent	backward	termination	negated	10
+without apparent	forward	trigger	negated	10
+without audible	backward	termination	negated	10
+without audible	forward	trigger	negated	10
+without a	backward	termination	negated	10
+without a	forward	trigger	negated	10
+without becoming	backward	termination	negated	10
+without becoming	forward	trigger	negated	10
+without being	backward	termination	negated	10
+without being	forward	trigger	negated	10
+without causing	backward	termination	negated	10
+without causing	forward	trigger	negated	10
+without difficulties	both	pseudo	uncertain	30
+without difficulty	both	pseudo	negated	10
+without difficulty	both	pseudo	uncertain	30
+without diff	both	pseudo	uncertain	30
+without evidence of	backward	termination	negated	10
+without evidence of	forward	trigger	negated	10
+without evidence	backward	termination	negated	10
+without evidence	forward	trigger	negated	10
+without experiencing	backward	termination	negated	10
+without experiencing	forward	trigger	negated	10
+without further	backward	termination	negated	10
+without further	forward	trigger	negated	10
+without gross	backward	termination	negated	10
+without gross	forward	trigger	negated	10
+without having	backward	termination	negated	10
+without having	forward	trigger	negated	10
+without increased	backward	termination	negated	10
+without increased	forward	trigger	negated	10
+without indication of	backward	termination	negated	10
+without indication of	forward	trigger	negated	10
+without left	backward	termination	negated	10
+without left	forward	trigger	negated	10
+without major	backward	termination	negated	10
+without major	forward	trigger	negated	10
+without maximally	backward	termination	negated	10
+without maximally	forward	trigger	negated	10
+without mention of	backward	termination	negated	10
+without mention of	forward	trigger	negated	10
+without much	backward	termination	negated	10
+without much	forward	trigger	negated	10
+without new	backward	termination	negated	10
+without new	forward	trigger	negated	10
+without noted	backward	termination	negated	10
+without noted	forward	trigger	negated	10
+without noticed	backward	termination	negated	10
+without noticed	forward	trigger	negated	10
+without not	forward	trigger	uncertain	30
+without no	forward	trigger	uncertain	30
+without obvious	backward	termination	negated	10
+without obvious	forward	trigger	negated	10
+without other	backward	termination	negated	10
+without other	forward	trigger	negated	10
+without painful	backward	termination	negated	10
+without painful	forward	trigger	negated	10
+without paraspinal	backward	termination	negated	10
+without paraspinal	forward	trigger	negated	10
+without peripheral	backward	termination	negated	10
+without peripheral	forward	trigger	negated	10
+without purulent	backward	termination	negated	10
+without purulent	forward	trigger	negated	10
+without reported	backward	termination	negated	10
+without reported	forward	trigger	negated	10
+without right	backward	termination	negated	10
+without right	forward	trigger	negated	10
+without sign of	backward	termination	negated	10
+without sign of	forward	trigger	negated	10
+without significant	backward	termination	negated	10
+without significant	forward	trigger	negated	10
+without signs of	backward	termination	negated	10
+without signs of	forward	trigger	negated	10
+without some	backward	termination	negated	10
+without some	forward	trigger	negated	10
+without success	backward	trigger	negated	10
+without success	forward	termination	negated	10
+without the	backward	termination	negated	10
+without the	forward	trigger	negated	10
+without upward	backward	termination	negated	10
+without upward	forward	trigger	negated	10
+without using	backward	termination	negated	10
+without using	forward	trigger	negated	10
+without visible	backward	termination	negated	10
+without visible	forward	trigger	negated	10
+without vital	backward	termination	negated	10
+without vital	forward	trigger	negated	10
+without which	backward	termination	negated	10
+without which	forward	trigger	negated	10
+without	backward	termination	negated	10
+without	forward	trigger	negated	20
+wihtout	forward	trigger	negated	20
+
+yet	forward	termination	negated	10
+##
+given	forward	termination	uncertain	4
+##
+given	forward	termination	hypothetical	4
+
+#3. Interval resolution of the right posterior chest wall abscess.
+resolution of	forward	trigger	negated	15
+interval resolution of	forward	pseudo	negated	15
+##
+call	forward	trigger	negated	5
+##
+negative	forward	trigger	negated	10
+negative	backward	trigger	negated	2
+## if tokenize include punctuations
+w / o evidence of	backward	termination	negated	10
+w / o evidence of	forward	trigger	negated	10
+w / o evidence	backward	termination	negated	10
+w / o evidence	forward	trigger	negated	10
+w / o	backward	termination	negated	10
+w / o	forward	trigger	negated	10
+f / h	forward	trigger	nonpatient	30
+#h / o	forward	trigger	historical	30
+no e / o	backward	termination	negated	10
+no e / o	forward	trigger	negated	10
+no h / o	backward	termination	negated	10
+no h / o	forward	trigger	negated	10
+
+r / o	forward	trigger	uncertain	30
+
+\> 30 - day of	forward	trigger	historical	30
+\> 30 - days of	forward	trigger	historical	30
+\> 0 - month of	forward	trigger	historical	30
+\> 0 - months of	forward	trigger	historical	30
+\> 0 - year of	forward	trigger	historical	30
+\> 0 - years of	forward	trigger	historical	30
+\> 4 -week of	forward	trigger	historical	30
+\> 4 -weeks of	forward	trigger	historical	30
+dont	forward	trigger	negated	20
+don t	forward	trigger	negated	20
+don ' t	forward	trigger	negated	20
+#risk for	forward	trigger	negated	100
+risk of	forward	trigger	uncertain	100
+risks of	forward	trigger	uncertain	100
+risk of	backward	termination	negated	20
+risks include	forward	trigger	irrelevant	100
+risks including	forward	trigger	irrelevant	100
+risk factor of	forward	trigger	negated	20
+risk factors of	forward	trigger	negated	20
+risk factor for	forward	trigger	negated	20
+risk factors for	forward	trigger	negated	20
+toxicity include	forward	trigger	negated	30
+toxicity such as	forward	trigger	negated	30
+toxicities such as	forward	trigger	negated	30
+#Be observant for noncardiac signs of toxicity in elderly such as anorexia
+toxicity \w+ such as	forward	trigger	negated	30
+toxicities \w+ such as	forward	trigger	negated	30
+toxicity \w+ \w+ such as	forward	trigger	negated	30
+toxicities \w+ \w+ such as	forward	trigger	negated	30
+side effects include	forward	trigger	negated	30
+side effect include	forward	trigger	negated	30
+don ' t	forward	trigger	negated	20
+monitor for	forward	trigger	hypothetical	30
+#In an effort to reduce this patient's delirium risk
+risk	backward	trigger	negated	3
+#a volunteer-based program designed to reduce the incidence of delirium in hospitalized older adults.
+reduce the incidence of	forward	trigger	negated	20
+#with most recent admission at xxxx 5/xx-xx/20xx for encephalopathy.
+#recent admission	both	trigger	historical	30
+#Start Plavix tomorrow. Delirium prophylaxis
+prophylaxis	backward	trigger	negated	3
+prevent	forward	trigger	hypothetical	30
+potential for	forward	trigger	negated	30
+#Medication(s) associated with delirium: Digoxin, levetiracetam, trazodone
+medication \w+ \w+ \w+ associated with	forward	trigger	negated	30
+medications \w+ \w+ \w+ associated with	forward	trigger	negated	30
+medication associated with	forward	trigger	negated	30
+medications associated with	forward	trigger	negated	30
+medication for	forward	trigger	negated	30
+medications for	forward	trigger	negated	30
+#His PMH is notable for alcohol related cirrhosis with portal HTN, hepatohydrothorax, hepatic encephalopathy, CKD, and CAD s/p CABG.
+pmh	forward	trigger	historical	30
+# a PMHx of seizure, multiple psychiatric history including anxiety, bipolar, depression, and AVM
+pmhx	forward	trigger	historical	30
+past medical history	forward	trigger	historical	30
+#After her episodes she will be in a state of confusion for about 15-20 minutes.
+for about \w+ minutes	backward	trigger	negated	20
+for about \w+ \w+ \w+ minutes	backward	trigger	negated	20
+for about \w+ \w+ minutes	backward	trigger	negated	20
+#She describes her episodes as states of confusion with loss of consciousness occasionally.
+episodes as states of	forward	trigger	negated	30
+#Her delirium was attributed to pain medication and being in the hospital.
+attributed to \w+ medication	backward	trigger	negated	20
+attributed to medication	backward	trigger	negated	20
+#Continues on close supervision for confusion
+supervision for	forward	trigger	hypothetical	30
+
+
+
+
+#attempt to control pain while also minimizing medications that can increase confusion
+can increase	forward	trigger	negated	10
+
+#Delirium none
+: none	backward	trigger	negated	5
+none	backward	trigger	negated	5
+
+
+
+#Pt PMH significant for prior CVA, CABG s/p stent placement, L CEA and smoking history admitted for altered mental status and left sided weakness who was found to have a right proximal M1 occlusion s/p tPA and attempted thrombectomy.
+admitted for	forward	termination	historical	30
+
+
+#Signs may be dizziness, headache, feeling sleepy, feeling weak, shaking, a fast heartbeat, confusion, hunger, or sweating.
+signs may be	forward	trigger	hypothetical	30
+signs may include	forward	trigger	hypothetical	30
+
+#will decrease prednisone to 20 mg given concerned that it may contribute to delirium
+may contribute	forward	trigger	hypothetical	30
+
+#This medication can cause confusion, constipation, nausea or a rash.
+can cause	forward	trigger	hypothetical	50
+may cause	forward	trigger	hypothetical	50
+
+#Amiodarone has the potential to precipitate delirium in older adults.
+potential to	forward	trigger	hypothetical	50
+
+
+
+#11-06-2017
+#low concern for....
+low concern	forward	trigger	negated	50
+vs	both	trigger	uncertain	8
+versus	both	trigger	uncertain	8
+ddx	both	trigger	irrelevant	20
+
+
+
+#EEG overnight to rule out seizures showed encephalopathy.
+rule out \w+ showed	forward	pseudo	uncertain	8
+rule out \w+ showed	forward	pseudo	negated	8
+rule out \w+ \w+ showed	forward	pseudo	uncertain	8
+rule out \w+ \w+ showed	forward	pseudo	negated	8
+
+#Indication for Procedure: Portal hypertension and hepatic encephalopathy
+indication for procedure	forward	pseudo	uncertain	30
+
+
+#Patient's wife expressed confusion regarding which of his medications can be given by feeding tube.
+wife	forward	trigger	nonpatient	50
+husband	forward	trigger	nonpatient	50
+
+
+#  Patient Name: xx Trauma
+patient name	forward	trigger	negated	5
+
+#a volunteer-based program designed to reduce the incidence of delirium in hospitalized older adults
+reduce the incidence of	forward	trigger	negated	5
+
+
+#He has some confusion, but family at bedside states he is at his baseline.
+at \w+ baseline	both	trigger	irrelevant	10
+at baseline	both	trigger	irrelevant	10
+on \w+ baseline	both	trigger	irrelevant	10
+on baseline	both	trigger	irrelevant	10
+
+##DM.
+#- SSI, glucose management consulted.
+glucose	both	trigger	irrelevant	10
+dm	both	trigger	irrelevant	10
+diabetes	both	trigger	irrelevant	10
+lantus	both	trigger	irrelevant	10
+insulin	both	trigger	irrelevant	10
+
+#Delirium vs early dementia at risk for delirium 2/2 advanced age
+# -Will start delirium protocol; minimize excessive sedatives/Narcotics, regulate sleep/awake cycle, PT/OT for early ambulation if able, prn IV haldol, and ensure
+2 / 2 advanced age	both	trigger	irrelevant	8
+
+
+#Here is one example I see pretty frequently, patient is fine all through the chart but is 73 and hard of hearing so gets confused when discussing all the medications with the pharmacist.
+#Reasoning: Patient seemed to get confused when talking about her medications at times (could have also been becasue she is hard of hearing)
+when talking about \w+ medications	both	trigger	irrelevant	10
+when discussing \w+ medications	both	trigger	irrelevant	10
+when talking about \w+ \w+ medications	both	trigger	irrelevant	10
+when discussing \w+ \w+ medications	both	trigger	irrelevant	10
+when talking about \w+ \w+ \w+ medications	both	trigger	irrelevant	10
+when discussing \w+ \w+ \w+ medications	both	trigger	irrelevant	10
+
+
+#were also discussed	backward	trigger	irrelevant	50
+were \w+ discussed	backward	trigger	irrelevant	50
+were discussed	backward	trigger	irrelevant	50
+was \w+ discussed	backward	trigger	irrelevant	50
+was discussed	backward	trigger	irrelevant	50
+we discussed	forward	trigger	irrelevant	50
+we \w+ discussed	forward	trigger	irrelevant	50
+
+were \w+ discussed with \w+ \w+ including	forward	trigger	irrelevant	50
+were discussed with \w+ \w+ including	forward	trigger	irrelevant	50
+were \w+ discussed with \w+ \w+ \w+ including	forward	trigger	irrelevant	50
+were discussed with \w+ \w+ \w+ including	forward	trigger	irrelevant	50
+were \w+ discussed with \w+ \w+ \w+ \w+ including	forward	trigger	irrelevant	50
+were discussed with \w+ \w+ \w+ \w+ including	forward	trigger	irrelevant	50
+
+
+#Drowsiness/Confusion 0 = No
+#NAME?	backward	trigger	negated	5
+
+per family	both	trigger	nonpatient	10
+family says	forward	trigger	nonpatient	10
+
+
+
+
+
+wound	both	trigger	wound	30
+wounds	both	trigger	wound	30
+incision	both	trigger	wound	30
+incisions	both	trigger	wound	30
+
+
+
+
+discharge	both	trigger	superficial	30
+cdi	both	trigger	negated	30
+#healed	both	trigger	negated	30
+
+serosanguinous	both	trigger	negated	30
+serosanguineous	both	trigger	negated	30
+sanguinous	both	trigger	negated	30
+sanguineous	both	trigger	negated	30
+serosang	both	trigger	negated	30
+#in place	both	trigger	negated	30
+non - healing	both	pseudo	healed	30
+not healing	both	pseudo	healed	30
+no healing	both	pseudo	healed	30
+no - healing	both	pseudo	healed	30
+not \w+ healed	both	pseudo	healed	30
+not \w+ healing	both	pseudo	healed	30
+
+non - healing	both	trigger	nothealed	30
+not healing	both	trigger	nothealed	30
+no healing	both	trigger	nothealed	30
+no - healing	both	trigger	nothealed	30
+
+healed	both	trigger	healed	30
+#healing	both	trigger	healed	30
+healing well	both	trigger	healed	30
+and healing well	both	trigger	healed	30
+clean, dry, and intact	both	trigger	negated	30
+c , d , i	both	trigger	negated	30
+c / d / i	both	trigger	negated	30
+cdi	both	trigger	negated	30
+
+
+erythema	both	trigger	superficial	30
+erythematous	both	trigger	superficial	30
+is red	both	trigger	superficial	30
+#purulence	both	trigger	superficial	30
+#pus	both	trigger	superficial	30
+redness	both	trigger	superficial	30
+soupy	both	trigger	superficial	30
+#drainage	both	trigger	superficial	30
+#present at the time of surgery	both	trigger	historical	30
+#present at the time of surgery	both	trigger	historical	30
+
+
+fascial	both	trigger	superficial	30
+deep incision	both	trigger	superficial	30
+fascia	both	trigger	superficial	30
+
+viscus	both	trigger	abdomen	30
+Nissen	both	trigger	abdomen	30
+supraumbilical	both	trigger	abdomen	30
+umbilical	both	trigger	abdomen	30
+omentum	both	trigger	abdomen	30
+mesenteric	both	trigger	abdomen	30
+Genitourinary	both	trigger	abdomen	30
+ileostomy	both	trigger	abdomen	30
+colostomy	both	trigger	abdomen	30
+#ostomy	both	trigger	abdomen	30
+abd	both	trigger	abdomen	30
+abdomen	both	trigger	abdomen	30
+abdominal	both	trigger	abdomen	30
+anast	both	trigger	abdomen	30
+gastrectomy	both	trigger	abdomen	30
+laparoscopic	both	trigger	abdomen	30
+coloanal	both	trigger	abdomen	30
+liver	both	trigger	abdomen	30
+subxiphoid	both	trigger	abdomen	30
+left upper quadrant	both	trigger	abdomen	30
+left lower quadrant	both	trigger	abdomen	30
+right upper quadrant	both	trigger	abdomen	30
+right lower quadrant	both	trigger	abdomen	30
+pneumoperitoneum	both	trigger	abdomen	30
+peritoneum	both	trigger	abdomen	30
+jejunal	both	trigger	abdomen	30
+ileum	both	trigger	abdomen	30
+colon	both	trigger	abdomen	30
+#anastamosis	both	trigger	abdomen	30
+#anastomosis	both	trigger	abdomen	30
+#anastomotic	both	trigger	abdomen	30
+#anastamotic	both	trigger	abdomen	30
+umbilical	both	trigger	abdomen	30
+mediastinum	both	trigger	chest	30
+mediastinal	both	trigger	chest	30
+breast	both	trigger	chest	30
+breasts	both	trigger	chest	30
+mastectomy	both	trigger	chest	30
+subcostal	both	trigger	chest	30
+sternotomy	both	trigger	chest	30
+sternum	both	trigger	chest	30
+
+colon	both	trigger	abdomen	30
+perirectal	both	trigger	abdomen	30
+rectum	both	trigger	abdomen	30
+hepatic	both	trigger	abdomen	30
+perihepatic	both	trigger	abdomen	30
+bladder	both	trigger	abdomen	30
+biliary	both	trigger	abdomen	30
+gallbladder	both	trigger	abdomen	30
+pancreas	both	trigger	abdomen	30
+peripancreatic	both	trigger	abdomen	30
+pancreatic	both	trigger	abdomen	30
+spleen	both	trigger	abdomen	30
+renal	both	trigger	abdomen	30
+kidney	both	trigger	abdomen	30
+kidneys	both	trigger	abdomen	30
+stomach	both	trigger	abdomen	30
+gastric	both	trigger	abdomen	30
+duodenum	both	trigger	abdomen	30
+duodenal	both	trigger	abdomen	30
+laparoscopic	both	trigger	abdomen	30
+cholecystectomy	both	trigger	abdomen	30
+cholecystitis	both	trigger	abdomen	30
+pancreatitis	both	trigger	abdomen	30
+\w+ diet	both	pseudo	abdomen	30
+groin	both	trigger	extremities	30
+groins	both	trigger	extremities	30
+bowel	both	trigger	abdomen	30
+#We are hopeful that with BID wound care the abscess or coloatmospheric fistula will heal without surgery.
+coloatmospheric	both	trigger	abdomen	30
+
+Nissen	both	trigger	deep	30
+supraumbilical	both	trigger	superficial	30
+umbilical	both	trigger	superficial	30
+omentum	both	trigger	deep	30
+mesenteric	both	trigger	deep	30
+Genitourinary	both	trigger	deep	30
+ileostomy	both	trigger	deep	30
+colostomy	both	trigger	deep	30
+ostomy	both	trigger	deep	30
+anast	both	trigger	deep	30
+gastrectomy	both	trigger	deep	30
+laparoscopic	both	trigger	deep	30
+coloanal	both	trigger	deep	30
+liver	both	trigger	deep	30
+pneumoperitoneum	both	trigger	deep	30
+peritoneum	both	trigger	deep	30
+jejunal	both	trigger	deep	30
+ileum	both	trigger	deep	30
+colon	both	trigger	deep	30
+anastamosis	both	trigger	deep	30
+anastomosis	both	trigger	deep	30
+anastomotic	both	trigger	deep	30
+anastamotic	both	trigger	deep	30
+mediastinum	both	trigger	deep	30
+mediastinal	both	trigger	deep	30
+mastectomy	both	trigger	deep	30
+mastectomy incisions	both	pseudo	deep	30
+mastectomy incisions	both	trigger	superficial	30
+mastectomy incision	both	pseudo	deep	30
+mastectomy incision	both	trigger	superficial	30
+subcostal	both	trigger	deep	30
+sternotomy	both	trigger	deep	30
+sternum	both	trigger	deep	30
+
+colon	both	trigger	deep	30
+perirectal	both	trigger	deep	30
+rectum	both	trigger	deep	30
+hepatic	both	trigger	deep	30
+perihepatic	both	trigger	deep	30
+bladder	both	trigger	deep	30
+biliary	both	trigger	deep	30
+gallbladder	both	trigger	deep	30
+pancreas	both	trigger	deep	30
+pancreatic	both	trigger	deep	30
+spleen	both	trigger	deep	30
+renal	both	trigger	deep	30
+kidney	both	trigger	deep	30
+kidneys	both	trigger	deep	30
+stomach	both	trigger	deep	30
+gastric	both	trigger	deep	30
+duodenum	both	trigger	deep	30
+duodenal	both	trigger	deep	30
+laparoscopic	both	trigger	deep	30
+cholecystectomy	both	trigger	deep	30
+cholecystitis	both	trigger	deep	30
+pancreatitis	both	trigger	deep	30
+groin	both	trigger	superficial	30
+groins	both	trigger	superficial	30
+bowel	both	trigger	deep	30
+#We are hopeful that with BID wound care the abscess or coloatmospheric fistula will heal without surgery.
+coloatmospheric	both	trigger	deep	30
+soft tissue	forward	trigger	deep	30
+
+#surgery	both	trigger	surgery	30
+surgical incision	both	trigger	surgery	30
+surgery	both	trigger	surgery	30
+surgical incisions	both	trigger	surgery	30
+surgical site	both	trigger	surgery	30
+surgical sites	both	trigger	surgery	30
+surgical wound	both	trigger	surgery	30
+sutures	both	trigger	surgery	30
+ileostomy	both	trigger	surgery	30
+colostomy	both	trigger	surgery	30
+ostomy	both	trigger	surgery	30
+anastamosis	both	trigger	surgery	30
+anastomosis	both	trigger	surgery	30
+anastomotic	both	trigger	surgery	30
+anastamotic	both	trigger	surgery	30
+incision	both	trigger	surgery	30
+incisions	both	trigger	surgery	30
+postsurgery	both	trigger	surgery	30
+postsurgical	both	trigger	surgery	30
+postoperative	both	trigger	surgery	30
+post - operative	both	trigger	surgery	30
+postoperation	both	trigger	surgery	30
+post - operation	both	trigger	surgery	30
+mastectomy	both	trigger	surgery	30
+
+
+#UA Appearance Clear
+appearance clear	backward	trigger	negated	2
+appear clear	backward	trigger	negated	2
+appears clear	backward	trigger	negated	2
+
+wound	both	trigger	superficial	30
+wounds	both	trigger	superficial	30
+incision	both	trigger	superficial	30
+
+
+precaution	both	trigger	irrelevant	30
+q \> 0 d	both	trigger	irrelevant	2
+q \> 0 h	both	trigger	irrelevant	2
+qid	both	trigger	irrelevant	2
+bid	both	trigger	irrelevant	2
+tid	both	trigger	irrelevant	2
+q . i . d	both	trigger	irrelevant	2
+b . i . d	both	trigger	irrelevant	2
+t . i . d	both	trigger	irrelevant	2
+qd	both	trigger	irrelevant	2
+qh	both	trigger	irrelevant	2
+q . d .	both	trigger	irrelevant	2
+q . h .	both	trigger	irrelevant	2
+
+#Risks included but were not limited to
+risks included	both	trigger	irrelevant	100
+risks include	both	trigger	irrelevant	100
+risks \w+ benefits 	both	trigger	irrelevant	100
+
+
+#Unsure where the site of his infection is.
+unsure	both	trigger	uncertain	30
+uncertain	both	trigger	uncertain	30
+unclear source	both	trigger	notsurgsite	30
+eye	both	trigger	notsurgsite	30
+eyes	both	trigger	notsurgsite	30
+potential	forward	trigger	uncertain	30
+pectoral	both	trigger	notsurgsite	30
+extremities	both	trigger	extremities	30
+#axillary	both	trigger	extremities	30
+ischial	both	trigger	extremities	30
+limb	both	trigger	extremities	30
+limbs	both	trigger	extremities	30
+pleural	both	trigger	chest	30
+Respiratory	both	trigger	chest	30
+
+urinary	both	trigger	notsurgsite	30
+lung	both	trigger	chest	30
+
+cytomegalovirus	both	trigger	notsurgsite	30
+virus	both	trigger	notsurgsite	30
+
+
+wrist	both	trigger	extremities	30
+hand	both	trigger	extremities	30
+foot	both	trigger	extremities	30
+feet	both	trigger	extremities	30
+toe	both	trigger	extremities	30
+arm	both	trigger	extremities	30
+leg	both	trigger	extremities	30
+forearm	both	trigger	extremities	30
+head	both	trigger	notsurgsite	30
+neck	both	trigger	notsurgsite	30
+nipple	both	trigger	chest	30
+RLE	both	trigger	extremities	30
+LLE	both	trigger	extremities	30
+RUE	both	trigger	extremities	30
+LUE	both	trigger	extremities	30
+urine	both	trigger	notsurgsite	30
+sputum	both	trigger	notsurgsite	30
+vaginal	both	trigger	notsurgsite	30
+
+
+#The graft was clamped and thrombin-soaked Gelfoam placed over the anastomosis, but the anastomosis continued to ooze from needle holes as long as she was heparinized.
+Gelfoam	both	trigger	notsurgsite	30
+thrombin	both	trigger	notsurgsite	30
+
+preoperative	both	trigger	preoperative	30
+preoperational	both	trigger	preoperative	30
+
+#He has a long medical history including recent CCY, VRE sepsis and recent ED visit for hypotension that was found to be
+long medical history	both	trigger	historical	30
+long history of	forward	trigger	historical	30
+
+were stopped	backward	trigger	negated	10
+was stopped	backward	trigger	negated	10
+chances of	forward	trigger	hypothetical	10
+chance of	forward	trigger	hypothetical	10
+will	forward	trigger	plan	30
+will continue	forward	pseudo	plan	30
+
+
+open	backward	trigger	open	10
+#We did speak with her about putting those on suction intermittently to try to aid drainage of fluid should the incision open up further.
+open up	both	pseudo	open	10
+
+opened	backward	trigger	open	10
+opened by	backward	pseudo	open	10
+opened using	backward	pseudo	open	10
+opening	backward	trigger	open	10
+#A lower midline incision was then performed and open dissection was attempted.
+performed	both	termination	open	10
+
+dehiscence	both	trigger	open	10
+dehicence	both	trigger	open	10
+#reopened	both	trigger	open	10
+split	both	trigger	open	10
+rupture	both	trigger	open	10
+ruptured	both	trigger	open	10
+leak	both	trigger	open	10
+leaked	both	trigger	open	10
+leaking	both	trigger	open	10
+leakage	both	trigger	open	10
+dehisced	both	trigger	open	10
+dehisce	both	trigger	open	10
+dehiscing	both	trigger	open	10
+dehisces	both	trigger	open	10
+
+#Additionally, the superior aspect of the abdominal incision is open, and a drain courses adjacent to this area.
+is open	both	pseudo	open	10
+
+#Possible revision of stoma versus colostomy for anastomotic repair
+for	forward	termination	uncertain	10
+packed	both	trigger	taken	30
+opened	both	trigger	taken	30
+reopened	both	trigger	taken	30
+drained	both	trigger	taken	30
+drain placed	both	trigger	taken	30
+
+
+#Please draw blood cultures prior to giving anti biotics.
+please	both	trigger	irrelevant	10
+
+#Collection Method Override->Unit Collect CULTURE, BLOOD.
+Collection Method Override	forward	trigger	irrelevant	10
+
+
+
+#This incision was oriented in the lateral position after our flap creation and excision of the infected skin. (chronic infection)
+excision	both	trigger	irrelevant	5
+
+#Ct Chest Wo Cont 1/3/2015 Findings consistent with perforation involving the distal thoracic esophagus
+thoracic	both	trigger	chest	10
+esophagus	both	trigger	chest	10
+esophageal	both	trigger	chest	10
+thoracoscopic	both	trigger	chest	10
+
+gastroesophageal junction	both	trigger	abdomen	10
+ge junction	both	trigger	abdomen	10
+
+#He understands the nature of his illness, the rationale for surgery, the options in management, and the inherent risks, esp infection, bleeding, pancreatic leak, MI, VTE, CVA, and death.
+He understands	both	trigger	irrelevant	100
+
+#We plan laparoscopic enucleation.
+plan	forward	trigger	plan	30
+planned to	forward	trigger	plan	30
+is planned	backward	trigger	plan	30
+was planned	backward	trigger	plan	30
+is \w+ planned	backward	trigger	plan	30
+was \w+ planned	backward	trigger	plan	30
+
+risks of	both	trigger	hypothetical	100
+concerns including	both	trigger	hypothetical	100
+
+# JP drain producing brown output possible fecal matter.
+fecal	both	trigger	infected	30
+purulent	both	trigger	infected	30
+pulrlant	both	trigger	infected	30
+no purulent	both	pseudo	infected	30
+no pulrlant	both	pseudo	infected	30
+not purulent	both	pseudo	infected	30
+not pulrlant	both	pseudo	infected	30
+non-purulent	both	pseudo	infected	30
+non - purulent	both	pseudo	infected	30
+foul	both	trigger	infected	30
+stool	both	trigger	infected	30
+Stool softener	both	pseudo	infected	30
+infected	both	trigger	infected	30
+
+#Drain on right lower quadrant in place, ileostomy bag with stool and gas.
+ileostomy bag	both	termination	infected	30
+
+# JP drain with tan/brownish drainage.
+brown	both	trigger	mayinfected	10
+brownish	both	trigger	mayinfected	30
+
+
+pneumonia	both	trigger	other_infection_purpose	30
+stent removal	both	trigger	other_infection_purpose	30
+urology	both	trigger	other_infection_purpose	30
+ureteral	both	trigger	other_infection_purpose	30
+ua	both	trigger	other_infection_purpose	30
+
+PICC line	both	trigger	extremities	30
+blood	both	trigger	notsurgsite	30
+urine	both	trigger	notsurgsite	30
+
+#Please draw blood cultures prior to givin g antibiotics.
+Please	forward	trigger	hypothetical	30
+arthritis	both	trigger	notsurgsite	50
+epidural	both	trigger	notsurgsite	50
+intramuscular	both	trigger	extremities	50
+thigh	both	trigger	extremities	50
+limb	both	trigger	extremities	50
+myositis	both	trigger	notsurgsite	50
+spinal	both	trigger	notsurgsite	50
+non	forward	trigger	negated	2
+
+AV	forward	trigger	notinflammatory	2
+dialysis	forward	trigger	notinflammatory	30
+dialytic	forward	trigger	notinflammatory	30
+thrombosis	both	trigger	notinflammatory	30
+clogged	both	trigger	notinflammatory	30
+excised	both	trigger	notinflammatory	10
+arm	both	trigger	notinflammatory	10
+forearm	both	trigger	notinflammatory	10
+
+differential diagnosis	both	trigger	irrelevant	30
+differentiate	forward	trigger	irrelevant	30
+
+#call us	backward	trigger	irrelevant	30
+#admitted for	forward	trigger	irrelevant	10
+started on	forward	termination	negated	10
+due to concern	forward	trigger	uncertain	10
+concern that	forward	trigger	uncertain	10
+could be	forward	trigger	uncertain	10
+
+#SKIN: Abdominal incision stable without evidence of infection, bleeding, or dehiscence.
+without	backward	termination	infected	30
+without	backward	termination	notinflammatory	30
+without	backward	termination	open	30
+
+sacral	both	trigger	notsurgsite	50
+perineal	both	trigger	notsurgsite	50
+#from the rectum to the right gluteal fold with abscess formation.
+gluteal fold	both	pseudo	notsurgsite	50
+gluteal	both	trigger	notsurgsite	50
+perineum	both	trigger	notsurgsite	50
+ble	both	trigger	extremities	50
+bue	both	trigger	extremities	50
+
+h / o	backward	termination	historical	30
+h / o	forward	trigger	historical	30
+#Pre-op midline wound infection and nipple infection
+#and	both	termination	notsurgsite	30
+and	both	termination	extremities	30
+
+midline	both	trigger	abdomen	30
+ventral	both	trigger	abdomen	30
+
+#She is off of antibiotics
+off of	both	trigger	negated	30
+
+
+
+#Continue 7 day course of Vanco for chronic wound infection.
+#Identify the antibiotics for chronic conditions
+chronic	both	trigger	other_infection_purpose	30
+chronically	both	trigger	other_infection_purpose	30
+
+# Zosyn q8h for bowel obstruction per primary, but likely 8d after source control
+bowel obstruction	both	trigger	no_other_infection_purpose	30
+bowel obstruction	both	trigger	no_ssi_purpose	30
+#- UA +, started on Cipro. F/u cx.
+ua	both	trigger	no_ssi_purpose	30
+urine	both	trigger	no_ssi_purpose	30
+urine culture	both	trigger	no_ssi_purpose	30
+urine cultures	both	trigger	no_ssi_purpose	30
+uti	both	trigger	other_infection_purpose	30
+
+#- Ciprofloxacin Vomiting, Nausea and Swelling Allergy .
+allergy	both	trigger	no_other_infection_purpose	30
+allergies	both	trigger	no_other_infection_purpose	30
+surgical	forward	trigger	no_other_infection_purpose	3
+perioperative	forward	trigger	no_other_infection_purpose	3
+
+allergy	both	trigger	no_ssi_purpose	30
+allergies	both	trigger	no_ssi_purpose	30
+surgical	forward	trigger	no_ssi_purpose	3
+surgical site	forward	pseudo	no_ssi_purpose	3
+surgical sites	forward	pseudo	no_ssi_purpose	3
+perioperative	forward	trigger	no_ssi_purpose	3
+
+#Plan: Neurological/Psychiatric: History of chronic pain.
+#Chronic abdominal wound infection.
+Chronic	both	trigger	irrelevant	30
+chronically	both	trigger	irrelevant	30
+
+#Her most recent attempt at hernia repair results in another abdominal wall infection and has left her with a large loss-of-domain type hernia.
+most recent	both	trigger	uncertain	30
+most recent	both	trigger	historical	30
+
+
+#VANCOMYCIN, TROUGH LEVEL Result Value Range Vancomycin Trough 16.0
+trough	both	trigger	no_other_infection_purpose	30
+trough	both	trigger	no_ssi_purpose	30
+hernia	both	trigger	othercause	30
+hernia	both	trigger	otherpaincause	30
+
+chest	both	trigger	chest	30
+
+
+adverse reactions	both	trigger	othercause	30
+adverse reaction	both	trigger	othercause	30
+ruptured AAA	both	trigger	othercause	30
+chronic	both	trigger	othercause	30
+
+
+#Ostomy beefy red and edematous with thin liquid brown contents in appliance.
+ostomy	both	trigger	othercause	30
+ostomy	both	trigger	notinfected	30
+
+
+adverse reactions	both	trigger	otherpaincause	30
+adverse reaction	both	trigger	otherpaincause	30
+ruptured AAA	both	trigger	otherpaincause	30
+chronic	both	trigger	otherpaincause	30
+
+#Pain Evaluation Primary diagnosis: acute postoperative pain.
+postoperative	both	trigger	otherpaincause	30
+post operative	both	trigger	otherpaincause	30
+post - op	both	trigger	otherpaincause	30
+
+
+
+
+postsurgery	both	trigger	postoperative	30
+post - surgery	both	trigger	postoperative	30
+postsurgical	both	trigger	postoperative	30
+post - surgical	both	trigger	postoperative	30
+postoperative	both	trigger	postoperative	30
+post - operative	both	trigger	postoperative	30
+post operative	both	trigger	postoperative	30
+postoperation	both	trigger	postoperative	30
+post operation	both	trigger	postoperative	30
+post - operation	both	trigger	postoperative	30
+post - op	both	trigger	postoperative	30
+post op	both	trigger	postoperative	30
+postop	both	trigger	postoperative	30
+
+
+
+presurgery	both	trigger	preoperative	30
+pre - surgery	both	trigger	preoperative	30
+presurgical	both	trigger	preoperative	30
+pre - surgical	both	trigger	preoperative	30
+preoperative	both	trigger	preoperative	30
+pre - operative	both	trigger	preoperative	30
+pre operative	both	trigger	preoperative	30
+preoperation	both	trigger	preoperative	30
+pre operation	both	trigger	preoperative	30
+pre - operation	both	trigger	preoperative	30
+pre - op	both	trigger	preoperative	30
+pre op	both	trigger	preoperative	30
+preop	both	trigger	preoperative	30
+
+
+#- Hydrocodone Other (See Comments) Intolerance Stomach pain.
+hydrocodone	both	trigger	otherpaincause	30
+
+
+
+
+wound	both	trigger	superficial	30
+skin	both	trigger	superficial	30
+incision	both	trigger	superficial	15
+incisions	both	trigger	superficial	15
+#for redness surrounding her left sided 5 mm port site
+port site	both	trigger	superficial	30
+
+#- start vancomycin (cover risk of MRSA VAP, skin infections although no evidence of infection at surgical wound sites)
+wound	both	trigger	ssi_purpose	30
+erythema	both	trigger	ssi_purpose	30
+#Her antibiotics were further narrowed to vancomycin and meropenem in the setting of a clean wound and normal white blood cell count.
+clean wound	both	pseudo	ssi_purpose	30
+cellulitis	both	trigger	ssi_purpose	30
+#Wound care reviewed with patient. i have recommended that he start antibiotics as I am worried about an early wound infection.
+wound infection	both	trigger	ssi_purpose	30
+
+
+chronic wound	both	trigger	no_ssi_purpose	30
+skin	both	trigger	ssi_purpose	30
+incision	both	trigger	ssi_purpose	30
+incisions	both	trigger	ssi_purpose	30
+intraabdominal	both	trigger	ssi_purpose	30
+vap	both	trigger	other_infection_purpose	30
+tracheal	both	trigger	other_infection_purpose	30
+
+#She was receiving preoperative antibiotics
+preoperative	forward	trigger	no_other_infection_purpose	3
+preoperative	forward	trigger	no_ssi_purpose	3
+
+
+#- Flagyl [Metronidazole] Swelling High Difficulty breathing .
+breathing	both	trigger	other_infection_purpose	10
+breath	both	trigger	other_infection_purpose	10
+sob	both	trigger	other_infection_purpose	10
+
+#She is status post ostomy takedown and has had multiple ostomy revisions secondary to intraabdominal infections
+secondary to	forward	termination	surgery	30
+
+
+#purulent discharge draining from around her staples 9 days ago.
+staples	both	trigger	surgery	30
+
+
+#He understands the nature of his illness, the rationale for surgery, the options in management, and the inherent risks, esp infection, bleeding, pancreatic leak, MI, VTE, CVA, and death.
+understands	forward	trigger	hypothetical	50
+understood	forward	trigger	hypothetical	50
+
+disruption	both	trigger	open	50
+
+
+#He is open to achieve better pain management and decreased risk of infection.
+is open to	forward	trigger	irrelevant	50
+was informed of	forward	trigger	irrelevant	50
+
+
+with evidence of	forward	termination	negated	30
+
+
+
+No \w+ providers	both	pseudo	negated	30
+No attending	both	pseudo	negated	30
+No att .	both	pseudo	negated	30
+No provider	both	pseudo	negated	30
+No providers	both	pseudo	negated	30
+
+#Increasing erythema around JP drain with purulent discharge
+jp drain	both	trigger	surgery	30
+jp drain	both	trigger	superficial	30
+
+#post op site infection evaluation
+post op	both	trigger	surgery	30
+
+#She is status post ostomy takedown and has had multiple ostomy revisions secondary to intraabdominal infections.
+has had	forward	trigger	historical	30
+
+#Differential considerations include infectious or inflammatory aortitis
+or inflammatory	backward	trigger	uncertain	30
+differential considerations	forward	trigger	uncertain	30
+
+#This isolated like phlebectomy site has pale feminist exudate and a minimal ring of erythema which is resolving with use of oral and topical antibiotics.
+phlebectomy site	both	trigger	superficial	30
+
+#denies significant pain, and has resumed normal daily activities.xx days ago pt was concerned about drainage from
+resumed	both	termination	negated	30
+concerned about	both	termination	negated	30
+
+#New right side tooth pain, febrile. Concern fo dental abscess v PICC line infection
+v	both	termination	negated	30
+v	both	trigger	uncertain	30
+v	both	termination	extremities	30
+
+but this does not appear to be the case	backward	trigger	negated	30
+but this did not appear to be the case	backward	trigger	negated	30
+does not appear to be the case	backward	trigger	negated	30
+did not appear to be the case	backward	trigger	negated	30
+
+does not look like	backward	trigger	negated	30
+would hold	forward	trigger	negated	30
+would have hold	forward	trigger	negated	30
+
+#Has red rash at lower abdomen, looks like when xx had a fungal infection before
+before	backward	trigger	historical	3
+
+#-Drainage from ear(s)?: no
+: no	backward	trigger	negated	10
+?: no	backward	trigger	negated	10
+)?: no	backward	trigger	negated	10
+
+#She called concerned that she has a post-op wound infection.
+concerned that	forward	trigger	uncertain	10
+concerns for	forward	trigger	uncertain	10
+
+#Gallbladder perforation during OR, will be on zosyn until
+during or	both	trigger	dayone	10
+
+#monitoring of her midline incision for signs and symptoms of infection a
+monitoring \w+ \w+ \w+ \w+ for	forward	trigger	hypothetical	30
+monitoring \w+ \w+ \w+ for	forward	trigger	hypothetical	30
+monitoring \w+ \w+ for	forward	trigger	hypothetical	30
+monitoring \w+ for	forward	trigger	hypothetical	30
+
+monitor \w+ \w+ \w+ \w+ for	forward	trigger	hypothetical	30
+monitor \w+ \w+ \w+ for	forward	trigger	hypothetical	30
+monitor \w+ \w+ for	forward	trigger	hypothetical	30
+monitor \w+ for	forward	trigger	hypothetical	30
+
+#Recommended that he should see a provider during an acute episode and undergo stool studies for infectious,
+recommended that	forward	trigger	hypothetical	30
+recommend that	forward	trigger	hypothetical	30
+recommending that	forward	trigger	hypothetical	30
+studies for	forward	trigger	uncertain	30
+
+#Labs drawn by nursing for question of infection due to erythema of ant.
+question of	forward	trigger	uncertain	30
+
+admitted for	forward	trigger	dayone	30
+admitted with	forward	trigger	dayone	30
+
+#old gentleman admitted to the hospital with infected gangrenous toes on the right foot.
+admitted to \w+ with	forward	trigger	dayone	30
+admitted to \w+ \w+ with	forward	trigger	dayone	30
+admitted to \w+ \w+ \w+ with	forward	trigger	dayone	30
+
+#He was rehabbing there after a recent admission for an infected decub ulcer.
+admission for	forward	trigger	dayone	30
+
+#Resolved Problems
+#She did experience symptoms of yeast infection, which resolved with treatment with fluconazole.
+resolved	both	trigger	healed	30
+#Agree with above except intra-adominal abscess improved but not resolved.
+not resolved	both	pseudo	healed	30
+no resolved	both	pseudo	healed	30
+#- Splenic abscess precludes the patient candidacy for TAVR until the infection is completely resolved
+until	backward	termination	healed	30
+till	backward	termination	healed	30
+#Resolved Problems:
+resolved problems :	backward	pseudo	healed	30
+# increased purulence from L JP drain: has been afebrile for 6 days now, resolved leukocytosis
+increased	both	trigger	nothealed	30
+#,	both	termination	healed	30
+
+#His post-op course was complicated by urinary rentention (which resolved prior to discharge) and by an intra-abdominal abscess
+and	both	termination	healed	30
+#- can consider u/s of L pectoral region to look for abscess given new bloody/?purulent drainage\n #. AKI: resolved
+: resolved	backward	trigger	healed	2
+
+#Well-healing abdominal incisions.
+well healing	both	trigger	healed	30
+well - healing	both	trigger	healed	30
+well-healing	both	trigger	healed	30
+
+#The patient is alerted to watch for any signs of infection (redness, pus, pain, increased swelling or fever) and call if such occurs.
+watch for	forward	trigger	hypothetical	30
+# Drain in place laterally with localized erythema and tenderness, but no significant erythema or purulent drainage
+no \w+ erythema	both	pseudo	infected	30
+no \w+ purulent	both	pseudo	infected	30
+no \w+ \w+ purulent	both	pseudo	infected	30
+no \w+ \w+ \w+ purulent	both	pseudo	infected	30
+no \w+ \w+ \w+ \w+ purulent	both	pseudo	infected	30
+
+#We reviewed signs and symptoms of increasing fluid collection, infection and hematoma.
+reviewed signs and symptoms of	forward	trigger	uncertain	30
+#Should that fail to demonstrate any anastomotic leak,
+fail to demonstrate	forward	trigger	negated	30
+
+pneumonia	forward	trigger	notsurgsite	30
+pulmonary	forward	trigger	notsurgsite	30
+
+concern for	forward	trigger	uncertain	30
+
+#abdomen is tender because of abdominal incision from surgery
+because of \w+ incision	both	trigger	irrelevant	30
+because of incision	both	trigger	irrelevant	30
+
+#Her skin is clean and free from s/s of infection
+free from	forward	trigger	negated	30
+#During his operation, the previously placed mesh was noted to be infected
+during \w+ operation	both	trigger	dayone	30
+indication for procedure	forward	trigger	dayone	30
+
+#Preoperative Diagnosis: forniers gangrene,
+#19648
+#preoperative	forward	trigger	dayone	30
+#postoperative diagnosis	forward	trigger	dayone	30
+primary encounter diagnosis	both	trigger	dayone	30
+
+resolved	forward	trigger	healed	30
+
+# follow clinically for signs of bleeding or infection
+follow for	forward	trigger	hypothetical	30
+follow \w+ for	forward	trigger	hypothetical	30
+
+#We reviewed signs and symptoms of increasing fluid collection, infection and hematoma.
+reviewed	forward	trigger	irrelevant	30
+
+#Loss of flexion to LUE related to infection--present history?past history
+related to	forward	trigger	uncertain	30
+
+#-will give a course of antibiotics due to the slight erythema of the wound edges.
+due to	forward	termination	hypothetical	30
+#drain site in the LUQ with minimal clear fluid, ileostomy in the RLQ that is pink, gas and stool in the bag, stoma rod present.
+clear	both	termination	infected	30
+
+#High risk for peritonitis
+risk for	forward	trigger	hypothetical	30
+
+
+#3. Bronchial wall thickening/edema, which can be seen in atypical infections, or inflammatory processes.
+bronchial	forward	trigger	notsurgsite	30
+
+#removal of previously infected PTFE fem-fem and fem to above-knee pop bypass
+previously	forward	trigger	historical	3
+
+#wound infection prevention
+prevention	backward	trigger	irrelevant	5
+prevent	forward	trigger	irrelevant	5
+
+#Post pone radiation until the infection has resolved
+#until	forward	trigger	hypothetical	5
+
+#I did let the patient know before we start radiation, I do want her infection/abscess resolved.
+want	forward	trigger	hypothetical	5
+
+#Septic shock resolved secondary to infected hematoma after bowel resection and leak now with end ileostomy
+secondary to	forward	termination	healed	5
+
+#Pre Op Dx history of laparoscopic Roux en Y gastric bypass with onset of diffuse abdominal pain, tachycardia and new leukocytosis on postoperative day 3
+postoperative day\d+	forward	trigger	in30d	30
+
+#Dispo: When patient is hemodynamically stable, pain is under control, kidney function returns to pre-op standards, and the erythema and infection have resolved.
+dispo :	forward	trigger	hypothetical	50
+
+#• Possible Crohn's disease with small bowel obstruction
+#• Peritonitis
+•	both	termination	uncertain	50
+•	both	termination	negated	50
+
+#CHIEF COMPLAINT: Fecal drainage from vagina
+chief complaint	forward	trigger	dayone	30
+
+for hematoma	both	trigger	no_ssi_purpose	30
+
+#This is a limited study to assess for abscess without oral contrast material.
+limited study	both	trigger	uncertain	30
+assess for	forward	trigger	uncertain	30
+
+#Abdomen: soft, less distended and minimally tender, midline dressing clean/dry/intact, stoma pink, with gas and stool in the bag
+minimally	forward	trigger	negated	30
+#Midline vertical incision well-approximated with minimal erythema.
+#minimal	forward	trigger	negated	30
+
+
+#Plan: 73 year old female with known metastatic breast cancer, POD2 for ex-lap and modified grahm patch of perforated pylorus.
+pod \w+ for	forward	trigger	in30d	30
+#POD#4 s/p ileocecectom
+pod \w+ \> 0	forward	trigger	in30d	30
+#Operative findings included a 1 cm anterior perforation at the pylorus of the stomach that was oversewn with modified Graham patch
+Operative findings	both	trigger	dayone	30
+
+#Differential includes abscess, inflammation related to recent surgery, and seroma.
+differential includes	forward	trigger	uncertain	30
+
+#NITROFURANTOIN (MACROBID) 100 MG CAP  Take 1 capsule by mouth 2 times a day. for infection
+nitrofurantoin	both	trigger	notsurgsite	30
+macrobid	both	trigger	notsurgsite	30
+
+#Pt instructed to watch site for swelling and informed that the drain site may drain for a few day's.
+instructed to	forward	trigger	hypothetical	30
+
+#He is having frequent loose stool, similar to previous stool that he had during c.diff infection.
+c . diff	both	trigger	notsurgsite	50
+Cdiff	both	trigger	notsurgsite	50
+
+
+c . diff	both	trigger	no_ssi_purpose	50
+Cdiff	both	trigger	no_ssi_purpose	50
+c > diff	both	trigger	no_ssi_purpose	50
+
+c . diff	both	trigger	no_ssi_purpose	50
+Cdiff	both	trigger	no_ssi_purpose	50
+c > diff	both	trigger	no_ssi_purpose	50
+
+Clostridioides difficile	both	trigger	notsurgsite	50
+c diff	both	trigger	notsurgsite	50
+c > diff	both	trigger	notsurgsite	50
+#Has past history of C diff and has been having watery foul smelling stool which he says is reminiscent of prior infection.
+prior	forward	trigger	historical	8
+
+#Wound cdi except for 2 cm draining serosangouinous.
+serosangouinous	both	trigger	notinfected	30
+serosangouinous	both	trigger	notinfected	30
+
+clean	both	trigger	notinfected	30
+
+#Had a seroma under the wound drained at an outside clinic.
+seroma	both	trigger	notinfected	30
+seroma	both	trigger	no_ssi_purpose	30
+
+with concern of	forward	trigger	uncertain	30
+for concern of	forward	trigger	uncertain	30
+
+#Developing infectious process is not entirely excluded.
+not \w+ excluded	backward	trigger	uncertain	30
+
+#what we would be concerned about are fevers, chills, or increasing erythema or purulent drainage from the wound.
+concerned about	forward	trigger	uncertain	30
+#Wound- CDI
+cdi	both	trigger	notinfected	30
+
+#he thinks
+he thinks	forward	trigger	uncertain	30
+she thinks	forward	trigger	uncertain	30
+he thought	forward	trigger	uncertain	30
+she thought	forward	trigger	uncertain	30
+
+#She states that her R groin incision wound had a foul smell and is draining clear/reddish fluid.
+clear fluid	both	trigger	notinfected	30
+clear drainage	both	trigger	notinfected	30
+clear \w+ \w+ fluid	both	trigger	notinfected	30
+clear \w+ \w+ drainage	both	trigger	notinfected	30
+
+#was evaluated in the ED and taken urgently to the operating room for excisional debridement of a large area of necrotizing soft tissue infection
+ed	both	trigger	dayone	30
+#We are starting Bactrim x 7 days for treatment and the patient was made aware of all infections symptoms and to contact us or head to the nearest ED if any of these arise.
+to ed	both	pseudo	dayone	30
+to \w+ ed	both	pseudo	dayone	30
+to \w+ \w+ ed	both	pseudo	dayone	30
+
+#suspicion of candida infection.
+suspicion of	forward	trigger	uncertain	30
+
+#Bactrim was not a good abx
+was not	backward	trigger	negated	30
+#Antibiotics were not given at the time of the operation given that he was on dosing systemic for vanco.
+were not	backward	trigger	negated	30
+
+
+#NSTI of perineum: s/p debridement; cellulitis that has completed IV antibiotic course
+completed	both	trigger	completed	10
+finished	both	trigger	completed	10
+
+#Oseltamivir finished, fluconazole and Zosyn (Day 4 of 10) - Per primary team
+,	both	termination	completed	3
+
+
+
+#male with perineal and left groin gangrene sp debridement plastic suregry developed episode of transient afib and RVR.
+sp debridement	both	trigger	dayone	10
+s / p debridement	both	trigger	dayone	10
+status post	both	trigger	historical	10
+
+
+#There is a right upper quadrant small bowel loop with pneumatosis which may indicate perforated viscus.
+may indicate	forward	trigger	uncertain	30
+might indicate	forward	trigger	uncertain	30
+
+
+#The risks were discussed including anastomotic leak
+discussed including	forward	trigger	hypothetical	30
+risks \w+ \w+ including	forward	trigger	hypothetical	30
+
+#His surgical sites do not appear to be a source of infection at this time.
+not appear to	forward	trigger	negated	30
+not appear to be \w+ source of	forward	trigger	negated	30
+
+#I taught him this could be normal post op inflammation redness but it could also be the start of an infection.
+could \w+ be	forward	trigger	hypothetical	30
+
+
+#Well healed previous abdominal incisions.
+previous	forward	trigger	historical	8
+
+#The patient is status post gastroesophagectomy with high anastomosis, NG tube is secured in place and needs minimal disruption.
+NG tube	both	termination	open	8
+
+"	both	trigger	uncertain	2
+
+
+#(Inside Instruction)Wound care reviewed with patient. i have recommended that he start antibiotics as I am worried about an early wound infection.
+worried about	forward	trigger	uncertain	30
+worrisome for	forward	trigger	uncertain	30
+
+worried about	forward	termination	hypothetical	30
+worrisome for	forward	termination	hypothetical	30
+
+
+recommended	forward	termination	irrelevant	30
+worried about	forward	termination	irrelevant	30
+
+
+#AKI likely due to supratherapeutic tacrolimus level, +/- infection contributing.
++ / -	forward	trigger	uncertain	8
+
+#however period of time without foley she was urinating under pressure, which could have caused further leak and led to intraabdominal abscess
+could have caused	forward	trigger	hypothetical	30
+
+#axillary for mastectomy
+axillary	both	trigger	chest	30
+axilla	both	trigger	chest	30
+
+#Agrees to call the nurse's line with s/s infection or if the seroma recollects and they'd like it drained again.
+call the	forward	trigger	hypothetical	30
+
+#Discussed signs of ischemia and infection.
+discussed signs of	forward	trigger	hypothetical	30
+discussed s / s	forward	trigger	hypothetical	30
+
+
+#Call Dr. X's office 821-310-3333 for any of the following symptoms: Chest pain, shortness of breath, increasing redness or tenderness at incision sites, purulent drainage from incisions, fever/chills.
+call dr.	forward	trigger	hypothetical	30
+call dr .	forward	trigger	hypothetical	30
+for any of the following symptoms	forward	trigger	hypothetical	30
+for any of the following signs	forward	trigger	hypothetical	30
+
+# Deviated septum with sinus problems, occasional needs Augmentin for infections.
+occasional needs	forward	trigger	historical	30
+occasional needed	forward	trigger	historical	30
+
+
+#male with an extensive abdominal surgery history including incisional hernia repairs complicated by abdominal wall infections.
+with \w+ \w+ \w+ \w+ history including	forward	trigger	historical	30
+with \w+ \w+ \w+ history including	forward	trigger	historical	30
+with \w+ \w+ history including	forward	trigger	historical	30
+with \w+ history including	forward	trigger	historical	30
+with \w+ \w+ \w+ \w+ history of	forward	trigger	historical	30
+with \w+ \w+ \w+ history of	forward	trigger	historical	30
+with \w+ \w+ history of	forward	trigger	historical	30
+with \w+ history of	forward	trigger	historical	30
+
+
+surface	both	trigger	superficial	30
+
+
+#Drains are in place laterally with mild surrounding erythema, but no significant erythema or purulent drainage.
+mild	forward	trigger	negated	30
+
+#lf on overall survival) and potential risks (bleeding, infection, wound healing complications, need for postoperative drains, lifetime risk of symptomatic lymphedema) and altern
+potential risks (	forward	trigger	hypothetical	30
+
+# on the date of his surgery.
+on the date of \w+ surgery	both	trigger	dayone	30
+on the date of \w+ procedure	both	trigger	dayone	30
+on the day of \w+ surgery	both	trigger	dayone	30
+on the day of \w+ procedure	both	trigger	dayone	30
+
+
+#Now shows signs of infection without identified source.
+without identified source	both	trigger	notsurgsite	30
+unknown source	both	trigger	notsurgsite	30
+unidentified source	both	trigger	notsurgsite	30
+unknown etiology	both	trigger	notsurgsite	30
+without identified etiology	both	trigger	notsurgsite	30
+unidentified etiology	both	trigger	notsurgsite	30
+
+#Patient instructed on s/s of infection, seroma/fluid buildup and patient knows to call back if any issue ensue.
+on s / s of	both	trigger	hypothetical	30
+
+#Further she developed fever less than one day post-op, which is too early for surgical site or abscess infection to form.
+too early for	both	trigger	negated	30
+too early to	both	trigger	negated	30
+
+#No obvious source of infection
+no \w+ source of	both	trigger	notsurgsite	30
+
+#Admit to hospital for close monitoring for infection given h/o CVID
+monitoring for	forward	trigger	hypothetical	30
+monitoring \w+ for	forward	trigger	hypothetical	30
+monitoring \w+ \w+ for	forward	trigger	hypothetical	30
+
+#Ink code is as follows: superior - blue, inferior - green, superficial (anterior) - yellow, deep(posterior)- black, medial - orange, and lateral - red.
+ink code	both	trigger	othercause	30
+
+#He continues to have a small amount of serous fluid leaking from his abdominal incision but claims it continues to decrease in amount.
+serous fluid	both	trigger	notinfected	30
+
+
+#There is new perinephric and peri-ureteral stranding potentially c/w infection, although this can occur s/p stent placement.
+ureteral	both	trigger	notsurgsite	30
+ua	both	trigger	notsurgsite	30
+urology	both	trigger	notsurgsite	30
+urine	both	trigger	notsurgsite	30
+
+
+#He reports that he had an episode where wound opened and drained while he was in the shower
+had an episode	both	trigger	no_ssi_purpose	30
+
+
+#Warning signs of infection were reviewed.
+were reviewed	both	trigger	irrelevant	30
+
+#Concern would be for infected pericardial space, pneumonia of ?intraabdominal infection with recent surgery.
+concern \w+ be	both	trigger	hypothetical	30
+concerns \w+ be	both	trigger	hypothetical	30
+
+
+ivig	both	trigger	notsurgsite	50
+virus	both	trigger	notsurgsite	50
+
+possible complications including	both	trigger	hypothetical	200
+possible complications including	both	trigger	irrelevant	200
+
+#he is concerned it is infected
+is concerned	forward	trigger	uncertain	200
+
+no source of	forward	trigger	negated	30
+
+# Findings may reflect soft tissue infection
+may reflect	forward	trigger	uncertain	30
+
+#Hx MDRO infections of skin (MRSA),
+hx	forward	trigger	historical	10
+
+#The right drain site was without drain and suture and appeared to be healing well with minimal superficial purulent drainage.
+appear to	both	termination	negated	50
+appears to	both	termination	negated	50
+appeared to	both	termination	negated	50
+
+be healing well	backward	trigger	healed	30
+be healing well	forward	termination	healed	30
+
+#minimal superficial purulent drainage.
+superficial	both	trigger	superficial	50
+
+#-Vanc for suspected VAP (see pulm),
+vap	both	trigger	no_ssi_purpose	30
+
+closed	forward	trigger	closed	4
+close	forward	trigger	closed	4
+staple	forward	trigger	closed	4
+stapled	forward	trigger	closed	4
+staples	forward	trigger	closed	4
+approximated	forward	trigger	closed	4
+approximate	forward	trigger	closed	4
+reapproximated	forward	trigger	closed	4
+reapproximate	forward	trigger	closed	4
+closure	forward	trigger	closed	4
+
+closed	backward	trigger	closed	15
+close	backward	trigger	closed	15
+staple	backward	trigger	closed	15
+stapled	backward	trigger	closed	15
+staples	backward	trigger	closed	15
+approximated	backward	trigger	closed	15
+reapproximated	backward	trigger	closed	15
+closure	backward	trigger	closed	5
+
+vac	both	termination	closed	6
+#planned to close
+planned to	both	termination	closed	6
+plan to	both	termination	closed	6
+
+#We irrigated the wound and then used 3-0 Monocryl for interrupted subcuticular sutures.
+Monocryl	forward	trigger	closed	4
+Vicryl Rapide	forward	trigger	closed	4
+poliglecaprone	forward	trigger	closed	4
+Caprosyn	forward	trigger	closed	4
+suture	both	trigger	closed	15
+sutured	both	trigger	closed	15
+
+#Interrupted Vicryl sutures were used on the fascia and then used Monocryl on the skin and Steri-Strips.
+fascia	both	termination	closed	6
+
+#Then Scarpa fascia was closed with 3-0 Vicryl suture and the skin with 4-0 Monocryl suture and Steri-Strips.
+with \w+ \w+ \w+ \w+ \w+ poliglecaprone	backward	trigger	closed	4
+with \w+ \w+ \w+ \w+ poliglecaprone	backward	trigger	closed	4
+with \w+ \w+ \w+ poliglecaprone	backward	trigger	closed	4
+with \w+ \w+ poliglecaprone	backward	trigger	closed	4
+with \w+ poliglecaprone	backward	trigger	closed	4
+
+with \w+ \w+ \w+ \w+ \w+ Caprosyn	backward	trigger	closed	4
+with \w+ \w+ \w+ \w+ Caprosyn	backward	trigger	closed	4
+with \w+ \w+ \w+ Caprosyn	backward	trigger	closed	4
+with \w+ \w+ Caprosyn	backward	trigger	closed	4
+with \w+ Caprosyn	backward	trigger	closed	4
+
+with \w+ \w+ \w+ \w+ \w+ Vicryl	backward	trigger	closed	4
+with \w+ \w+ \w+ \w+ Vicryl	backward	trigger	closed	4
+with \w+ \w+ \w+ Vicryl	backward	trigger	closed	4
+with \w+ \w+ Vicryl	backward	trigger	closed	4
+with \w+ Vicryl	backward	trigger	closed	4
+
+with \w+ \w+ \w+ \w+ \w+ Monocryl	backward	trigger	closed	4
+with \w+ \w+ \w+ \w+ Monocryl	backward	trigger	closed	4
+with \w+ \w+ \w+ Monocryl	backward	trigger	closed	4
+with \w+ \w+ Monocryl	backward	trigger	closed	4
+with \w+ Monocryl	backward	trigger	closed	4
+
+#and skin with running subcutaneous 4-0 monocryl.
+steri - strips	both	trigger	closed	15
+
+#5. Placement of delayed primary closure skin sutures.
+delayed	both	trigger	notclosed	15
+
+#The staples from her previous incision were removed with some frankly purulent discharge noted from her wound and some devitalized tissue at the edge of the wound.
+removed	both	trigger	notclosed	15
+
+
+excision	both	trigger	notclosed	15
+excised	both	trigger	notclosed	15
+excise	both	trigger	notclosed	15
+
+#Today she presented to the operating room for excision of burn wounds and possible homograft.
+excision	both	trigger	removed	15
+excised	both	trigger	removed	15
+excise	both	trigger	removed	15
+removed	both	trigger	removed	15
+
+placed	both	trigger	sutured	15
+placement	both	trigger	sutured	15
+place	both	trigger	sutured	15
+stapled	both	trigger	sutured	15
+staple	both	trigger	sutured	15
+sutured	both	trigger	sutured	15
+suture	both	trigger	sutured	15
+glue	both	trigger	sutured	15
+glued	both	trigger	sutured	15
+
+#The skin was left open and covered with a damp Kerlix.
+left open	backward	trigger	notclosed	15
+#Abdomen closed, skin DPC'd
+dpc	both	trigger	notclosed	15
+fibrin glue	both	trigger	closed	15
+
+#The midline was then closed with interrupted 2-0 Vicryl deep dermal sutures followed by surgical clips on the skin.
+clips	both	trigger	closed	15
+clip	both	trigger	closed	15
+clipped	both	trigger	closed	15
+
+
+
+#Today's procedure is a planned take back for wound inspection, further debridement, and possible closure or wound vac placement.
+possible closure	both	pseudo	closed	15
+
+#2. Wound vacuum-assisted closure placement to the left lower extremity wound.
+vacuum - assisted closure	both	pseudo	closed	15
+vacuum assisted closure	both	pseudo	closed	15
+
+
+
+#presented to ed 6 days later with abscess drain placed put on antibiotics,
+\> 0 days later	both	termination	dayone	15
+
+# patient still reports fevers and malaise told patient to follow up in ED or with general surgeon.
+follow up	both	termination	dayone	15
+
+
+#is recovering from recent debridement and drainage of multiple abscesses.
+recovering from	forward	trigger	negated	15
+recovered from	forward	trigger	negated	15
+recover from	forward	trigger	negated	15
+recovers from	forward	trigger	negated	15
+
+
+#increased erythema and purulent drainage from one of her port sites.
+port site	both	trigger	deep	15
+port sites	both	trigger	deep	15
+
+skin	both	trigger	superficial	15
+
+# CT of abdomen and pelvis as well as chest was done looking for signs of infection.
+looking for	forward	trigger	uncertain	30
+
+#Given the presence of the chronic abscesses and fistula, the skin was not completely closed.
+not \w+ closed	both	trigger	notclosed	15
+not \w+ close	both	trigger	notclosed	15
+not closed	both	trigger	notclosed	15
+not close	both	trigger	notclosed	15
+
+was not \w+ closed	both	pseudo	negated	15
+was not \w+ close	both	pseudo	negated	15
+was not closed	both	pseudo	negated	15
+was not close	both	pseudo	negated	15
+
+#Underlying MSSA abscess is suspected
+is suspected	backward	trigger	uncertain	15
+was suspected	backward	trigger	uncertain	15
+
+#Ventral hernia s/p multiple repairs and mesh infection now with recurrent incisional hernia with skin breakdown s/p ventral hernia repair
+s / p	both	trigger	historical	15
+status post	both	trigger	historical	15
+s . p .	both	trigger	historical	15
+sp .	both	trigger	historical	15
+
+#Keflex for infx proph
+for \w+ proph	both	trigger	other_infection_purpose	10
+for \w+ proph	both	trigger	no_ssi_purpose	10
+
+#Incision w./o signs of infection.
+w \w+ \w+ o	forward	trigger	negated	15
+
+doesn ' t	forward	trigger	negated	15
+doesn't	forward	trigger	negated	15
+
+#GI has been consulted for discussion of motility studies and agents, as well as infectious etiologies.
+discussion of	forward	trigger	irrelevant	15
+
+#abx are not indicated this time
+are not indicated	backward	trigger	negated	15
+were not indicated	backward	trigger	negated	15
+is not indicated	backward	trigger	negated	15
+was not indicated	backward	trigger	negated	15
+
+
+#He was given 2 g of Ancef for prophylaxis against deep and superficial wound infection.
+prophylaxis against	forward	trigger	hypothetical	15
+prophylaxis for	forward	trigger	hypothetical	15
+
+#He called me with swelling and I had some concerns that he had a hematoma or an infection, but the wound looks very good.
+or	both	trigger	uncertain	10
+
+#most consistent with infectious bronchiolitis
+bronchiolitis	both	trigger	notsurgsite	10
+pneumonia	both	trigger	notsurgsite	10
+
+#Considered the diagnoses of abscess, perianastamotic stricture, psbo.
+considered the diagnoses of	forward	trigger	uncertain	15
+considered diagnosing	forward	trigger	uncertain	15
+
+#Continue Levaquin for drain site erythema
+drain site	both	trigger	surgery	10
+
+
+
+
+# that is a different color than the stool
+different than	both	termination	infected	10
+different \w+ than	both	termination	infected	10
+
+
+#There is a fluid collection under the lateral aspect of her largest incision on the right upper back that does not appear to be infected or causing additional tension on the wound.
+not infected	both	pseudo	infected	10
+not \w+ infected	both	pseudo	infected	10
+not \w+ \w+ infected	both	pseudo	infected	10
+not \w+ \w+ \w+ infected	both	pseudo	infected	10
+
+not \w+ purulent	both	pseudo	infected	30
+not \w+ \w+ purulent	both	pseudo	infected	30
+not \w+ \w+ \w+ purulent	both	pseudo	infected	30
+not \w+ pulrlant	both	pseudo	infected	30
+not \w+ \w+ pulrlant	both	pseudo	infected	30
+not \w+ \w+ \w+ pulrlant	both	pseudo	infected	30
+
+
+#Incision and drainage of large perianal abscess;
+perianal	both	trigger	deep	30
+perianal	both	trigger	abdomen	30
+
+
+#He was initially evaluated for abdominal pain due to a pelvic abscess with colonoscopy, which demonstrated a sigmoid colon mass and biopsies were consistent with adenocarcinoma
+initially evaluated for	forward	trigger	historical	30
+
+
+#She was intubated by the Anesthesia Team and given antibiotics preoperatively.
+preoperatively	both	trigger	no_ssi_purpose	30
+preoperatively	both	trigger	other_infection_purpose	30
+
+
+# recuperated well from his UTI infection.
+uti	both	trigger	notsurgsite	30
+
+#The small epidural incision was expressing a small amount of purulent drainage, with minimal erythema and was placed in clindamycin.
+epidural	both	trigger	notsurgsite	30
+epidural	both	trigger	other_infection_purpose	30
+epidural	both	trigger	no_ssi_purpose	30
+
+#Pt states that there is drainage around the site, but denies any foul smelling discharge.
+denies	both	termination	infected	30
+denied	both	termination	infected	30
+deny	both	termination	infected	30
+
+
+#Diverticulitis w/ inflammation and purulence
+diverticulitis	both	trigger	other_infection_purpose	30
+diverticulitis	both	trigger	no_ssi_purpose	30
+appendicitis	both	trigger	other_infection_purpose	30
+appendicitis	both	trigger	no_ssi_purpose	30
+
+#Popliteal fossa packing removed, not purulent though soupy with SS drainage.
+not purulent	both	trigger	notinfected	30
+SS drainage	both	trigger	notinfected	30
+
+#Discharged with doxycycline and wound vac.
+wound vac	both	pseudo	ssi_purpose	30
+
+#Incisions/Wounds: Ostomy in place with gas and stool in bag.
+bag	both	trigger	notinfected	30
+
+#The patient was instructed to be watchful for signs of infection
+watchful for	both	trigger	hypothetical	30
+if	both	termination	dayone	30
+
+#Surgical Sites: upper 1cm of wound open with clear drainage and thin rim of erythema (<5mm) Explored with cotton tip applicator by Dr and large amount of serous fluid drained out, no purulence,
+serous	both	trigger	no_ssi_purpose	30
+no purulence	both	trigger	no_ssi_purpose	30
+not purulent	both	trigger	no_ssi_purpose	30
+
+
+#Midline incision, no erythema, ostomy with brown to green stool present
+ostomy	both	termination	infected	30
+
+
+#History of chronic complications including variceal bleeding, ascites, on SBP prophylaxis with flagyl/cipro at home in the past
+chronic	both	trigger	no_ssi_purpose	30
+chronic	both	trigger	other_infection_purpose	30
+
+
+#Versajet debridement & iirigation of perineal wound, with partial closure & wound vac placement.
+partial closure	both	trigger	notclosed	30
+
+#Discussed risk such as an intraabdominal abscess.
+discussed risk	forward	trigger	irrelevant	50
+discussed risks	forward	trigger	irrelevant	50
+discussed \w+ such as	forward	trigger	irrelevant	50
+discussed \w+ \w+ such as	forward	trigger	irrelevant	50
+discussed \w+ \w+ \w+ such as	forward	trigger	irrelevant	50
+discussed \w+ including	forward	trigger	irrelevant	50
+discussed \w+ \w+ including	forward	trigger	irrelevant	50
+discussed \w+ \w+ \w+ including	forward	trigger	irrelevant	50
+
+
+#Acute diarrhea likely due to return of infection.
+diarrhea	both	trigger	other_infection_purpose	30
+diarrhea	both	trigger	other_infection_purpose	30
+diarrhea	both	trigger	notsurgsite	30
+
+#She knows to look out for signs or symptoms of infection, redness, swelling, fevers.
+look out for	forward	trigger	hypothetical	30
+watch out for	forward	trigger	hypothetical	30
+
+
+#A negative pressure wound therapy dressing was placed over the top of the entire incision to try and decrease postoperative wound infection or breakdown.
+try and decrease	forward	trigger	hypothetical	30
+try to decrease	forward	trigger	hypothetical	30
+
+#Presented with abdominal pain and CT showing perforated descending colon cancer with retroperitoneal abscess sp resection with end-colostomy.
+sp	both	trigger	historical	30
+#Small subsegmental opacities in the base of the medial segment, right middle lobe suggests small foci of infectious inflammatory process.
+lobe	both	trigger	notsurgsite	30
+subsegmental	both	trigger	notsurgsite	30
+segment	both	trigger	notsurgsite	30
+
+surgical site	both	trigger	ssi_purpose	30
+surgical sites	both	trigger	ssi_purpose	30
+
+
+#Merro for OR contamination continue
+or contamination	both	pseudo	uncertain	30
+
+
+#surrounded by edema, clean, no purulence or drainage. Cellulitis to right medial thigh and L flank
+, no	backward	termination	negated	30
+
+not limited to	both	pseudo	negated	30
+
+#She agrees to call if she develops any of these symptoms or if she'd like this drained sooner.
+to call if	forward	trigger	irrelevant	30
+
+#Container three "right axillary tissue with biopsy clip" contains a 2.3 x 1.5 x 0.4 cm yellow-red fatty fragment
+biopsy	both	trigger	notsurgsite	30
+
+less likely	both	trigger	negated	30
+
+#Foley catheter placed in cavity, 4 red vessel loops placed in cavity.
+vessel	both	trigger	notsurgsite	30
+
+#but UA shows only small amount of blood, no sign of infection.
+ua	both	trigger	notsurgsite	30
+
+#bowel sounds normal, nontender, no masses, no organomegally and no guarding Surgical wound healing without evidence of infection
+discharge	both	termination	deep	30
+erythema	both	termination	deep	30
+erythematous	both	termination	deep	30
+is red	both	termination	deep	30
+redness	both	termination	deep	30
+soupy	both	termination	deep	30
+fascial	both	termination	deep	30
+deep incision	both	termination	deep	30
+fascia	both	termination	deep	30
+supraumbilical	both	termination	deep	30
+umbilical	both	termination	deep	30
+mastectomy incisions	both	termination	deep	30
+mastectomy incision	both	termination	deep	30
+groin	both	termination	deep	30
+groins	both	termination	deep	30
+wound	both	termination	deep	50
+wounds	both	termination	deep	50
+incision	both	termination	deep	30
+skin	both	termination	deep	50
+incision	both	termination	deep	15
+incisions	both	termination	deep	15
+port site	both	termination	deep	2
+jp drain	both	termination	deep	30
+phlebectomy site	both	termination	deep	30
+surface	both	termination	deep	30
+superficial	both	termination	deep	50
+skin	both	termination	deep	15
+
+
+#This will evaluate his small bowel, for possible crohn's related inflammation, but also for an abscess.
+will evaluate	forward	trigger	uncertain	30
+will evaluate	forward	trigger	uncertain	30
+evaluate \w+ for	forward	trigger	uncertain	30
+evaluate \w+ \w+ for	forward	trigger	uncertain	30
+evaluate \w+ \w+ \w+ for	forward	trigger	uncertain	30
+evaluate \w+ \w+ \w+ \w+ for	forward	trigger	uncertain	30
+evaluate \w+ \w+ \w+ \w+ \w+ for	forward	trigger	uncertain	30
+evaluate \w+ \w+ \w+ \w+ \w+ \w+ for	forward	trigger	uncertain	30
+evaluate \w+ \w+ \w+ \w+ \w+ \w+ \w+ for	forward	trigger	uncertain	30
+evaluate \w+ \w+ \w+ \w+ \w+ \w+ \w+ for	forward	trigger	uncertain	30
+evaluate \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ for	forward	trigger	uncertain	30
+evaluate \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ for	forward	trigger	uncertain	30
+evaluate \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ for	forward	trigger	uncertain	30
+evaluate \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ for	forward	trigger	uncertain	30
+evaluate \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ for	forward	trigger	uncertain	30
+evaluate \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ for	forward	trigger	uncertain	30
+evaluate \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ for	forward	trigger	uncertain	30
+evaluate \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ for	forward	trigger	uncertain	30
+evaluate \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ for	forward	trigger	uncertain	30
+evaluate \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ for	forward	trigger	uncertain	30
+evaluate \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ \w+ for	forward	trigger	uncertain	30
+
+#He went to urgent care when the hematoma drained through the incision.
+hematoma	both	trigger	no_ssi_purpose	30
+ddx includes but not limited to	both	trigger	irrelevant	20
+ddx includes \w+ \w+ \w+ \w+	both	trigger	irrelevant	20
+
+#infected left iliac/femoral limb of aortic graft
+
+limbs of aortic	both	pseudo	extremities	30
+limb of aortic	both	pseudo	extremities	30
+\w+ limb of aortic	both	pseudo	extremities	30
+iliac	both	trigger	abdomen	30
+aortic	both	trigger	deep	30
+
+#will call with any s/s of infection.
+will call	both	trigger	hypothetical	30
+
+#are part of the differential diagnosis
+are \w+ \w+ \w+ \w+ differential diagnosis	both	trigger	irrelevant	30
+are \w+ \w+ \w+ differential diagnosis	both	trigger	irrelevant	30
+are \w+ \w+ differential diagnosis	both	trigger	irrelevant	30
+are \w+ differential diagnosis	both	trigger	irrelevant	30
+
+#Fever and leukocytosis may also be present with pancreatic anastomosis leak.
+may be	forward	trigger	uncertain	30
+may \w+ be	forward	trigger	uncertain	30
+
+#Pancreatic anastomosis leak typically presents with abdominal pain
+typically presents with	both	trigger	irrelevant	30
+typically present with	both	trigger	irrelevant	30
+usually presents with	both	trigger	irrelevant	30
+usually present with	both	trigger	irrelevant	30
+often presents with	both	trigger	irrelevant	30
+often present with	both	trigger	irrelevant	30
+
+typically comes with	both	trigger	irrelevant	30
+typically come with	both	trigger	irrelevant	30
+usually comes with	both	trigger	irrelevant	30
+usually come with	both	trigger	irrelevant	30
+often comes with	both	trigger	irrelevant	30
+often come with	both	trigger	irrelevant	30
+
+
+#BODY: pruritic rash over back, arms, legs and abdomen, erythematous, raised patches.
+rash	both	trigger	notsurgsite	30
+
+#Diff dx: Cellulitis, DVT, abscess, CHF, venous stasis
+diff dx	both	trigger	irrelevant	30
+#xxx is seen in clinic today in follow up of her surgery on xx/xx/xxx. This isolated like phlebectomy site has pale feminist exudate and a minimal ring of erythema which is resolving with use of oral and topical antibiotics.
+#is	both	trigger	current	30
+#are	both	trigger	current	30

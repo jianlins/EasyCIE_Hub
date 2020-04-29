@@ -1,0 +1,595 @@
+@processer:	featureinferencer												
+@splitter:													
+@version:2													
+@casesensitive:	true												
+#keep this comment for documentation purpose													
+#The following inference rules will follow this format:													
+#To define a conclusion annotation with features and corresponding default values:													
+#@ConclusionConcept	SuperTypeName	Feature1:defaultValue1	Feature2:defaultValue2...										
+&CONCEPT_FEATURES	NEGA_CONDITION	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Anatomic:notspecified 	Surgery:notmentioned			
+&CONCEPT_FEATURES	IRRE_CONDITION	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Anatomic:notspecified 	Surgery:notmentioned			
+&CONCEPT_FEATURES	HIST_CONDITION	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:historical	Experiencer:patient	Anatomic:notspecified 	Surgery:notmentioned			
+&CONCEPT_FEATURES	HYPO_CONDITION	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Anatomic:notspecified 	Surgery:notmentioned			
+&CONCEPT_FEATURES	HIST_SURGERY	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:historical	Experiencer:patient	Anatomic:notspecified 	Surgery:notmentioned			
+													
+&CONCEPT_FEATURES	OTHER_INFECTION	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Surgery:surgery				
+&CONCEPT_FEATURES	OTHER_FISTULA	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Surgery:surgery	Otherfistula:notinfected			
+&CONCEPT_FEATURES	OTHER_USE_ABX	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	SSI_Purpose:ssi_purpose_unknown	OtherInfection_Purpose:other_infection_purpose_unknown			
+													
+													
+&CONCEPT_FEATURES	POSS_PAIN_SUP_INF	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	POSS_INFECTION	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	POSS_OTHER_INFECTION	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+													
+													
+&CONCEPT_FEATURES	HEALED_INFECTION	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+#&CONCEPT_FEATURES	HEALED_POSS_INFECTION	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+													
+													
+#unknown depth infections													
+&CONCEPT_FEATURES	SSI	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	ABD_INFECTION	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	CHEST_INFECTION	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	EXTRE_INFECTION	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	NO_INFECTION	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+													
+													
+&CONCEPT_FEATURES	POSS_ABD_INFECTION	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	POSS_CHEST_INFECTION	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	POSS_EXTRE_INFECTION	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+													
+													
+#differentiate wound infection for its own modifier, instead of using paragraph inferencer to make inferencer using larger context.													
+#superficial infections													
+&CONCEPT_FEATURES	ABD_S_INF	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	CHEST_S_INF	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	EXTRE_S_INF	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	S_INFECTION	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+													
+													
+&CONCEPT_FEATURES	POSS_ABD_S_INF	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	POSS_CHEST_S_INF	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	POSS_EXTRE_S_INF	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	POSS_S_INF	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+													
+													
+&CONCEPT_FEATURES	NO_ABD_S_INF	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	NO_CHEST_S_INF	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	NO_EXTRE_S_INF	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	NO_S_INF	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+													
+													
+#organ infections													
+&CONCEPT_FEATURES	ABD_O_INF	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	CHEST_O_INF	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	EXTRE_O_INF	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	O_INFECTION	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+													
+													
+&CONCEPT_FEATURES	POSS_ABD_O_INF	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	POSS_CHEST_O_INF	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	POSS_EXTRE_O_INF	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	POSS_O_INF	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+													
+													
+&CONCEPT_FEATURES	NO_ABD_O_INF	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	NO_CHEST_O_INF	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	NO_EXTRE_O_INF	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	NO_O_INF	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+													
+													
+&CONCEPT_FEATURES	SSI_USE_ABX	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	SSI_Purpose:ssi_purpose_unknown	OtherInfection_Purpose:other_infection_purpose_unknown			
+&CONCEPT_FEATURES	PLANNED_SSI_USE_ABX	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:plan	Experiencer:patient	SSI_Purpose:ssi_purpose_unknown	OtherInfection_Purpose:other_infection_purpose_unknown
+&CONCEPT_FEATURES	PLANNED_ABX	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:plan	Experiencer:patient	SSI_Purpose:ssi_purpose_unknown	OtherInfection_Purpose:other_infection_purpose_unknown
+&CONCEPT_FEATURES	PLANNED_TREATMENT	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:plan	Experiencer:patient	SSI_Purpose:ssi_purpose_unknown	OtherInfection_Purpose:other_infection_purpose_unknown
+&CONCEPT_FEATURES	DAY1_TREATMENT	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:plan	Experiencer:patient	SSI_Purpose:ssi_purpose_unknown	OtherInfection_Purpose:other_infection_purpose_unknown
+&CONCEPT_FEATURES	PLANNED_BT	Concept	Section:DocumentAnSPnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:plan	Experiencer:patient	Anatomic:abdomen
+&CONCEPT_FEATURES	OTHER_BT	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Anatomic:abdomen				
+													
+&CONCEPT_FEATURES	ABD_SURGERY	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient					
+&CONCEPT_FEATURES	CHEST_SURGERY	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient					
+&CONCEPT_FEATURES	EXTRE_SURGERY	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient					
+													
+&CONCEPT_FEATURES	COMPLETE_ABX	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient					
+@CONCEPT_FEATURES	NOT_CLOSED	Concept											
+@CONCEPT_FEATURES	SKIN_CLOSED	Concept
+@CONCEPT_FEATURES	FASC_CLOSED	Concept
+													
+													
+#There are perforation at the point of op, but referring to the perforation later without mention when.													
+&CONCEPT_FEATURES	INFECTIOUS_PERFORATION	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+													
+													
+@FEATURE_VALUES	Negation	affirm	negated										
+@FEATURE_VALUES	Certainty	certain	uncertain	concerned									
+@FEATURE_VALUES	Temporality	present	historical	plan	hypothetical	in30d	dayone	after30d
+@FEATURE_VALUES	Experiencer	patient	nonpatient										
+@FEATURE_VALUES	Relevance	relevant	irrelevant										
+@FEATURE_VALUES	Anatomic	notspecified	skin	incision	abdomen	chest	extremities	notsurgsite					
+@FEATURE_VALUES	Surgery	notmentioned	surgery										
+@FEATURE_VALUES	Depth	unknown	superficial	deep									
+@FEATURE_VALUES	Operative	notdescribed	operative	preoperative	postoperative								
+@FEATURE_VALUES	Dehiscence	notopen	open										
+@FEATURE_VALUES	Action	nottaken	taken										
+@FEATURE_VALUES	Infected	unknowninfected	mayinfected	infected	notinfected								
+@FEATURE_VALUES	SSI_Purpose	ssi_purpose_unknown	ssi_purpose	no_ssi_purpose									
+@FEATURE_VALUES	OtherInfection_Purpose	other_infection_purpose_unknown	other_infection_purpose	no_other_infection_purpose									
+@FEATURE_VALUES	Otherfistula	inflammatory	notinflammatory										
+#to exclude other reasons causes the  SIGN_SUP_INF													
+@FEATURE_VALUES	Cause	unknowncause	othercause										
+#to exclude other reasons causes the  pain													
+@FEATURE_VALUES	PainCause	unknownpaincause	otherpaincause										
+@FEATURE_VALUES	Healed	unknownhealed	healed	nothealed									
+@FEATURE_VALUES	Completion	unknowncompletion	notcompleted	completed									
+@FEATURE_VALUES	Closure	unknowclosed	closed	notclosed									
+@FEATURE_VALUES	Suture	unknowsuture	sutured	removed									
+													
+#To define an inference rule:													
+#TOPIC	CONCLUSION	COPY_ATTRIB	EVIDENCE_ANNO	CONDITION	SCOPE_ANNO								
+													
+CONDITION	NEGA_CONDITION	Note,Section,Certainty,Temporality	Concept	negated	SourceDocumentInformation								
+CONDITION	PLANNED_BT	Note,Section,Certainty,Temporality	BT	affirm,plan	SourceDocumentInformation
+CONDITION	PLANNED_BT	Note,Section,Certainty,Temporality	BT	affirm	Plan								
+CONDITION	HYPO_CONDITION	Note,Section,Certainty,Temporality	Concept	affirm,hypothetical	SourceDocumentInformation								
+CONDITION	HIST_CONDITION	Note,Section,Certainty,Temporality	Concept	affirm,historical	SourceDocumentInformation								
+CONDITION	HIST_CONDITION	Note,Section,Certainty,Temporality	Concept	affirm	PastHistory								
+#CONDITION	IRRE_CONDITION	Note,Section,Certainty,Temporality	Concept	affirm,irrelevant	SourceDocumentInformation								
+CONDITION	IRRE_CONDITION	Note,Section,Certainty,Temporality	Concept	nonpatient	SourceDocumentInformation
+CONDITION	IRRE_CONDITION	Note,Section,Certainty,Temporality	Concept	affirm	FamilyHistory								
+													
+CONDITION	OTHER_BT	Note,Section,Certainty,Temporality,Anatomic	BT	affirm,notsurgsite	SourceDocumentInformation								
+													
+CONDITION	IRRE_CONDITION	Note,Section,Certainty,Temporality	BT		Discussion								
+													
+													
+													
+													
+													
+													
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality	Concept	nonpatient	SourceDocumentInformation
+													
+
+INFECT	NO_EXTRE_S_INF	Note,Section,Certainty,Temporality,Experiencer	INFECTION	negated,present,extremities,superficial	SourceDocumentInformation
+INFECT	NO_EXTRE_S_INF	Note,Section,Certainty,Temporality,Experiencer	INCISION	affirm,present,extremities,healed	SourceDocumentInformation
+INFECT	NO_EXTRE_S_INF	Note,Section,Certainty,Temporality,Experiencer	INCISION	negated,present,extremities	SourceDocumentInformation
+INFECT	NO_EXTRE_S_INF	Note,Section,Certainty,Temporality,Experiencer	SITE_INFECTION	negated,present,extremities,superficial	SourceDocumentInformation
+INFECT	NO_EXTRE_O_INF	Note,Section,Certainty,Temporality,Experiencer	INFECTION	negated,present,extremities,deep	SourceDocumentInformation
+INFECT	NO_EXTRE_S_INF	Note,Section,Certainty,Temporality,Experiencer	SITE_INFECTION	negated,present,extremities,unknown	SourceDocumentInformation
+
+
+INFECT	NO_CHEST_S_INF	Note,Section,Certainty,Temporality,Experiencer	INFECTION	negated,present,chest,superficial	SourceDocumentInformation
+INFECT	NO_CHEST_S_INF	Note,Section,Certainty,Temporality,Experiencer	INCISION	affirm,present,chest,healed	SourceDocumentInformation
+INFECT	NO_CHEST_S_INF	Note,Section,Certainty,Temporality,Experiencer	INCISION	negated,present,chest	SourceDocumentInformation
+INFECT	NO_CHEST_S_INF	Note,Section,Certainty,Temporality,Experiencer	SITE_INFECTION	negated,present,chest,superficial	SourceDocumentInformation
+INFECT	NO_CHEST_O_INF	Note,Section,Certainty,Temporality,Experiencer	INFECTION	negated,present,chest,deep	SourceDocumentInformation
+INFECT	NO_CHEST_O_INF	Note,Section,Certainty,Temporality,Experiencer	SITE_INFECTION	negated,present,chest,deep	SourceDocumentInformation
+
+INFECT	NO_ABD_S_INF	Note,Section,Certainty,Temporality,Experiencer	INFECTION	negated,present,abdomen,superficial	SourceDocumentInformation
+INFECT	NO_ABD_S_INF	Note,Section,Certainty,Temporality,Experiencer	INCISION	affirm,present,abdomen,healed	SourceDocumentInformation
+INFECT	NO_ABD_S_INF	Note,Section,Certainty,Temporality,Experiencer	INCISION	negated,present,abdomen	SourceDocumentInformation
+INFECT	NO_ABD_S_INF	Note,Section,Certainty,Temporality,Experiencer	SITE_INFECTION	negated,present,abdomen,superficial	SourceDocumentInformation
+INFECT	NO_ABD_O_INF	Note,Section,Certainty,Temporality,Experiencer	INFECTION	negated,present,abdomen,deep	SourceDocumentInformation
+INFECT	NO_ABD_O_INF	Note,Section,Certainty,Temporality,Experiencer	SITE_INFECTION	negated,present,abdomen,deep	SourceDocumentInformation
+
+INFECT	NO_S_INF	Note,Section,Certainty,Temporality,Experiencer	INFECTION	negated,present,superficial	SourceDocumentInformation
+INFECT	NO_S_INF	Note,Section,Certainty,Temporality,Experiencer	SITE_INFECTION	negated,present,superficial	SourceDocumentInformation
+INFECT	NO_O_INF	Note,Section,Certainty,Temporality,Experiencer	INFECTION	negated,present,deep	SourceDocumentInformation
+INFECT	NO_O_INF	Note,Section,Certainty,Temporality,Experiencer	SITE_INFECTION	negated,present,deep	SourceDocumentInformation
+
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	INFECTION	negated,present,notsurgsite	SourceDocumentInformation
+INFECT	NO_INFECTION	Note,Section,Certainty,Temporality,Experiencer	INFECTION	negated,present	SourceDocumentInformation
+INFECT	NO_INFECTION	Note,Section,Certainty,Temporality,Experiencer	BL_INFECTION	negated,present	SourceDocumentInformation
+INFECT	NO_INFECTION	Note,Section,Certainty,Temporality,Experiencer	SITE_INFECTION	negated,present	SourceDocumentInformation
+INFECT	NEGA_CONDITION	Note,Section,Certainty,Temporality,Experiencer	SITE_INFECTION	negated	SourceDocumentInformation
+INFECT	NEGA_CONDITION	Note,Section,Certainty,Temporality,Experiencer	Concept	negated	SourceDocumentInformation								
+INFECT	HYPO_CONDITION	Note,Section,Certainty,Temporality,Experiencer	Concept	affirm,hypothetical	SourceDocumentInformation								
+INFECT	HIST_CONDITION	Note,Section,Certainty,Temporality,Experiencer	Concept	affirm	PastHistory								
+INFECT	HIST_CONDITION	Note,Section,Certainty,Temporality,Experiencer	Concept	affirm,historical	SourceDocumentInformation								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	Concept	affirm,irrelevant	SourceDocumentInformation								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	Concept	certain,relevant,after30d									
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	Concept	affirm	FamilyHistory								
+													
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTION	certain	Plan								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTION	certain	Lab								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTION	certain	Instruction								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTION	certain	Allergy								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTION	certain	Discussion								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTION	certain	Problem								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTION	certain	Diagnosis								
+													
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SITE_INFECTION	certain	Plan								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SITE_INFECTION	certain	Lab								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SITE_INFECTION	certain	Instruction								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SITE_INFECTION	certain	Allergy								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SITE_INFECTION	certain	Discussion								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SITE_INFECTION	certain	Problem								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SITE_INFECTION	certain	Diagnosis								
+													
+													
+INFECT	ABD_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTION	certain,abdomen,notmentioned,superficial									
+INFECT	ABD_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTION	certain,abdomen,surgery,superficial									
+INFECT	ABD_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTION	certain,abdomen,notmentioned,deep									
+INFECT	ABD_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTION	certain,abdomen,surgery,deep									
+													
+INFECT	CHEST_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTION	certain,chest,notmentioned,superficial									
+INFECT	CHEST_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTION	certain,chest,surgery,superficial									
+INFECT	CHEST_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTION	certain,chest,notmentioned,deep									
+INFECT	CHEST_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTION	certain,chest,surgery,deep									
+													
+INFECT	EXTRE_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTION	certain,extremities,notmentioned,superficial									
+INFECT	EXTRE_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTION	certain,extremities,surgery,superficial									
+INFECT	EXTRE_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTION	certain,extremities,notmentioned,deep									
+INFECT	EXTRE_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTION	certain,extremities,surgery,deep									
+													
+INFECT	OTHER_INFECTION	Note,Section,Certainty,Temporality,Anatomic,Surgery	INFECTION	certain,relevant,notsurgsite	SourceDocumentInformation
+INFECT	POSS_OTHER_INFECTION	Note,Section,Certainty,Temporality,Anatomic,Surgery	POSS_INFECTION	certain,relevant,notsurgsite	SourceDocumentInformation
+INFECT	POSS_OTHER_INFECTION	Note,Section,Certainty,Temporality,Anatomic,Surgery	INFECTION	uncertain,relevant,notsurgsite	SourceDocumentInformation
+INFECT	POSS_OTHER_INFECTION	Note,Section,Certainty,Temporality,Anatomic,Surgery	UTI	uncertain,relevant	SourceDocumentInformation
+INFECT	POSS_OTHER_INFECTION	Note,Section,Certainty,Temporality,Anatomic,Surgery	PNEUMONIA	uncertain,relevant	SourceDocumentInformation
+													
+													
+													
+													
+													
+INFECT	POSS_ABD_O_INF	Note,Section,Certainty,Temporality,Anatomic,Surgery	INFECTION	uncertain,relevant,abdomen,deep	SourceDocumentInformation								
+INFECT	POSS_EXTRE_O_INF	Note,Section,Certainty,Temporality,Anatomic,Surgery	INFECTION	uncertain,relevant,extremities,deep	SourceDocumentInformation								
+INFECT	POSS_CHEST_O_INF	Note,Section,Certainty,Temporality,Anatomic,Surgery	INFECTION	uncertain,relevant,chest,deep	SourceDocumentInformation								
+													
+INFECT	POSS_ABD_S_INF	Note,Section,Certainty,Temporality,Anatomic,Surgery	INFECTION	uncertain,relevant,abdomen,superficial	SourceDocumentInformation								
+INFECT	POSS_EXTRE_S_INF	Note,Section,Certainty,Temporality,Anatomic,Surgery	INFECTION	uncertain,relevant,extremities,superficial	SourceDocumentInformation								
+INFECT	POSS_CHEST_S_INF	Note,Section,Certainty,Temporality,Anatomic,Surgery	INFECTION	uncertain,relevant,chest,superficial	SourceDocumentInformation								
+													
+INFECT	POSS_ABD_O_INF	Note,Section,Certainty,Temporality,Anatomic,Surgery	INFECTION	uncertain,relevant,abdomen	SourceDocumentInformation								
+INFECT	POSS_S_INF	Note,Section,Certainty,Temporality,Anatomic,Surgery	INFECTION	uncertain,relevant,superficial	SourceDocumentInformation								
+INFECT	POSS_O_INF	Note,Section,Certainty,Temporality,Anatomic,Surgery	INFECTION	uncertain,relevant,deep	SourceDocumentInformation
+INFECT	POSS_INFECTION	Note,Section,Certainty,Temporality,Anatomic,Surgery	INFECTION	uncertain,relevant	SourceDocumentInformation								
+													
+													
+													
+													
+INFECT	POSS_ABD_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	ABD_O_INF	uncertain	SourceDocumentInformation								
+													
+													
+													
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	SIGN_SUP_INF	notsurgsite	SourceDocumentInformation								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	DEHISCENCE	notsurgsite	SourceDocumentInformation								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	DRAINAGE	notsurgsite	SourceDocumentInformation								
+													
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	SITE_INFECTION	certain,relevant	Instruction								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	S_INFECTION	certain,relevant	Instruction								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	DEHISCENCE	certain,relevant	Instruction								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	DRAINAGE	certain,relevant	Instruction								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	POSS_SIGN_S_INF	certain,relevant	Instruction								
+													
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	SITE_INFECTION	certain,relevant	Discussion								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	S_INFECTION	certain,relevant	Discussion								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	DEHISCENCE	certain,relevant	Discussion								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	DRAINAGE	certain,relevant	Discussion								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	POSS_SIGN_S_INF	certain,relevant	Instruction								
+													
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	SITE_INFECTION	certain,relevant	Diagnosis								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	S_INFECTION	certain,relevant	Diagnosis								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	DEHISCENCE	certain,relevant	Diagnosis								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	DRAINAGE	certain,relevant	Diagnosis								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	ABD_O_INF	certain,relevant	Diagnosis								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	BL_INFECTION	certain,relevant	Diagnosis								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	FISTULA	certain,relevant	Diagnosis								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	INCISION	certain,relevant	Diagnosis								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	POSS_SIGN_S_INF	certain,relevant	Diagnosis								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	INFECTION	certain,relevant	Diagnosis								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	POSS_ABD_O_INF	certain,relevant	Diagnosis								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	POSS_S_INF	certain,relevant	Diagnosis								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	POSS_INFECTION	certain,relevant	Diagnosis								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	SIGN_SUP_INF	certain,relevant	Diagnosis								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	SIGN_SUP_UTI	certain,relevant	Diagnosis								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	SSI	certain,relevant	Diagnosis								
+													
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	SITE_INFECTION	certain,relevant	Problem								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	S_INFECTION	certain,relevant	Problem								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	DEHISCENCE	certain,relevant	Problem								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	DRAINAGE	certain,relevant	Problem								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	ABD_O_INF	certain,relevant	Problem								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	BL_INFECTION	certain,relevant	Problem								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	FISTULA	certain,relevant	Problem								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	INCISION	certain,relevant	Problem								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	POSS_SIGN_S_INF	certain,relevant	Problem								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	INFECTION	certain,relevant	Problem								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	POSS_ABD_O_INF	certain,relevant	Problem								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	POSS_S_INF	certain,relevant	Problem								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	POSS_INFECTION	certain,relevant	Problem								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	SIGN_SUP_INF	certain,relevant	Problem								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	SIGN_SUP_UTI	certain,relevant	Problem								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	SSI	certain,relevant	Problem
+
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+INFECT	POSS_ABD_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SIGN_SUP_INF	certain,abdomen,notmentioned,superficial
+INFECT	POSS_ABD_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SIGN_SUP_INF	certain,abdomen,surgery,superficial
+INFECT	POSS_ABD_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SIGN_SUP_INF	certain,abdomen,notmentioned,deep	SourceDocumentInformation
+INFECT	POSS_ABD_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SIGN_SUP_INF	certain,abdomen,surgery,deep	SourceDocumentInformation
+													
+INFECT	POSS_CHEST_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SIGN_SUP_INF	certain,chest,notmentioned,superficial
+INFECT	POSS_CHEST_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SIGN_SUP_INF	certain,chest,surgery,superficial
+INFECT	POSS_CHEST_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SIGN_SUP_INF	certain,chest,notmentioned,deep
+INFECT	POSS_CHEST_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SIGN_SUP_INF	certain,chest,surgery,deep
+													
+INFECT	POSS_EXTRE_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SIGN_SUP_INF	certain,extremities,notmentioned,superficial
+INFECT	POSS_EXTRE_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SIGN_SUP_INF	certain,extremities,surgery,superficial
+INFECT	POSS_EXTRE_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SIGN_SUP_INF	certain,extremities,notmentioned,deep
+INFECT	POSS_EXTRE_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SIGN_SUP_INF	certain,extremities,surgery,deep
+													
+													
+#INFECT	S_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SIGN_SUP_INF	certain,notspecified,surgery,superficial	SourceDocumentInformation								
+INFECT	POSS_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SIGN_SUP_INF	certain,notspecified,notmentioned,superficial	SourceDocumentInformation
+INFECT	POSS_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SIGN_SUP_INF	uncertain,notspecified,notmentioned,superficial	SourceDocumentInformation
+
+INFECT	POSS_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_SIGN_S_INF	certain,notspecified,notmentioned,superficial	SourceDocumentInformation
+INFECT	POSS_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_SIGN_S_INF	uncertain,notspecified,notmentioned,superficial	SourceDocumentInformation
+
+
+													
+													
+INFECT	ABD_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	DRAINAGE	abdomen,infected,certain,superficial									
+INFECT	ABD_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	DRAINAGE	abdomen,infected,certain	SourceDocumentInformation								
+INFECT	S_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	DRAINAGE	notspecified,infected,certain,superficial	SourceDocumentInformation								
+INFECT	INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	DRAINAGE	notspecified,infected,certain	SourceDocumentInformation								
+													
+INFECT	POSS_ABD_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	DRAINAGE	abdomen,mayinfected,certain,superficial	SourceDocumentInformation								
+INFECT	POSS_ABD_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	DRAINAGE	abdomen,mayinfected,certain	SourceDocumentInformation								
+INFECT	POSS_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	DRAINAGE	notspecified,mayinfected,certain	SourceDocumentInformation								
+													
+INFECT	POSS_ABD_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	DRAINAGE	abdomen,infected,uncertain	SourceDocumentInformation								
+INFECT	POSS_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	DRAINAGE	notspecified,infected,uncertain	SourceDocumentInformation								
+													
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	DRAINAGE	relevant	Instruction								
+INFECT	CHEST_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	DRAINAGE	chest,infected,certain	SourceDocumentInformation								
+INFECT	POSS_CHEST_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	DRAINAGE	chest,mayinfected,certain	SourceDocumentInformation								
+INFECT	POSS_CHEST_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	DRAINAGE	chest,infected,uncertain	SourceDocumentInformation								
+													
+INFECT	EXTRE_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	DRAINAGE	extremities,infected,certain	SourceDocumentInformation								
+INFECT	POSS_EXTRE_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	DRAINAGE	extremities,mayinfected,certain	SourceDocumentInformation								
+INFECT	POSS_EXTRE_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	DRAINAGE	extremities,infected,uncertain	SourceDocumentInformation								
+													
+													
+													
+													
+INFECT	POSS_ABD_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	DRAINAGE	abdomen,mayinfected,certain	SourceDocumentInformation								
+INFECT	POSS_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	DRAINAGE	notspecified,mayinfected,certain	SourceDocumentInformation								
+													
+INFECT	POSS_ABD_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	DRAINAGE	abdomen,infected,uncertain	SourceDocumentInformation								
+INFECT	POSS_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	DRAINAGE	notspecified,infected,uncertain	SourceDocumentInformation								
+													
+													
+													
+INFECT	INFECTIOUS_PERFORATION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	PERFORATION	chest,certain	SourceDocumentInformation								
+INFECT	INFECTIOUS_PERFORATION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	PERFORATION	abdomen,certain	SourceDocumentInformation								
+													
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTION	relevant	Instruction								
+INFECT	CHEST_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTION	chest	SourceDocumentInformation								
+INFECT	EXTRE_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTION	extremities	SourceDocumentInformation								
+INFECT	ABD_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SITE_INFECTION	certain,abdomen,superficial									
+INFECT	ABD_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SITE_INFECTION	certain,abdomen	SourceDocumentInformation								
+INFECT	CHEST_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SITE_INFECTION	certain,chest,superficial	SourceDocumentInformation								
+INFECT	CHEST_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SITE_INFECTION	certain,chest	SourceDocumentInformation								
+INFECT	EXTRE_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SITE_INFECTION	certain,extremities,superficial	SourceDocumentInformation								
+INFECT	EXTRE_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SITE_INFECTION	certain,extremities	SourceDocumentInformation								
+													
+INFECT	POSS_ABD_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SITE_INFECTION	uncertain,abdomen,superficial
+INFECT	POSS_ABD_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SITE_INFECTION	uncertain,abdomen	SourceDocumentInformation
+INFECT	POSS_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SITE_INFECTION	uncertain,skin	SourceDocumentInformation
+INFECT	POSS_CHEST_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SITE_INFECTION	uncertain,chest,superficial	SourceDocumentInformation								
+INFECT	POSS_CHEST_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SITE_INFECTION	uncertain,chest	SourceDocumentInformation								
+INFECT	POSS_EXTRE_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SITE_INFECTION	uncertain,extremities,superficial	SourceDocumentInformation								
+INFECT	POSS_EXTRE_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SITE_INFECTION	uncertain,extremities	SourceDocumentInformation								
+													
+													
+													
+													
+													
+INFECT	POSS_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SITE_INFECTION	uncertain,notspecified	SourceDocumentInformation								
+INFECT	OTHER_INFECTION	Note,Section,Certainty,Temporality,Relevance,Anatomic,Surgery	SITE_INFECTION	notsurgsite	SourceDocumentInformation								
+													
+													
+													
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	infected	Plan								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	infected	Lab								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	infected	Instruction								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	infected	Allergy								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	infected	Discussion								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	infected	Problem								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	infected	Diagnosis								
+INFECT	S_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTION	incision
+INFECT	OTHER_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	infected,notsurgsite
+INFECT	S_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	certain,infected
+INFECT	POSS_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	uncertain,infected
+													
+													
+INFECT	CHEST_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	S_INFECTION	certain,chest
+INFECT	EXTRE_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	S_INFECTION	certain,extremities
+INFECT	ABD_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	S_INFECTION	certain,abdomen
+INFECT	POSS_ABD_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	S_INFECTION	uncertain,abdomen
+INFECT	POSS_CHEST_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	S_INFECTION	uncertain,chest									
+INFECT	POSS_EXTRE_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	S_INFECTION	uncertain,extremities
+INFECT	POSS_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	S_INFECTION	uncertain,notspecified
+INFECT	OTHER_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	S_INFECTION	notsurgsite
+													
+INFECT	POSS_ABD_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_S_INF	abdomen									
+INFECT	POSS_CHEST_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_S_INF	chest									
+INFECT	POSS_EXTRE_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_S_INF	extremities									
+													
+													
+													
+													
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	PAIN	certain,abdomen,otherpaincause	SourceDocumentInformation								
+INFECT	POSS_ABD_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	PAIN	certain,abdomen,unknowncause,taken	SourceDocumentInformation								
+INFECT	POSS_PAIN_SUP_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	PAIN	certain,abdomen,unknowncause,nottaken	SourceDocumentInformation								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	PAIN	certain,notsurgsite	SourceDocumentInformation								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	POSS_SIGN_S_INF	certain,notsurgsite	SourceDocumentInformation								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	POSS_SIGN_S_INF	certain,othercause	SourceDocumentInformation								
+													
+													
+INFECT	POSS_CHEST_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_SIGN_S_INF	certain,chest,	SourceDocumentInformation								
+INFECT	POSS_ABD_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_SIGN_S_INF	certain,abdomen	SourceDocumentInformation								
+INFECT	POSS_EXTRE_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_SIGN_S_INF	certain,extremities	SourceDocumentInformation								
+													
+													
+INFECT	POSS_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_SIGN_S_INF	certain,superficial	SourceDocumentInformation								
+INFECT	POSS_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_SIGN_S_INF	certain,incision	SourceDocumentInformation								
+INFECT	POSS_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_SIGN_S_INF	certain,surgery	SourceDocumentInformation								
+
+#He was found to have succuss leaking from a site near the most proximal small bowel anastomosis.
+INFECT	NO_ABD_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	STITCHING	certain,abdomen,open,notinfected	SourceDocumentInformation
+INFECT	ABD_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	STITCHING	certain,abdomen,open,unknowninfected	SourceDocumentInformation
+INFECT	ABD_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	STITCHING	certain,abdomen,open,mayinfected	SourceDocumentInformation
+INFECT	ABD_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	STITCHING	certain,abdomen,open,infected	SourceDocumentInformation
+													
+INFECT	NO_CHEST_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	STITCHING	certain,chest,open,notinfected	SourceDocumentInformation
+INFECT	CHEST_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	STITCHING	certain,chest,open,unknowninfected	SourceDocumentInformation
+INFECT	CHEST_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	STITCHING	certain,chest,open,mayinfected	SourceDocumentInformation
+INFECT	CHEST_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	STITCHING	certain,chest,open,infected	SourceDocumentInformation
+													
+INFECT	NO_EXTRE_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	STITCHING	certain,extremities,open,notinfected	SourceDocumentInformation
+INFECT	EXTRE_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	STITCHING	certain,extremities,open,unknowninfected	SourceDocumentInformation
+INFECT	EXTRE_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	STITCHING	certain,extremities,open,mayinfected	SourceDocumentInformation
+INFECT	EXTRE_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	STITCHING	certain,extremities,open,infected	SourceDocumentInformation
+													
+INFECT	NO_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	STITCHING	certain,notspecified,open,notinfected	SourceDocumentInformation
+INFECT	POSS_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	STITCHING	certain,notspecified,open,unknowninfected	SourceDocumentInformation
+INFECT	POSS_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	STITCHING	certain,notspecified,open,mayinfected	SourceDocumentInformation
+INFECT	S_SSI_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	STITCHING	certain,notspecified,open,infected	SourceDocumentInformation
+#INFECT	POSS_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	STITCHING	uncertain,notspecified,open	SourceDocumentInformation
+													
+INFECT	POSS_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	STITCHING	certain,abdomen,open	SourceDocumentInformation
+
+
+
+INFECT	NO_ABD_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	certain,abdomen,open,notinfected	SourceDocumentInformation
+INFECT	POSS_ABD_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	certain,abdomen,open,unknowninfected	SourceDocumentInformation
+INFECT	POSS_ABD_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	certain,abdomen,open,mayinfected	SourceDocumentInformation
+INFECT	ABD_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	certain,abdomen,open,infected	SourceDocumentInformation
+
+INFECT	NO_CHEST_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	certain,chest,open,notinfected	SourceDocumentInformation
+INFECT	POSS_CHEST_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	certain,chest,open,unknowninfected	SourceDocumentInformation
+INFECT	POSS_CHEST_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	certain,chest,open,mayinfected	SourceDocumentInformation
+INFECT	CHEST_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	certain,chest,open,infected	SourceDocumentInformation
+
+INFECT	NO_EXTRE_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	certain,extremities,open,notinfected	SourceDocumentInformation
+INFECT	POSS_EXTRE_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	certain,extremities,open,unknowninfected	SourceDocumentInformation
+INFECT	POSS_EXTRE_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	certain,extremities,open,mayinfected	SourceDocumentInformation
+INFECT	EXTRE_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	certain,extremities,open,infected	SourceDocumentInformation
+
+INFECT	NO_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	certain,notspecified,open,notinfected	SourceDocumentInformation
+INFECT	POSS_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	certain,notspecified,open,unknowninfected	SourceDocumentInformation
+INFECT	POSS_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	certain,notspecified,open,mayinfected	SourceDocumentInformation
+INFECT	S_SSI_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	certain,notspecified,open,infected	SourceDocumentInformation
+#INFECT	POSS_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	uncertain,notspecified,open	SourceDocumentInformation
+
+INFECT	POSS_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INCISION	certain,abdomen,open	SourceDocumentInformation
+
+
+													
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	SSI	relevant	Plan								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	SSI	relevant	Lab								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	SSI	relevant	Instruction								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	SSI	relevant	Allergy								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	SSI	relevant	Discussion								
+INFECT	SSI	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SSI	relevant,certain	SourceDocumentInformation								
+INFECT	POSS_INFECTION	Note,Section,Certainty,Temporality,Anatomic,Surgery	SSI	relevant,uncertain	SourceDocumentInformation								
+													
+INFECT	POSS_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SIGN_SUP_INF	certain,abdomen,surgery	SourceDocumentInformation
+INFECT	POSS_ABD_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SIGN_SUP_INF	certain,abdomen	SourceDocumentInformation								
+INFECT	POSS_CHEST_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SIGN_SUP_INF	certain,chest	SourceDocumentInformation								
+INFECT	POSS_EXTRE_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SIGN_SUP_INF	certain,extremities	SourceDocumentInformation								
+INFECT	POSS_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SIGN_SUP_INF	certain,superficial	SourceDocumentInformation								
+													
+INFECT	OTHER_FISTULA	Note,Section,Certainty,Temporality,Anatomic,Otherfistula	FISTULA	relevant,notspecified,notinflammatory	SourceDocumentInformation								
+INFECT	OTHER_FISTULA	Note,Section,Certainty,Temporality,Anatomic,Otherfistula	FISTULA	relevant,notsurgsite,inflammatory	SourceDocumentInformation								
+													
+#FISTULA-→> sign of infection>need actions													
+													
+INFECT	SSI	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	DEHISCENCE	certain,abdomen	SourceDocumentInformation								
+													
+													
+													
+#OTHER_INFECTION	Note,Certainty,Temporality,Anatomic,Surgery	INFECTION	affirm,certain,present,patient,relevant,notabdomen	SourceDocumentInformation									
+#POSS_OTHER_INFECTION	Note,Certainty,Temporality,Anatomic,Surgery	INFECTION	affirm,uncertain,present,patient,relevant,notabdomen	SourceDocumentInformation									
+#OTHER_INFECTION	Note,Certainty,Temporality,Anatomic,Surgery	BT	affirm,certain,present,patient,notabdomen	SourceDocumentInformation									
+													
+#													
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	INCISION	uncertain,relevant,notsurgsite	SourceDocumentInformation								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	INCISION	certain,relevant,notsurgsite	SourceDocumentInformation								
+INFECT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	INCISION	uncertain,relevant	SourceDocumentInformation								
+													
+TREAT	HIST_CONDITION	Note,Section,Certainty,Temporality,Experiencer	DEBRIDEMENT	affirm	PastHistory
+TREAT	NEGA_CONDITION	Note,Section,Certainty,Temporality,SSI_Purpose	ANTIBIOTICS	negated	SourceDocumentInformation
+TREAT	IRRE_CONDITION	Note,Section,Certainty,Temporality,SSI_Purpose	ANTIBIOTICS	irrelevant	SourceDocumentInformation
+TREAT	OTHER_USE_ABX	Note,Section,Certainty,Temporality,SSI_Purpose	ANTIBIOTICS	plan,no_other_infection_purpose	SourceDocumentInformation
+TREAT	OTHER_USE_ABX	Note,Section,Certainty,Temporality,SSI_Purpose	ANTIBIOTICS	no_other_infection_purpose	Plan								
+TREAT	OTHER_USE_ABX	Note,Section,Certainty,Temporality,SSI_Purpose	ANTIBIOTICS	plan,no_ssi_purpose	SourceDocumentInformation
+TREAT	OTHER_USE_ABX	Note,Section,Certainty,Temporality,SSI_Purpose	ANTIBIOTICS	no_ssi_purpose	Plan								
+TREAT	PLANNED_SSI_USE_ABX	Note,Section,Certainty,Temporality,SSI_Purpose	ANTIBIOTICS	plan,ssi_purpose	SourceDocumentInformation
+TREAT	PLANNED_SSI_USE_ABX	Note,Section,Certainty,Temporality,SSI_Purpose	ANTIBIOTICS	ssi_purpose	Plan								
+TREAT	PLANNED_SSI_USE_ABX	Note,Section,Certainty,Temporality,SSI_Purpose	ANTIBIOTICS	ssi_purpose	Instruction								
+TREAT	PLANNED_ABX	Note,Section,Certainty,Temporality,SSI_Purpose	ANTIBIOTICS	plan	SourceDocumentInformation
+TREAT	PLANNED_ABX	Note,Section,Certainty,Temporality,SSI_Purpose	ANTIBIOTICS		Plan
+TREAT	IRRE_CONDITION	Note,Section,Certainty,Temporality	TREATMENT	irrelevant	SourceDocumentInformation
+TREAT	NEGA_CONDITION	Note,Section,Certainty,Temporality	TREATMENT	irrelevant	SourceDocumentInformation
+TREAT	PLANNED_TREATMENT	Note,Section,Certainty,Temporality	TREATMENT	affirm,plan	SourceDocumentInformation
+
+TREAT	IRRE_CONDITION	Note,Section,Certainty,Temporality	DEBRIDEMENT	irrelevant	SourceDocumentInformation
+TREAT	NEGA_CONDITION	Note,Section,Certainty,Temporality	DEBRIDEMENT	irrelevant	SourceDocumentInformation
+
+
+													
+													
+TREAT	PLANNED_ABX	Note,Section,Certainty,Temporality,Experiencer	ANTIBIOTICS		Plan								
+TREAT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	ANTIBIOTICS		Lab								
+TREAT	PLANNED_ABX	Note,Section,Certainty,Temporality,Experiencer	ANTIBIOTICS		Instruction								
+TREAT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	ANTIBIOTICS		Allergy								
+TREAT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	ANTIBIOTICS		Discussion								
+													
+													
+#TREAT	OTHER_USE_ABX	Note,Section,Certainty,Temporality,Experiencer,SSI_Purpose,OtherInfection_Purpose	ANTIBIOTICS	affirm,ssi_purpose	PresentHistory								
+TREAT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer,SSI_Purpose,OtherInfection_Purpose	ANTIBIOTICS	affirm,uncertain	SourceDocumentInformation								
+													
+TREAT	COMPLETE_ABX	Note,Section,Certainty,Temporality,Experiencer,SSI_Purpose	ANTIBIOTICS	affirm,ssi_purpose,other_infection_purpose_unknown,completed	SourceDocumentInformation								
+TREAT	COMPLETE_ABX	Note,Section,Certainty,Temporality,Experiencer,SSI_Purpose,OtherInfection_Purpose	ANTIBIOTICS	affirm,ssi_purpose_unknown,other_infection_purpose_unknown,completed	SourceDocumentInformation								
+TREAT	COMPLETE_ABX	Note,Section,Certainty,Temporality,Experiencer,SSI_Purpose,OtherInfection_Purpose	ANTIBIOTICS	affirm,ssi_purpose,no_other_infection_purpose,completed	SourceDocumentInformation								
+TREAT	COMPLETE_ABX	Note,Section,Certainty,Temporality,Experiencer,SSI_Purpose,OtherInfection_Purpose	ANTIBIOTICS	affirm,ssi_purpose_unknown,no_other_infection_purpose,completed	SourceDocumentInformation								
+													
+TREAT	SSI_USE_ABX	Note,Section,Certainty,Temporality,Experiencer,SSI_Purpose,OtherInfection_Purpose	ANTIBIOTICS	affirm,ssi_purpose	SourceDocumentInformation								
+TREAT	OTHER_USE_ABX	Note,Section,Certainty,Temporality,Experiencer,SSI_Purpose,OtherInfection_Purpose	ANTIBIOTICS	affirm,ssi_purpose_unknown,other_infection_purpose	SourceDocumentInformation								
+TREAT	OTHER_USE_ABX	Note,Section,Certainty,Temporality,Experiencer,SSI_Purpose,OtherInfection_Purpose	ANTIBIOTICS	affirm,no_ssi_purpose,other_infection_purpose	SourceDocumentInformation								
+													
+TREAT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	ANTIBIOTICS	affirm,no_ssi_purpose,no_other_infection_purpose	SourceDocumentInformation								
+TREAT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	TREATMENT	affirm,no_ssi_purpose	SourceDocumentInformation								
+TREAT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	TREATMENT	affirm,irrelevant	SourceDocumentInformation
+#as he may need a drain placed or back to the OR. IV saline locked.
+TREAT	IRRE_CONDITION	Note,Section,Certainty,Temporality,Experiencer	TREATMENT	uncertain
+
+TREAT	DAY1_TREATMENT	Note,Section,Certainty,Temporality,Experiencer	TREATMENT	affirm,dayone	SourceDocumentInformation								
+#TREAT	TREATMENT	Note,Section,Certainty,Temporality,Experiencer,SSI_Purpose,OtherInfection_Purpose	ANTIBIOTICS	affirm,patient,present,unknownpurpose	SourceDocumentInformation								
+#TREAT	TREATMENT	Note,Section,Certainty,Temporality,Experiencer,SSI_Purpose,OtherInfection_Purpose	ANTIBIOTICS	affirm,patient,present,ssi	SourceDocumentInformation								
+													
+SURGERY	ABD_SURGERY	Note,Section,Certainty,Temporality,Anatomic	SURGERY	abdomen	SourceDocumentInformation								
+SURGERY	CHEST_SURGERY	Note,Section,Certainty,Temporality,Anatomic	SURGERY	chest	SourceDocumentInformation								
+SURGERY	EXTRE_SURGERY	Note,Section,Certainty,Temporality,Anatomic	SURGERY	extremities	SourceDocumentInformation
+													
+CLOSURE	SKIN_CLOSED	Note,Section,Certainty,Temporality	EXT_INCISION	affirm,closed									
+CLOSURE	NOT_CLOSED	Note,Section,Certainty,Temporality	EXT_INCISION	affirm,notclosed
+
+CLOSURE	FASC_CLOSED	Note,Section,Certainty,Temporality	FASCIA	affirm,closed
+CLOSURE	NOT_CLOSED	Note,Section,Certainty,Temporality	FASCIA	affirm,notclosed
+													
+CLOSURE	SKIN_CLOSED	Note,Section,Certainty,Temporality	SKINGRAFT	affirm,sutured									
+
+

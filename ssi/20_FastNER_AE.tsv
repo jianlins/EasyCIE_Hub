@@ -1,0 +1,1230 @@
+@fastner		
+#UT: urinary track		
+&CONCEPT_FEATURES	INF_STATUS	Concept
+@CONCEPT_FEATURES	UT	Concept
+@CONCEPT_FEATURES	ABD_O_INF	Concept
+@CONCEPT_FEATURES	BL_INFECTION	Concept
+@CONCEPT_FEATURES	ABDOMEN	Concept
+@CONCEPT_FEATURES	SKIN	Concept
+@CONCEPT_FEATURES	ADJ_INFECTION	Concept
+@CONCEPT_FEATURES	ANTIBIOTICS	Concept
+@CONCEPT_FEATURES	BT	Concept
+@CONCEPT_FEATURES	CHEST	Concept
+@CONCEPT_FEATURES	DEHISCENCE	Concept
+@CONCEPT_FEATURES	DRAINAGE	Concept
+@CONCEPT_FEATURES	FISTULA	Concept
+@CONCEPT_FEATURES	INCISION	Concept
+@CONCEPT_FEATURES	POSS_SIGN_S_INF	Concept
+@CONCEPT_FEATURES	INFECTION	Concept
+@CONCEPT_FEATURES	NO_SITE_INFECTION	Concept
+@CONCEPT_FEATURES	OP_NOTE	Concept
+@CONCEPT_FEATURES	OTHER_INFECTION	Concept
+@CONCEPT_FEATURES	OTHER_PAIN	Concept
+@CONCEPT_FEATURES	PAIN	Concept
+@CONCEPT_FEATURES	PERFORATION	Concept
+@CONCEPT_FEATURES	PNEUMONIA	Concept
+@CONCEPT_FEATURES	POSS_ABD_O_INF	Concept
+@CONCEPT_FEATURES	POSS_S_INF	Concept
+@CONCEPT_FEATURES	POSS_INFECTION	Concept
+@CONCEPT_FEATURES	SIGN_SUP_INF	Concept
+@CONCEPT_FEATURES	SIGN_SUP_UTI	Concept
+@CONCEPT_FEATURES	SITE_INFECTION	Concept
+@CONCEPT_FEATURES	SSI	Concept
+@CONCEPT_FEATURES	SURGERY	Concept
+@CONCEPT_FEATURES	TREATMENT	Concept
+@CONCEPT_FEATURES	UTI	Concept
+@CONCEPT_FEATURES	S_INFECTION	Concept
+@CONCEPT_FEATURES	EXTREMITIES	Concept
+@CONCEPT_FEATURES	CHEST_SURGERY	Concept
+@CONCEPT_FEATURES	EXTRE_SURGERY	Concept
+@CONCEPT_FEATURES	ABD_SURGERY	Concept
+@CONCEPT_FEATURES	ABD_O_INF_24H	INF_STATUS
+@CONCEPT_FEATURES	NOT_CLOSED	Concept
+@CONCEPT_FEATURES	SKIN_CLOSED	Concept
+@CONCEPT_FEATURES	FASC_CLOSED	Concept
+@CONCEPT_FEATURES	EXT_INCISION	Concept
+@CONCEPT_FEATURES	FASCIA	Concept
+@CONCEPT_FEATURES	SKINGRAFT	Concept
+@CONCEPT_FEATURES	DEBRIDEMENT	Concept
+@CONCEPT_FEATURES	PROPH_ABX_COND	Concept
+
+
+
+
+#Abdominal incision packed with WTD gauze, erythema appears to be resolving.
+incisional cellulitis	POSS_S_INF
+Surgical site infection	SSI
+incisional phlegmon	SSI
+incisional phlegmon	S_INFECTION	PSEUDO
+
+#perirectal abscess	SITE_INFECTION
+phlegmon	SITE_INFECTION
+empyema	SITE_INFECTION
+abscesses	SITE_INFECTION
+infections	INFECTION
+skin infection	INFECTION	PSEUDO
+skin infection	S_INFECTION
+abscess	SITE_INFECTION
+abscesses	SITE_INFECTION
+infected fluid	SITE_INFECTION
+infected hematoma	SITE_INFECTION
+purulence	SITE_INFECTION
+purulent	SITE_INFECTION
+purulent discharge	SITE_INFECTION
+pus	SITE_INFECTION
+puss	SITE_INFECTION
+soupy	POSS_INFECTION
+
+purulent drainage	SITE_INFECTION
+abscesses planned procedure	SITE_INFECTION	PSEUDO
+abscess planned procedure	SITE_INFECTION	PSEUDO
+abscess drain placement plan	SITE_INFECTION	PSEUDO
+abscesses drain placement plan	SITE_INFECTION	PSEUDO
+
+serous fluid	NO_SITE_INFECTION
+dressings c / d / i	NO_SITE_INFECTION
+
+
+#External anal inspection was significant for erythema and fluctuance in the right posterior perianal skin.
+#TODO need associate with site
+anastamosis	STITCHING
+
+fluctuance	SIGN_SUP_INF
+wound culture	POSS_S_INF
+Vascular Surgery	SURGERY
+debridement	SURGERY
+debrided	SURGERY
+
+
+
+postoperative stitch abscess	SSI
+postoperative stitch abscess	SITE_INFECTION	PSEUDO
+stitch abscess	SSI
+stitch abscess	SITE_INFECTION	PSEUDO
+
+ooze	S_INFECTION
+venous ooze	S_INFECTION	PSEUDO
+sepsis	BL_INFECTION
+septic	BL_INFECTION
+abdominal sepsis	ABD_O_INF
+bowel injury	POSS_ABD_O_INF
+infectious	INFECTION
+infectious diarrhea	INFECTION	PSEUDO
+Infectious surveillance	INFECTION	PSEUDO
+infectious diarrhea	OTHER_INFECTION
+#She was started on albendazole for echinococcal cyst and the Infectious Disease team was consulted during her admission.
+Infectious disease	INFECTION	PSEUDO
+Sepsis Diagnostic Procedures	BL_INFECTION	PSEUDO
+
+
+
+
+#TODO need associate with operation or site
+#Loculations of this pocket were broken up and a penrose drain was placed from the external opening to the anal canal.
+penrose drain	S_INFECTION
+
+#TODO need to ass0ciate with operation
+#Given the anastomotic dehiscence and the soft tissue INFECTION
+infection	INFECTION
+infected	INFECTION
+#may due to sepsis other infection, don't want to be inferred by paragraph inferencer using  large context with anatomic concepts.
+infectious disease management	INFECTION	PSEUDO
+#Infection Control: abx dc'd yesterday, monitor
+infection control	INFECTION	PSEUDO
+
+#He also was found to have concern for wound INFECTION and his incision was opened and packed.
+wound infection	S_INFECTION
+wound infected	S_INFECTION
+wound infection	INFECTION	PSEUDO
+wound infected	INFECTION	PSEUDO
+Feculent drainage	INFECTION
+#chronic wound INFECTION	S_INFECTION	PSEUDO
+
+fistula	FISTULA
+
+#She developed an enterocutaneous fistula with much of the lumen of the bowel exposed.
+#enterocutaneous fistula	FISTULA	PSEUDO
+
+
+#Procedure(s) (LRB): Exploratory Laparotomy w/ Fistula Takedown / Suprapubic Catheter Change / Vac Therapy (N/A)
+Fistula Takedown	FISTULA	PSEUDO
+
+perirectal abscess	ABD_O_INF
+bowel leak	ABD_O_INF
+small bowel leak	ABD_O_INF
+enteroatmospheric fistula	ABD_O_INF
+intraabdominal abscess	ABD_O_INF
+
+
+superficial SSI	SSI
+superficial wound infection	SSI
+#infected incision	SSI
+urinary tract infect	UTI
+UTI	UTI
+uti	UTI
+UTI	UTI
+UTIs	UTI
+urinary infection	UTI
+urinary tract infections	UTI
+urinary tract infection	UTI
+Urinary tract infection	INFECTION	PSEUDO
+Urinary tract infections	INFECTION	PSEUDO
+UTI	UTI
+UTIs	UTI
+UTI	UTI
+UTIs	UTI
+utis	UTI
+#TODO check ua
+#UA	UTI
+UCx	UTI
+#Weak urine stream; no dysuria,
+weak urine stream 	SIGN_SUP_UTI
+dysuria	SIGN_SUP_UTI
+urinary urgency	SIGN_SUP_UTI
+frequent urination	SIGN_SUP_UTI
+urgent urination	SIGN_SUP_UTI
+
+
+
+
+postoperative wound infections	SSI
+surgical wound infection	SSI
+#SSI	SSI
+infected wound	INFECTION
+postoperative wound infection	SSI
+surgical wound infection	SSI
+
+
+
+
+
+
+cellulitis	POSS_S_INF
+
+
+
+
+
+pneumoniae antigen	PNEUMONIA	PSEUDO
+pneumonia antigen	PNEUMONIA	PSEUDO
+pneumonia	PNEUMONIA
+pneumoniae	PNEUMONIA
+pna vs pneumonitis	PNEUMONIA
+pneumonias	PNEUMONIA
+pneumonitis	PNEUMONIA
+pulmonary inflammation	PNEUMONIA
+lung inflammation	PNEUMONIA
+pna	PNEUMONIA
+pneumonia	PNEUMONIA
+pneumonias	PNEUMONIA
+pneumoniae	PNEUMONIA
+pneumonitis	PNEUMONIA
+pulmonary inflammation	PNEUMONIA
+unspecified pneumonia	PNEUMONIA
+HCAP	PNEUMONIA
+tracheal aspirate	PNEUMONIA
+vap	PNEUMONIA
+
+incisional	INCISION
+#Abdomen: Soft, non-distended, midline incisional wound vac with pink ostomy with stool in the bag
+incisional wound vac	INCISION	PSEUDO
+incisions	INCISION
+surgical incision	INCISION
+surgical incisions	INCISION
+#wound	INCISION
+#wounds	INCISION
+incision	INCISION
+post surgical scar	INCISION
+surgical incision	INCISION
+surgical incisions	INCISION
+surgical site	INCISION
+surgical sites	INCISION
+surgical wound	INCISION
+phlebectomy site	INCISION
+fistulotomy site	INCISION
+
+cellulitis	POSS_S_INF
+phlegmon	INFECTION
+infection	INFECTION
+
+pain	PAIN
+pain controlled	PAIN	PSEUDO
+pain control	PAIN	PSEUDO
+pain evaluation	PAIN	PSEUDO
+pain eval	PAIN	PSEUDO
+
+
+
+cultures \w+ +	INFECTION
+cultures \w+ \w+ +	INFECTION
+cultures \w+ \w+ \w+ +	INFECTION
+culture \w+ +	INFECTION
+culture \w+ \w+ +	INFECTION
+culture \w+ \w+ \w+ +	INFECTION
+
+cultures \w+ positive	INFECTION
+cultures \w+ \w+ positive	INFECTION
+cultures \w+ \w+ \w+ positive	INFECTION
+culture \w+ positive	INFECTION
+culture \w+ \w+ positive	INFECTION
+culture \w+ \w+ \w+ positive	INFECTION
+
+biliosanguineous	POSS_INFECTION
+
+dark serosanguanous	POSS_INFECTION
+bile leak	POSS_ABD_O_INF
+#pancreatic leak	POSS_ABD_O_INF
+#peri - pancreatic hemorrhage	POSS_ABD_O_INF
+#peri - pancreatic hemorrhagic fluid	POSS_ABD_O_INF
+#pancreatic \w+ collection	POSS_ABD_O_INF
+pancreatic collection	POSS_ABD_O_INF
+perihepatic collection	POSS_ABD_O_INF
+ir drain	POSS_ABD_O_INF
+ir drainage	POSS_ABD_O_INF
+intra - abdominal contamination	ABD_O_INF
+#Peritonitis	ABD_O_INF
+contamination of abdomen	ABD_O_INF
+panniculitis	INFECTION
+
+
+ankle	EXTREMITIES
+groin	EXTREMITIES
+groins	EXTREMITIES
+axillary	CHEST
+axilla	CHEST
+phlebectomy	EXTREMITIES
+phlebectomy	SURGERY
+hernia repair	SURGERY
+pancreatic leak	SURGERY
+bile leak	SURGERY
+pancreatic \w+ collection	SURGERY
+pancreatic collection	SURGERY
+pancreatic drain	SURGERY
+perihepatic collection	SURGERY
+perihepatic drain	SURGERY
+laparotomy	SURGERY
+laparotomies	SURGERY
+drainage	SURGERY
+
+#she had an infection after surgery.
+after \( surgery	SURGERY
+surgery	SURGERY
+Nissen	SURGERY
+Whipple procedure	SURGERY
+Whipple procedure	ABD_SURGERY
+Whipple procedure	ABDOMEN
+appendectomy	ABDOMEN
+Whipple on	ABDOMEN
+gastrectomy	ABDOMEN
+gastric	ABDOMEN
+ileostomy	ABDOMEN
+pneumatosis	ABDOMEN
+Roux limb	ABDOMEN
+roux - en - Y	ABDOMEN
+stomach	ABDOMEN
+jejunum	ABDOMEN
+ileum	ABDOMEN
+intestine	ABDOMEN
+iliac	ABDOMEN
+
+gastrectomy	ABD_SURGERY
+appendectomy	ABD_SURGERY
+Whipple on	ABD_SURGERY
+small bowel resection	ABD_SURGERY
+ileostomy	ABD_SURGERY
+transplant	SURGERY
+renal transplant	ABD_SURGERY
+liver transplant	ABD_SURGERY
+roux - en - Y	ABD_SURGERY
+Laparoscopic roux - en - Y gastric bypass	ABD_SURGERY
+roux - en - Y gastric bypass	ABD_SURGERY
+perineal resection	ABD_SURGERY
+
+
+
+SSG output	POSS_ABD_O_INF
+necrotic \w+ colon	POSS_ABD_O_INF
+necrotic colon	POSS_ABD_O_INF
+necrotic intestine	POSS_ABD_O_INF
+necrotic jejunum	POSS_ABD_O_INF
+necrotic ileum	POSS_ABD_O_INF
+#1- with minimal SSG output, JP#2- with minimal serous output, IR drain LUQ- minimal dark SSG outputSSG output	POSS_INFECTION
+Abdominal post - op fluid collection	POSS_ABD_O_INF
+
+jp drain	DRAINAGE
+discharge	DRAINAGE
+discharge today	DRAINAGE	PSEUDO
+to discharge	DRAINAGE	PSEUDO
+discharge after	DRAINAGE	PSEUDO
+Discharge Diagnoses	DRAINAGE	PSEUDO
+Discharge Diagnose	DRAINAGE	PSEUDO
+Discharge Diagnosis	DRAINAGE	PSEUDO
+Discharge Disposition	DRAINAGE	PSEUDO
+Admission , Discharge	DRAINAGE	PSEUDO
+Admission Discharge	DRAINAGE	PSEUDO
+time of discharge	DRAINAGE	PSEUDO
+at discharge	DRAINAGE	PSEUDO
+discharge criteria	DRAINAGE	PSEUDO
+Discharge anticipated	DRAINAGE	PSEUDO
+Discharge tomorrow	DRAINAGE	PSEUDO
+
+
+darkins	TREATMENT
+darkin	TREATMENT
+unasyn	ANTIBIOTICS
+doxycycline	ANTIBIOTICS
+Keflex	ANTIBIOTICS
+TMP - SMX	ANTIBIOTICS
+
+antibiotics	ANTIBIOTICS
+antibiotic	ANTIBIOTICS
+abscess drain	TREATMENT
+abscess drainage	TREATMENT
+
+cefdinir	ANTIBIOTICS
+Clindamycin	ANTIBIOTICS
+augmentin	ANTIBIOTICS
+Levaquin	ANTIBIOTICS
+zosyn	ANTIBIOTICS
+ampillicin	ANTIBIOTICS
+clindamycin	ANTIBIOTICS
+Penicillin	ANTIBIOTICS
+Ofloxacin	ANTIBIOTICS
+Norfloxacin	ANTIBIOTICS
+Ciprofloxacin	ANTIBIOTICS
+Cipro	ANTIBIOTICS
+Cephalexin	ANTIBIOTICS
+Cefadroxil	ANTIBIOTICS
+Cefradine	ANTIBIOTICS
+Ceftriaxone	ANTIBIOTICS
+Cefuroxime	ANTIBIOTICS
+Cefotiam	ANTIBIOTICS
+Sulbactam	ANTIBIOTICS
+Cefoperazone	ANTIBIOTICS
+Cefotaxime	ANTIBIOTICS
+Ceftazidime	ANTIBIOTICS
+Rosёlphin	ANTIBIOTICS
+Metronidazole	ANTIBIOTICS
+Tinidazole	ANTIBIOTICS
+Ornidazole	ANTIBIOTICS
+Vancomycin	ANTIBIOTICS
+Vanco	ANTIBIOTICS
+VANCOCIN	ANTIBIOTICS
+Piperacillin	ANTIBIOTICS
+Oxypiperazine penicillin	ANTIBIOTICS
+Piperacillin tazobactam	ANTIBIOTICS
+meropenem	ANTIBIOTICS
+merrem	ANTIBIOTICS
+mero	ANTIBIOTICS
+merro	ANTIBIOTICS
+vanc	ANTIBIOTICS
+
+
+nystatin	ANTIBIOTICS
+
+Cephalosporin	ANTIBIOTICS
+dakins	TREATMENT
+bactrim	ANTIBIOTICS
+diflucan	ANTIBIOTICS
+drain placed	TREATMENT
+placed drainage	TREATMENT
+placed a drainage	TREATMENT
+placed drain	TREATMENT
+placed drains	TREATMENT
+#he had a sudden onset of bright red blood from his operatively placed drain associated with blood pressure lability
+his \w+ placed drain	TREATMENT	PSEUDO
+her \w+ placed drain	TREATMENT	PSEUDO
+the \w+ placed drain	TREATMENT	PSEUDO
+his placed drain	TREATMENT	PSEUDO
+her placed drain	TREATMENT	PSEUDO
+the placed drain	TREATMENT	PSEUDO
+
+placing drains	TREATMENT
+placing a drain	TREATMENT
+placed a drain	TREATMENT
+opened and packed	TREATMENT
+reopened and packed	TREATMENT
+opened and drained	TREATMENT
+was drained	TREATMENT
+drained	TREATMENT
+
+## JP Drain
+# - 180 ml drained
+ml drained	TREATMENT	PSEUDO
+drained \w+ ml	TREATMENT	PSEUDO
+reopened and drained	TREATMENT
+#She has four drains in place with daily outputs ranging from 20 to 25 mL to 40 to 50 mL depending on drain placement.
+#drain placement	TREATMENT
+return to OR	TREATMENT
+drain was placed	TREATMENT
+
+wound opened	TREATMENT
+
+
+abx	ANTIBIOTICS
+
+drain	DRAINAGE
+drainage	DRAINAGE
+draining	DRAINAGE
+drains	DRAINAGE
+ooze	DRAINAGE
+oozing	DRAINAGE
+serous	DRAINAGE
+soupy	DRAINAGE
+turbid	DRAINAGE
+drainage	DRAINAGE
+purulent	DRAINAGE
+
+
+
+
+
+
+
+
+
+
+culture	BT
+cx	BT
+cultures	BT
+
+discharge information	DRAINAGE	PSEUDO
+discharge date	DRAINAGE	PSEUDO
+discharge summary	DRAINAGE	PSEUDO
+discharge summaries	DRAINAGE	PSEUDO
+discharge condition	DRAINAGE	PSEUDO
+for discharge	DRAINAGE	PSEUDO
+discharge instructions	DRAINAGE	PSEUDO
+discharge instruction	DRAINAGE	PSEUDO
+discharge medication	DRAINAGE	PSEUDO
+discharge medications	DRAINAGE	PSEUDO
+disposition : discharge	DRAINAGE	PSEUDO
+disposition discharge	DRAINAGE	PSEUDO
+discharge to	DRAINAGE	PSEUDO
+since discharge	DRAINAGE	PSEUDO
+date of discharge	DRAINAGE	PSEUDO
+day of discharge	DRAINAGE	PSEUDO
+anticipate discharge	DRAINAGE	PSEUDO
+expect discharge	DRAINAGE	PSEUDO
+to discharge	DRAINAGE	PSEUDO
+on discharge	DRAINAGE	PSEUDO
+at discharge	DRAINAGE	PSEUDO
+
+bowel	ABDOMEN
+small bowel	ABDOMEN
+laparotomy	ABDOMEN
+perihepatic	ABDOMEN
+pancreatic	ABDOMEN
+ileostomy	ABDOMEN
+colostomy	ABDOMEN
+laparotomies	ABDOMEN
+laparotomy	ABDOMEN
+ostomy	ABDOMEN
+abd	ABDOMEN
+abdomen	ABDOMEN
+abdominal	ABDOMEN
+ventral	ABDOMEN
+laparoscopic	ABDOMEN
+laparscope	ABDOMEN
+cholecystectomy	ABDOMEN
+anast	ABDOMEN
+anastamosis	ABDOMEN
+anastamotic	ABDOMEN
+umbilical	ABDOMEN
+appendicits	ABDOMEN
+rectal	ABDOMEN
+intraperitoneally	ABDOMEN
+intraperitoneal	ABDOMEN
+peritoneal	ABDOMEN
+peritoneally	ABDOMEN
+subxiphoid	ABDOMEN
+liver	ABDOMEN
+
+mediastinum	CHEST
+mediastinal	CHEST
+chest	CHEST
+thoracic	CHEST
+esophagus	CHEST
+esophageal	CHEST
+thoracoscopic	CHEST
+mastectomy	CHEST
+breast	CHEST
+sternotomy	CHEST
+sternum	CHEST
+
+mastectomy	CHEST_SURGERY
+
+
+fundoplication	ABDOMEN
+#Abscess with associated panniculitis of the right medial thigh.
+#panniculitis	ABDOMEN
+diverticulitis	ABDOMEN
+colectomy	ABDOMEN
+diverticulitis	OTHER_INFECTION
+viral infection	OTHER_INFECTION
+viral infection	INFECTION	PSEUDO
+
+#Less likely would be post infectious GN, or AIN
+GN	OTHER_INFECTION
+AIN	OTHER_INFECTION
+
+post op	SURGERY
+post - op	SURGERY
+post - operative	SURGERY
+post - operation	SURGERY
+#laparscope	SURGERY
+#laparoscopic	SURGERY
+#cholecystectomy	SURGERY
+#ileostomy	SURGERY
+#colostomy	SURGERY
+#colectomy	SURGERY
+
+laparscope	ABD_SURGERY
+laparoscopic	ABD_SURGERY
+laparotomies	ABD_SURGERY
+laparotomy	ABD_SURGERY
+cholecystectomy	ABD_SURGERY
+ileostomy	ABD_SURGERY
+colostomy	ABD_SURGERY
+colectomy	ABD_SURGERY
+Nissen fundoplication	ABD_SURGERY
+Nissen	ABD_SURGERY
+hemicolectomy	ABD_SURGERY
+
+surgical incision	SURGERY
+surgical incisions	SURGERY
+surgical site	SURGERY
+surgical sites	SURGERY
+surgical wound	SURGERY
+sutures	SURGERY
+
+ostomy	SURGERY
+anastamosis	SURGERY
+anastomosis	SURGERY
+anastomotic	SURGERY
+anastamotic	SURGERY
+fundoplication	SURGERY
+resection	SURGERY
+pod \d+	SURGERY
+#mastectomy	SURGERY
+
+
+leukocytosis	BL_INFECTION
+
+
+
+#Abdomen: soft, mildly tender at abdominal surgical site incision present with lower mid abdominal wound, packed.
+# tender + action
+warmth	SIGN_SUP_INF
+#warm	SIGN_SUP_INF
+
+feculent material	SIGN_SUP_INF
+
+
+#hematoma	POSS_SIGN_S_INF
+erythemas	POSS_SIGN_S_INF
+erythematous	POSS_SIGN_S_INF
+erythematous mucosa	POSS_SIGN_S_INF	PSEUDO
+minor erythema	POSS_SIGN_S_INF	PSEUDO
+erythema	POSS_SIGN_S_INF
+erythema nodosum	POSS_SIGN_S_INF	PSEUDO
+red	POSS_SIGN_S_INF
+red rash	POSS_SIGN_S_INF	PSEUDO
+red Team	POSS_SIGN_S_INF	PSEUDO
+red yeast rice	POSS_SIGN_S_INF	PSEUDO
+red \w+ rice	POSS_SIGN_S_INF	PSEUDO
+redness	POSS_SIGN_S_INF
+subcutaneous fluid collections	POSS_S_INF
+
+red \w+ catheter	POSS_SIGN_S_INF	PSEUDO
+red catheter	POSS_SIGN_S_INF	PSEUDO
+
+red blood	POSS_SIGN_S_INF	PSEUDO
+induration	POSS_SIGN_S_INF
+indurations	POSS_SIGN_S_INF
+
+#Breasts: R breast and axillary incisions, L breast and axillary incsions all well-healing, with some residual induration.
+residual induration	POSS_SIGN_S_INF	PSEUDO
+residual indurations	POSS_SIGN_S_INF	PSEUDO
+
+swelled	SIGN_SUP_INF
+swelling	SIGN_SUP_INF
+swollen	SIGN_SUP_INF
+#Abdomen: soft and appropriately post-op tender, dressings removed Insicion c/d
+
+postoperative tender	SIGN_SUP_INF	PSEUDO
+post op tender	SIGN_SUP_INF	PSEUDO
+post - op tender	SIGN_SUP_INF	PSEUDO
+postop tender	SIGN_SUP_INF	PSEUDO
+post-op tender	SIGN_SUP_INF	PSEUDO
+
+postoperative tenderness	SIGN_SUP_INF	PSEUDO
+post op tenderness	SIGN_SUP_INF	PSEUDO
+post - op tenderness	SIGN_SUP_INF	PSEUDO
+postop tenderness	SIGN_SUP_INF	PSEUDO
+post-op tenderness	SIGN_SUP_INF	PSEUDO
+appropriate tender	SIGN_SUP_INF	PSEUDO
+appropriately tender	SIGN_SUP_INF	PSEUDO
+no - tender	SIGN_SUP_INF	PSEUDO
+non - tender	SIGN_SUP_INF	PSEUDO
+non tender	SIGN_SUP_INF	PSEUDO
+nontender	SIGN_SUP_INF	PSEUDO
+mildly tender	SIGN_SUP_INF	PSEUDO
+mild tender	SIGN_SUP_INF	PSEUDO
+mild tenderness	SIGN_SUP_INF	PSEUDO
+
+tenderness	SIGN_SUP_INF
+tender	SIGN_SUP_INF
+#appropriate tenderness associated with incision
+approriately tender	SIGN_SUP_INF	PSEUDO
+approriate tenderness	SIGN_SUP_INF	PSEUDO
+appropriate tenderness	SIGN_SUP_INF	PSEUDO
+back tender	SIGN_SUP_INF	PSEUDO
+soft tender	SIGN_SUP_INF	PSEUDO
+back tenderness	SIGN_SUP_INF	PSEUDO
+fluid collection	SIGN_SUP_INF
+
+had \w+ WBC	SIGN_SUP_INF
+had WBC	SIGN_SUP_INF
+elevated WBC	SIGN_SUP_INF
+
+
+
+leakage of anastamosis	DEHISCENCE
+
+leakage of anastamotic	DEHISCENCE
+leakage \w+ \w+ \w+ \w+ anastamosis	DEHISCENCE
+leakage \w+ \w+ \w+ \w+ anastamotic	DEHISCENCE
+leakage \w+ \w+ \w+ anastamosis	DEHISCENCE
+leakage \w+ \w+ \w+ anastamotic	DEHISCENCE
+leakage \w+ \w+ anastamosis	DEHISCENCE
+leakage \w+ \w+ anastamotic	DEHISCENCE
+leakage of anastomosis	DEHISCENCE
+leakage of anastomotic	DEHISCENCE
+leakage \w+ \w+ \w+ \w+ anastomosis	DEHISCENCE
+leakage \w+ \w+ \w+ \w+ anastomotic	DEHISCENCE
+leakage \w+ \w+ \w+ anastomosis	DEHISCENCE
+leakage \w+ \w+ \w+ anastomotic	DEHISCENCE
+leakage \w+ \w+ anastomosis	DEHISCENCE
+leakage \w+ \w+ anastomotic	DEHISCENCE
+
+anastomotic leak	DEHISCENCE
+
+leaking of anastamosis	DEHISCENCE
+leaking of anastamotic	DEHISCENCE
+leaking \w+ \w+ \w+ \w+ anastamosis	DEHISCENCE
+leaking \w+ \w+ \w+ \w+ anastamotic	DEHISCENCE
+leaking \w+ \w+ \w+ anastamosis	DEHISCENCE
+leaking \w+ \w+ \w+ anastamotic	DEHISCENCE
+leaking \w+ \w+ anastamosis	DEHISCENCE
+leaking \w+ \w+ anastamotic	DEHISCENCE
+leaking of anastomosis	DEHISCENCE
+leaking of anastomotic	DEHISCENCE
+leaking \w+ \w+ \w+ \w+ anastomosis	DEHISCENCE
+leaking \w+ \w+ \w+ \w+ anastomotic	DEHISCENCE
+leaking \w+ \w+ \w+ anastomosis	DEHISCENCE
+leaking \w+ \w+ \w+ anastomotic	DEHISCENCE
+leaking \w+ \w+ anastomosis	DEHISCENCE
+leaking \w+ \w+ anastomotic	DEHISCENCE
+
+leak of anastamosis	DEHISCENCE
+leak of anastamotic	DEHISCENCE
+leak \w+ \w+ \w+ \w+ anastamosis	DEHISCENCE
+leak \w+ \w+ \w+ \w+ anastamotic	DEHISCENCE
+leak \w+ \w+ \w+ anastamosis	DEHISCENCE
+leak \w+ \w+ \w+ anastamotic	DEHISCENCE
+leak \w+ \w+ anastamosis	DEHISCENCE
+leak \w+ \w+ anastamotic	DEHISCENCE
+leak of anastomosis	DEHISCENCE
+leak of anastomotic	DEHISCENCE
+leak \w+ \w+ \w+ \w+ anastomosis	DEHISCENCE
+leak \w+ \w+ \w+ \w+ anastomotic	DEHISCENCE
+leak \w+ \w+ \w+ anastomosis	DEHISCENCE
+leak \w+ \w+ \w+ anastomotic	DEHISCENCE
+leak \w+ \w+ anastomosis	DEHISCENCE
+leak \w+ \w+ anastomotic	DEHISCENCE
+
+#dehiscence of \w+ anastomosis	DEHISCENCE
+#dehiscence of \w+ \w+ anastomosis	DEHISCENCE
+#dehiscence of \w+ \w+ \w+ anastomosis	DEHISCENCE
+#dehiscence of \w+ \w+ \w+ \w+ anastomosis	DEHISCENCE
+#to open	DEHISCENCE
+#I opened	DEHISCENCE
+#opened	DEHISCENCE
+#opening	DEHISCENCE
+#dehiscence	DEHISCENCE
+#facial dehicence	DEHISCENCE
+#fascial dehiscence	DEHISCENCE
+#dehicence	DEHISCENCE
+#dehiscence	DEHISCENCE
+#dehiscence of wound	DEHISCENCE
+#incision opened	DEHISCENCE
+#opened	DEHISCENCE
+#reopened	DEHISCENCE
+
+anastomotic repair	DEHISCENCE
+wound dehiscence	S_INFECTION
+
+
+coloanal anastomosis disruption	SSI
+colon anastomosis disruption	SSI
+
+
+#stool in the subQ tissue
+stool \w+ \w+ subQ tissue	SSI
+stool \w+ \w+ subcutaneous tissue	SSI
+stool \w+ \w+ under skin	SSI
+feces \w+ \w+ subQ tissue	SSI
+feces \w+ \w+ subcutaneous tissue	SSI
+feces \w+ \w+ under skin	SSI
+excremental \w+ \w+ subQ tissue	SSI
+excremental \w+ \w+ subcutaneous tissue	SSI
+excremental \w+ \w+ under skin	SSI
+fecal \w+ \w+ subQ tissue	SSI
+fecal \w+ \w+ subcutaneous tissue	SSI
+fecal \w+ \w+ under skin	SSI
+excrementitious \w+ \w+ subQ tissue	SSI
+excrementitious \w+ \w+ subcutaneous tissue	SSI
+excrementitious \w+ \w+ under skin	SSI
+
+stool \w+ subQ tissue	SSI
+stool \w+ subcutaneous tissue	SSI
+stool \w+ under skin	SSI
+feces \w+ subQ tissue	SSI
+feces \w+ subcutaneous tissue	SSI
+feces \w+ under skin	SSI
+excremental \w+ subQ tissue	SSI
+excremental \w+ subcutaneous tissue	SSI
+excremental \w+ under skin	SSI
+fecal \w+ subQ tissue	SSI
+fecal \w+ subcutaneous tissue	SSI
+fecal \w+ under skin	SSI
+excrementitious \w+ subQ tissue	SSI
+excrementitious \w+ subcutaneous tissue	SSI
+excrementitious \w+ under skin	SSI
+
+
+stool \w+ \w+ \w+ subQ tissue	SSI
+stool \w+ \w+ \w+ subcutaneous tissue	SSI
+stool \w+ \w+ \w+ under skin	SSI
+feces \w+ \w+ \w+ subQ tissue	SSI
+feces \w+ \w+ \w+ subcutaneous tissue	SSI
+feces \w+ \w+ \w+ under skin	SSI
+excremental \w+ \w+ \w+ subQ tissue	SSI
+excremental \w+ \w+ \w+ subcutaneous tissue	SSI
+excremental \w+ \w+ \w+ under skin	SSI
+fecal \w+ \w+ \w+ subQ tissue	SSI
+fecal \w+ \w+ \w+ subcutaneous tissue	SSI
+fecal \w+ \w+ \w+ under skin	SSI
+excrementitious \w+ \w+ \w+ subQ tissue	SSI
+excrementitious \w+ \w+ \w+ subcutaneous tissue	SSI
+excrementitious \w+ \w+ \w+ under skin	SSI
+
+
+#dehiscence of delorme procedure
+
+#dehiscence of delorme	INFECTION
+#dehiscence of \w+ delorme	INFECTION
+#dehiscence of \w+ \w+ delorme	INFECTION
+
+##dehiscence of the delorme anastomosis
+
+
+
+delorme	STITCHING
+anastomosis	STITCHING
+anastomotic	STITCHING
+altemeier	STITCHING
+reanastomosis	STITCHING
+
+diabetes \w+ ssi	SSI	PSEUDO
+diabetes \w+ \w+ ssi	SSI	PSEUDO
+diabetes \w+ \w+ \w+ ssi	SSI	PSEUDO
+diabetes \w+ \w+ \w+ \w+ ssi	SSI	PSEUDO
+diabetes ssi	SSI	PSEUDO
+
+
+Endocrine ssi	SSI	PSEUDO
+Endocrine \w+ ssi	SSI	PSEUDO
+Endocrine \w+ \w+ ssi	SSI	PSEUDO
+Endocrine \w+ \w+ \w+ ssi	SSI	PSEUDO
+Endocrine \w+ \w+ \w+ \w+ ssi	SSI	PSEUDO
+Endocrine ssi	SSI	PSEUDO
+
+bg \w+ ssi	SSI	PSEUDO
+bg \w+ \w+ ssi	SSI	PSEUDO
+bg \w+ \w+ \w+ ssi	SSI	PSEUDO
+bg \w+ \w+ \w+ \w+ ssi	SSI	PSEUDO
+bg ssi	SSI	PSEUDO
+
+ssi \w+ bg	SSI	PSEUDO
+ssi \w+ \w+ bg	SSI	PSEUDO
+ssi \w+ \w+ \w+ bg	SSI	PSEUDO
+ssi \w+ \w+ \w+ \w+ bg	SSI	PSEUDO
+
+
+continue ssi	SSI	PSEUDO
+on ssi	SSI	PSEUDO
+ssi diet	SSI	PSEUDO
+ssi \w+ diet	SSI	PSEUDO
+ssi \w+ \w+ diet	SSI	PSEUDO
+
+
+#adjacent infection with abdomen symptoms or signs, e.g. esophagus perforation
+esophagus perforation	ADJ_INFECTION
+esophageal perforation	ADJ_INFECTION
+
+
+#Operative Note	OP_NOTE
+#OPERATIVE REPORT	OP_NOTE
+#Op Note	OP_NOTE
+#OP NOTE	OP_NOTE
+
+perforation	PERFORATION
+perforated	PERFORATION
+perforate	PERFORATION
+perforated stercorol	PERFORATION	PSEUDO
+perforated \w+ ulcer	PERFORATION	PSEUDO
+perforated ulcer	PERFORATION	PSEUDO
+Stercoral perforation	PERFORATION	PSEUDO
+Stercoral perforated	PERFORATION	PSEUDO
+perforation closure	PERFORATION	PSEUDO
+close perforation	PERFORATION	PSEUDO
+aorta perforation	PERFORATION	PSEUDO
+aortic perforation	PERFORATION	PSEUDO
+
+
+
+osteomyelitis	OTHER_INFECTION
+pancreatitis	OTHER_INFECTION
+
+#Pain Evaluation Primary diagnosis: acute postoperative pain.
+post op pain	OTHER_PAIN
+post - op pain	OTHER_PAIN
+postoperative pain	OTHER_PAIN
+postoperative pain	PAIN	PSEUDO
+post op pain	PAIN	PSEUDO
+post - op pain	PAIN	PSEUDO
+chronic pain	OTHER_PAIN
+
+
+
+wound opened	TREATMENT
+
+
+wrist	EXTREMITIES
+hand	EXTREMITIES
+hand sewn	EXTREMITIES	PSEUDO
+hand - sewn	EXTREMITIES	PSEUDO
+foot	EXTREMITIES
+arm	EXTREMITIES
+leg	EXTREMITIES
+forearm	EXTREMITIES
+extremities	EXTREMITIES
+RLE	EXTREMITIES
+LLE	EXTREMITIES
+RUE	EXTREMITIES
+LUE	EXTREMITIES
+PICC line	EXTREMITIES
+intramuscular	EXTREMITIES
+limb	EXTREMITIES
+Roux limb	EXTREMITIES	PSEUDO
+biliopancreatic limb	EXTREMITIES	PSEUDO
+ble	EXTREMITIES
+bue	EXTREMITIES
+
+UIT	UT
+urine	UT
+
+#- UA +, started on Cipro. F/u cx.
+UA +	UT
+UA +	UTI
+urinary infection	UTI
+
+
+#appendicitis with perforation
+appendicitis \w+ perforation	PERFORATION	PSEUDO
+appendicitis perforation	PERFORATION	PSEUDO
+perforated appendicitis	PERFORATION	PSEUDO
+
+appendicitis \w+ perforation	OTHER_INFECTION	PSEUDO
+appendicitis perforation	OTHER_INFECTION	PSEUDO
+perforated appendicitis	OTHER_INFECTION	PSEUDO
+
+appendicitis \w+ perforation	ABD_O_INF_24H
+appendicitis perforation	ABD_O_INF_24H
+perforated appendicitis	ABD_O_INF_24H
+
+
+
+diverticulitis \w+ perforation	PERFORATION	PSEUDO
+diverticulitis perforation	PERFORATION	PSEUDO
+perforated diverticulitis	PERFORATION	PSEUDO
+
+diverticulitis \w+ perforation	OTHER_INFECTION	PSEUDO
+diverticulitis perforation	OTHER_INFECTION	PSEUDO
+perforated diverticulitis	OTHER_INFECTION	PSEUDO
+
+diverticulitis \w+ perforation	ABD_O_INF_24H
+diverticulitis perforation	ABD_O_INF_24H
+perforated diverticulitis	ABD_O_INF_24H
+
+gangrene	SIGN_SUP_INF
+Fournier gangrene	INFECTION
+Fournier ' s gangrene	INFECTION
+Fournier's gangrene	INFECTION
+Fourniers gangrene	INFECTION
+gangrenous	SIGN_SUP_INF
+dry gangrene	SIGN_SUP_INF	PSEUDO
+dry - gangrene	SIGN_SUP_INF	PSEUDO
+
+gastric sleeve surgery	ABD_SURGERY
+#gastric sleeve surgery	SURGERY	PSEUDO
+
+#No chest pain
+no chest	CHEST	PSEUDO
+
+respiratory infection	OTHER_INFECTION
+infection prevention	INFECTION	PSEUDO
+wound infection prevention	INFECTION	PSEUDO
+wound infection prevention	S_INFECTION	PSEUDO
+
+
+#Abdominal:   Expected redness at incision
+expected redness	POSS_SIGN_S_INF	PSEUDO
+
+skin	SKIN
+erythema	SKIN
+wound	SKIN
+wounds	SKIN
+#Inferior aspect of the wound was closed to prevent further necrosis and infection of the tissue.
+inferior \w+  \w+  \w+ wound	SKIN	PSEUDO
+inferior \w+  \w+ wound	SKIN	PSEUDO
+inferior \w+ wound	SKIN	PSEUDO
+inferior wound	SKIN	PSEUDO
+
+wound	EXT_INCISION
+wounds	EXT_INCISION
+inferior \w+  \w+  \w+ wound	EXT_INCISION	PSEUDO
+inferior \w+  \w+ wound	EXT_INCISION	PSEUDO
+inferior \w+ wound	EXT_INCISION	PSEUDO
+inferior wound	EXT_INCISION	PSEUDO
+
+
+inferior \w+  \w+  \w+ wound	FASCIA
+inferior \w+  \w+ wound	FASCIA
+inferior \w+ wound	FASCIA
+inferior wound	FASCIA
+
+
+#Wound care completed in clinic, clean dressing change, plan to follow up on 2/11
+#TODO differentiate different type of healing?
+wound care completed	HEALED_INFECTION
+
+#infectious disease clinic appointment
+infectious \w+ clinic	INFECTION	PSEUDO
+infectious clinic	INFECTION	PSEUDO
+
+#7. Weight loss- will continue to monitor, most likely related to acute infection, diarrhea, and patient fasting
+acute infection	INFECTION	PSEUDO
+
+infectious colitis	INFECTION	PSEUDO
+infectious colitis	OTHER_INFECTION
+
+respiratory infection	INFECTION	PSEUDO
+respiratory infection	OTHER_INFECTION
+
+#respiratory tract infection
+respiratory \w+ infection	INFECTION	PSEUDO
+respiratory \w+ infection	OTHER_INFECTION
+
+Kidney infection	INFECTION	PSEUDO
+Kidney infections	INFECTION	PSEUDO
+Kidney infection	OTHER_INFECTION
+Kidney infections	OTHER_INFECTION
+
+
+yeast infection	INFECTION	PSEUDO
+yeast infection	OTHER_INFECTION
+yeast infections	INFECTION	PSEUDO
+yeast infections	OTHER_INFECTION
+
+bladder infections	INFECTION	PSEUDO
+bladder infections	UTI
+bladder infection	INFECTION	PSEUDO
+bladder infection	UTI
+
+#Immunizations and Infections:
+infections :	INFECTION	PSEUDO
+
+
+#is inked black. The lateral surface is inked red. The medial surface is inked orange.
+inked red	POSS_SIGN_S_INF	PSEUDO
+
+#On POD #4 wound was debrided further at bedside w/ significant purulence noted at the base of the 1st toe and w/in the wound on the plantar surface of the foot.
+toe	EXTREMITIES
+foot	EXTREMITIES
+feet	EXTREMITIES
+
+
+midline incision	ABDOMEN
+
+
+skin	EXT_INCISION
+incision	EXT_INCISION
+incisions	EXT_INCISION
+external	EXT_INCISION
+#The external oblique fascia was closed
+external fascia	EXT_INCISION	PSEUDO
+external \w+ fascia	EXT_INCISION	PSEUDO
+external \w+ \w+ fascia	EXT_INCISION	PSEUDO
+
+wound	EXT_INCISION
+subcutaneous	EXT_INCISION
+dermis	EXT_INCISION
+subcuticular	EXT_INCISION
+#TODO	SKIN_CLOSED
+homograft	SKINGRAFT
+homografts	SKINGRAFT
+skin graft	SKINGRAFT
+skin flap	SKINGRAFT
+skin flaps	SKINGRAFT
+skin grafts	SKINGRAFT
+skin substitutes	SKINGRAFT
+skin substitute	SKINGRAFT
+biobrane	SKINGRAFT
+transcyte	SKINGRAFT
+dermagraft	SKINGRAFT
+apligraf	SKINGRAFT
+
+
+was left open and wrapped	NOT_CLOSED
+pack the wound with Dakin	NOT_CLOSED
+pack the wound with Kerlix	NOT_CLOSED
+not to close at this time	NOT_CLOSED
+guillotine amputation	NOT_CLOSED
+
+approximated fascia	FASC_CLOSED
+approximated \w+ fascia	FASC_CLOSED
+fascia approximated	FASC_CLOSED
+fascia \w+ approximated	FASC_CLOSED
+fascia \w+ \w+ approximated	FASC_CLOSED
+fascia \w+ \w+ \w+ approximated	FASC_CLOSED
+
+closed fascia	FASC_CLOSED
+closed \w+ fascia	FASC_CLOSED
+fascia closed	FASC_CLOSED
+fascia \w+ closed	FASC_CLOSED
+fascia \w+ \w+ closed	FASC_CLOSED
+fascia \w+ \w+ \w+ closed	FASC_CLOSED
+
+reapproximated fascia	FASC_CLOSED
+reapproximated \w+ fascia	FASC_CLOSED
+fascia reapproximated	FASC_CLOSED
+fascia \w+ reapproximated	FASC_CLOSED
+fascia \w+ \w+ reapproximated	FASC_CLOSED
+fascia \w+ \w+ \w+ reapproximated	FASC_CLOSED
+
+#We next closed the midline fascial incision
+
+approximated fascial incision	FASC_CLOSED
+approximated \w+ fascial incision	FASC_CLOSED
+approximated \w+ \w+ fascial incision	FASC_CLOSED
+fascial incision approximated	FASC_CLOSED
+fascial incision \w+ approximated	FASC_CLOSED
+fascial incision \w+ \w+ approximated	FASC_CLOSED
+fascial incision \w+ \w+ \w+ approximated	FASC_CLOSED
+
+closed fascial incision	FASC_CLOSED
+closed \w+ fascial incision	FASC_CLOSED
+closed \w+ \w+ fascial incision	FASC_CLOSED
+fascial incision closed	FASC_CLOSED
+fascial incision \w+ closed	FASC_CLOSED
+fascial incision \w+ \w+ closed	FASC_CLOSED
+fascial incision \w+ \w+ \w+ closed	FASC_CLOSED
+
+reapproximated fascial incision	FASC_CLOSED
+reapproximated \w+ fascial incision	FASC_CLOSED
+reapproximated \w+ \w+ fascial incision	FASC_CLOSED
+fascial incision reapproximated	FASC_CLOSED
+fascial incision \w+ reapproximated	FASC_CLOSED
+fascial incision \w+ \w+ reapproximated	FASC_CLOSED
+fascial incision \w+ \w+ \w+ reapproximated	FASC_CLOSED
+
+
+##Abdomen closed, skin DPC'd
+abdomen closed	FASC_CLOSED
+
+debridement	DEBRIDEMENT
+
+contaminated	POSS_INFECTION
+contamination	POSS_INFECTION
+
+
+gangrenous cholecystitis	ABD_O_INF_24H
+perforated appendix	ABD_O_INF_24H
+perforated appendicits	ABD_O_INF_24H
+gangrenous cholecystitis	SIGN_SUP_INF	PSEUDO
+#general Surgery	ABD_SURGERY
+
+#red rubber catheters
+red \w+ catheters	POSS_SIGN_S_INF	PSEUDO
+red \w+ catheter	POSS_SIGN_S_INF	PSEUDO
+red catheters	POSS_SIGN_S_INF	PSEUDO
+red catheter	POSS_SIGN_S_INF	PSEUDO
+
+#Please see operative note dictated by
+#see operative note	OP_NOTE	PSEUDO
+
+
+
+#Peritoneal Infection: Peritoneal cultures drawn while hypotensive grew 3 colonies of filamentous fungus.
+peritoneal infection	INFECTION	PSEUDO
+peritoneal infection	POSS_ABD_O_INF
+
+
+underwent LLE angiogram	EXTRE_SURGERY
+underwent RLE angiogram	EXTRE_SURGERY
+underwent LUE angiogram	EXTRE_SURGERY
+underwent RUE angiogram	EXTRE_SURGERY
+
+underwent \w+ artery bypass	SURGERY
+underwent \w+ \w+ artery bypass	SURGERY
+underwent \w+ \w+ \w+ artery bypass	SURGERY
+underwent \w+ \w+ \w+ \w+ artery bypass	SURGERY
+
+do \w+ artery bypass	SURGERY
+do \w+ \w+ artery bypass	SURGERY
+do \w+ \w+ \w+ artery bypass	SURGERY
+do \w+ \w+ \w+ \w+ artery bypass	SURGERY
+
+did \w+ artery bypass	SURGERY
+did \w+ \w+ artery bypass	SURGERY
+did \w+ \w+ \w+ artery bypass	SURGERY
+did \w+ \w+ \w+ \w+ artery bypass	SURGERY
+
+
+# pod 2 for abdominal surgery and infected mesh removal who presented this morning with abdominal pain,
+infected \w+ removal	INFECTION	PSEUDO
+
+fascial	FASCIA
+
+
+#3. Wound: Surgical site wound opened at bedside, daily dry packing
+wound opened	TREATMENT
+
+expander	PROPH_ABX_COND
+expanders	PROPH_ABX_COND
+
+
+c . diff	OTHER_INFECTION
+c > diff	OTHER_INFECTION
+cdiff	OTHER_INFECTION
+catheter infection	OTHER_INFECTION
+catheter infection	INFECTION	PSEUDO
+
+#infected PTCs
+infected PTCs	ABD_O_INF
+
+#Site Color Pink;Red;Yellow;White
+pink \w+ red \w+ yellow \w+ white	POSS_SIGN_S_INF	PSEUDO

@@ -1,0 +1,35 @@
+@fastcner											
+											
+# temporality's value set											
+#markup	value	upper bound of hours after reference date (in hours)									
+@CATEGORY_VALUES	historical	-72
+#include pod 5d											
+@CATEGORY_VALUES	dayone	36									
+# reported infection on day 32 stating infection happened 2 days ago.											
+@CATEGORY_VALUES	in30d	744									
+@CATEGORY_VALUES	after30d	10000000									
+											
+#Concepts to be processed											
+@CONCEPT_FEATURES	ABD_O_INF	Concept	Negation	Certainty	Temporality	Experiencer	Operative				
+@CONCEPT_FEATURES	CHEST_INFECTION	Concept	Negation	Certainty	Temporality	Experiencer	Operative				
+@CONCEPT_FEATURES	EXTRE_INFECTION	Concept	Negation	Certainty	Temporality	Experiencer	Operative				
+#SIRS/Sepsis: Due to UTI or possible bacterial translocation from colon under stress of constipation.		 									
+#@CONCEPT_FEATURES	BL_INFECTION	Concept	Negation	Certainty	Temporality	Experiencer	Operative				
+@CONCEPT_FEATURES	S_INFECTION	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Anatomic	Surgery	Operative	
+@CONCEPT_FEATURES	ADJ_INFECTION	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Anatomic	Surgery	Operative	
+@CONCEPT_FEATURES	ANTIBIOTICS	Concept	Negation	Certainty	Temporality	Experiencer	SSI_Purpose	OtherInfection_Purpose			
+@CONCEPT_FEATURES	DRAINAGE	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Anatomic	Surgery	Infected	
+@CONCEPT_FEATURES	FISTULA	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Anatomic	Surgery	Operative	Otherfistula
+@CONCEPT_FEATURES	INFECTION	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Anatomic	Surgery	Operative	
+@CONCEPT_FEATURES	OTHER_INFECTION	Concept	Negation	Certainty	Temporality	Experiencer	Relevance				
+@CONCEPT_FEATURES	PERFORATION	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Anatomic	Surgery	Operative	
+@CONCEPT_FEATURES	PNEUMONIA	Concept	Negation	Certainty	Temporality	Experiencer	Relevance				
+@CONCEPT_FEATURES	POSS_ABD_O_INF	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Anatomic	Surgery	Operative	
+@CONCEPT_FEATURES	POSS_SIGN_S_INF	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Anatomic	Surgery	Wound	
+@CONCEPT_FEATURES	POSS_S_INF	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Anatomic	Surgery	Wound	
+@CONCEPT_FEATURES	POSS_INFECTION	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Anatomic	Surgery	Wound
+@CONCEPT_FEATURES	S_INFECTION	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Anatomic	Surgery	Operative	
+@CONCEPT_FEATURES	SIGN_SUP_INF	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Anatomic	Surgery	Wound	
+@CONCEPT_FEATURES	SIGN_SUP_UTI	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Anatomic			
+@CONCEPT_FEATURES	SITE_INFECTION	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Anatomic	Surgery	Wound	
+@CONCEPT_FEATURES	SSI	Concept	Negation	Certainty	Temporality	Experiencer	Relevance	Anatomic	Surgery		

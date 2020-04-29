@@ -1,0 +1,217 @@
+@processer:	featureinferencer												
+@splitter:													
+@version:2													
+@casesensitive:	true												
+#keep this comment for documentation purpose													
+#The following inference rules will follow this format:													
+#To define a conclusion annotation with features and corresponding default values:													
+#@ConclusionConcept	SuperTypeName	Feature1:defaultValue1	Feature2:defaultValue2...										
+&CONCEPT_FEATURES	HIST_CONDITION	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:historical	Experiencer:patient	Anatomic:notspecified 	Surgery:notmentioned			
+&CONCEPT_FEATURES	HYPO_CONDITION	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Anatomic:notspecified 	Surgery:notmentioned			
+&CONCEPT_FEATURES	HIST_SURGERY	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:historical	Experiencer:patient	Anatomic:notspecified 	Surgery:notmentioned			
+													
+&CONCEPT_FEATURES	INF_STATUS	Concept	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+													
+&CONCEPT_FEATURES	ABD_INF_24H	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	CHEST_INF_24H	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	EXTRE_INF_24H	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+													
+&CONCEPT_FEATURES	HEALED_ABD_INF	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	HEALED_CHEST_INF	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	HEALED_EXTRE_INF	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+													
+													
+&CONCEPT_FEATURES	ABD_S_INF_24H	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	CHEST_S_INF_24H	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	EXTRE_S_INF_24H	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	S_INF_24H	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+													
+&CONCEPT_FEATURES	HEALED_ABD_S_INF	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	HEALED_CHEST_S_INF	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	HEALED_EXTRE_S_INF	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	HEALED_S_INF	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+													
+&CONCEPT_FEATURES	NO_ABD_S_INF	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	NO_CHEST_S_INF	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	NO_EXTRE_S_INF	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	NO_S_INF	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+													
+#organ infections													
+													
+&CONCEPT_FEATURES	ABD_O_INF_24H	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	CHEST_O_INF_24H	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	EXTRE_O_INF_24H	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	O_INF_24H	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+													
+&CONCEPT_FEATURES	HEALED_ABD_O_INF	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	HEALED_CHEST_O_INF	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	HEALED_EXTRE_O_INF	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	HEALED_O_INF	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+													
+&CONCEPT_FEATURES	NO_ABD_O_INF	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	NO_CHEST_O_INF	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	NO_EXTRE_O_INF	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	NO_O_INF	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+													
+													
+&CONCEPT_FEATURES	INFECTION_IN_24H	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+&CONCEPT_FEATURES	POSS_INFECTION_IN_24H	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+													
+#There are perforation at the point of op, but referring to the perforation later without mention when.													
+&CONCEPT_FEATURES	PERFORATION_IN_24H	INF_STATUS	Section:DocumentAnnotation	Note:null	Negation:affirm	Certainty:certain	Temporality:present	Experiencer:patient	Operative:notdescribe	Healed:unknownhealed	Depth:unknown	Surgery:notmentioned	Anatomic:notspecified
+													
+													
+@FEATURE_VALUES	Negation	affirm	negated										
+@FEATURE_VALUES	Certainty	certain	uncertain	concerned
+@FEATURE_VALUES	Temporality	present	historical	plan	hypothetical	in30d	dayone	after30d
+@FEATURE_VALUES	Experiencer	patient	nonpatient										
+@FEATURE_VALUES	Relevance	relevant	irrelevant										
+@FEATURE_VALUES	Anatomic	notspecified	skin	incision	abdomen	chest	extremities	notsurgsite
+@FEATURE_VALUES	Surgery	notmentioned	surgery										
+@FEATURE_VALUES	Depth	unknown	superficial	deep									
+@FEATURE_VALUES	Operative	notdescribed	operative	preoperative	postoperative								
+@FEATURE_VALUES	Dehiscence	notopen	open										
+@FEATURE_VALUES	Action	nottaken	taken										
+@FEATURE_VALUES	Infected	unknowninfected	mayinfected	infected	notinfected								
+@FEATURE_VALUES	SSI_Purpose	ssi_purpose_unknown	ssi_purpose	no_ssi_purpose									
+@FEATURE_VALUES	OtherInfection_Purpose	other_infection_purpose_unknown	other_infection_purpose	no_other_infection_purpose									
+@FEATURE_VALUES	Otherfistula	inflammatory	notinflammatory										
+#to exclude other reasons causes the  SIGN_SUP_INF													
+@FEATURE_VALUES	Cause	unknowncause	othercause										
+#to exclude other reasons causes the  pain													
+@FEATURE_VALUES	PainCause	unknownpaincause	otherpaincause										
+@FEATURE_VALUES	Healed	unknownhealed	healed	nothealed									
+@FEATURE_VALUES	Completion	unknowncompletion	notcompleted	completed									
+													
+#To define an inference rule:													
+#TOPIC	CONCLUSION	COPY_ATTRIB	EVIDENCE_ANNO	CONDITION	SCOPE_ANNO								
+													
+													
+													
+													
+													
+													
+													
+													
+													
+													
+
+INFECT	HEALED_ABD_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	ABD_INFECTION	in30d,healed	SourceDocumentInformation								
+INFECT	HEALED_CHEST_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	CHEST_INFECTION	in30d,healed	SourceDocumentInformation								
+INFECT	HEALED_EXTRE_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	EXTRE_INFECTION	in30d,healed	SourceDocumentInformation
+
+													
+INFECT	HEALED_ABD_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	ABD_S_INF	in30d,healed	SourceDocumentInformation								
+INFECT	HEALED_CHEST_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	CHEST_S_INF	in30d,healed	SourceDocumentInformation								
+INFECT	HEALED_EXTRE_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	EXTRE_S_INF	in30d,healed	SourceDocumentInformation								
+
+INFECT	HEALED_ABD_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	ADJ_INFECTION	in30d,healed	SourceDocumentInformation								
+INFECT	HEALED_ABD_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	ABD_O_INF	in30d,healed	SourceDocumentInformation								
+INFECT	HEALED_CHEST_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	CHEST_O_INF	in30d,healed	SourceDocumentInformation								
+INFECT	HEALED_EXTRE_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	EXTRE_O_INF	in30d,healed	SourceDocumentInformation
+
+INFECT	HEALED_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	S_INFECTION	in30d,healed	SourceDocumentInformation
+INFECT	HEALED_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	O_INFECTION	in30d,healed	SourceDocumentInformation
+													
+
+INFECT	HEALED_ABD_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	ABD_INFECTION	present,healed	SourceDocumentInformation								
+INFECT	HEALED_CHEST_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	CHEST_INFECTION	present,healed	SourceDocumentInformation								
+INFECT	HEALED_EXTRE_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	EXTRE_INFECTION	present,healed	SourceDocumentInformation								
+
+													
+INFECT	HEALED_ABD_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	ABD_S_INF	present,healed	SourceDocumentInformation								
+INFECT	HEALED_CHEST_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	CHEST_S_INF	present,healed	SourceDocumentInformation								
+INFECT	HEALED_EXTRE_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	EXTRE_S_INF	present,healed	SourceDocumentInformation								
+
+INFECT	HEALED_ABD_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	ADJ_INFECTION	present,healed	SourceDocumentInformation								
+INFECT	HEALED_ABD_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	ABD_O_INF	present,healed	SourceDocumentInformation								
+INFECT	HEALED_CHEST_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	CHEST_O_INF	present,healed	SourceDocumentInformation								
+INFECT	HEALED_EXTRE_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	EXTRE_O_INF	present,healed	SourceDocumentInformation								
+
+INFECT	HEALED_S_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	S_INFECTION	present,healed	SourceDocumentInformation
+INFECT	HEALED_O_INF	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	O_INFECTION	present,healed	SourceDocumentInformation
+													
+													
+													
+													
+#INFECT	HEALED_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTION	healed	SourceDocumentInformation								
+#INFECT	HEALED_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	BL_INFECTION	healed									
+#INFECT	HEALED_INFECTION	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	SITE_INFECTION	healed	SourceDocumentInformation								
+													
+#INFECT	ABD_O_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	ABD_O_INF	preoperative	SourceDocumentInformation
+#INFECT	CHEST_O_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	CHEST_O_INF	preoperative	SourceDocumentInformation
+#INFECT	EXTRE_O_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	EXTRE_O_INF	preoperative	SourceDocumentInformation
+#INFECT	O_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	O_INFECTION	preoperative	SourceDocumentInformation
+													
+INFECT	ABD_O_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTIOUS_PERFORATION	dayone,abdomen	SourceDocumentInformation
+INFECT	CHEST_O_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	INFECTIOUS_PERFORATION	dayone,chest	SourceDocumentInformation
+
+INFECT	ABD_O_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	ABD_O_INF	dayone	SourceDocumentInformation
+INFECT	CHEST_O_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	CHEST_O_INF	dayone	SourceDocumentInformation								
+INFECT	EXTRE_O_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	EXTRE_O_INF	dayone	SourceDocumentInformation								
+INFECT	O_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	O_INFECTION	dayone	SourceDocumentInformation								
+													
+													
+#INFECT	ABD_S_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	ABD_S_INF	preoperative	SourceDocumentInformation
+#INFECT	CHEST_S_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	CHEST_S_INF	preoperative	SourceDocumentInformation
+#INFECT	EXTRE_S_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	EXTRE_S_INF	preoperative	SourceDocumentInformation
+#INFECT	S_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	S_INFECTION	preoperative	SourceDocumentInformation
+													
+INFECT	ABD_S_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	ABD_S_INF	dayone	SourceDocumentInformation								
+INFECT	CHEST_S_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	CHEST_S_INF	dayone	SourceDocumentInformation								
+INFECT	EXTRE_S_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	EXTRE_S_INF	dayone	SourceDocumentInformation								
+INFECT	S_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	S_INFECTION	dayone	SourceDocumentInformation
+INFECT	S_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	S_SSI	dayone	SourceDocumentInformation
+													
+													
+													
+#INFECT	ABD_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	ABD_INFECTION	preoperative	SourceDocumentInformation
+#INFECT	CHEST_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	CHEST_INFECTION	preoperative	SourceDocumentInformation
+#INFECT	EXTRE_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	EXTRE_INFECTION	preoperative	SourceDocumentInformation
+													
+INFECT	ABD_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	ABD_INFECTION	dayone	SourceDocumentInformation								
+INFECT	CHEST_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	CHEST_INFECTION	dayone	SourceDocumentInformation								
+INFECT	EXTRE_INF_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	EXTRE_INFECTION	dayone	SourceDocumentInformation								
+													
+													
+													
+													
+#INFECT	POSS_INFECTION_IN_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_S_INF	preoperative	SourceDocumentInformation
+#INFECT	POSS_INFECTION_IN_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_INFECTION	preoperative	SourceDocumentInformation
+#INFECT	POSS_INFECTION_IN_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_ABD_O_INF	preoperative	SourceDocumentInformation
+#INFECT	POSS_INFECTION_IN_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_CHEST_O_INF	preoperative	SourceDocumentInformation
+#INFECT	POSS_INFECTION_IN_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_EXTRE_O_INF	preoperative	SourceDocumentInformation
+													
+#INFECT	POSS_INFECTION_IN_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_ABD_S_INF	preoperative	SourceDocumentInformation
+#INFECT	POSS_INFECTION_IN_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_CHEST_S_INF	preoperative	SourceDocumentInformation
+#INFECT	POSS_INFECTION_IN_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_EXTRE_S_INF	preoperative	SourceDocumentInformation
+#INFECT	POSS_INFECTION_IN_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_S_INF	preoperative	SourceDocumentInformation
+													
+													
+INFECT	POSS_INFECTION_IN_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_S_INF	dayone	SourceDocumentInformation
+INFECT	POSS_INFECTION_IN_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_INFECTION	dayone	SourceDocumentInformation
+INFECT	POSS_INFECTION_IN_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_ABD_O_INF	dayone	SourceDocumentInformation
+INFECT	POSS_INFECTION_IN_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_CHEST_O_INF	dayone	SourceDocumentInformation
+INFECT	POSS_INFECTION_IN_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_EXTRE_O_INF	dayone	SourceDocumentInformation
+													
+INFECT	POSS_INFECTION_IN_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_ABD_S_INF	dayone	SourceDocumentInformation
+INFECT	POSS_INFECTION_IN_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_CHEST_S_INF	dayone	SourceDocumentInformation
+INFECT	POSS_INFECTION_IN_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_EXTRE_S_INF	dayone	SourceDocumentInformation
+INFECT	POSS_INFECTION_IN_24H	Note,Section,Certainty,Temporality,Operative,Healed,Depth,Surgery,Surgery,Anatomic	POSS_S_INF	dayone	SourceDocumentInformation
+													
+													
+													
+													
+INFECT	PERFORATION_IN_24H	Note,Section,Certainty,Temporality,Anatomic,Surgery	PERFORATION	chest,certain,dayone	SourceDocumentInformation								
+INFECT	PERFORATION_IN_24H	Note,Section,Certainty,Temporality,Anatomic,Surgery	PERFORATION	abdomen,certain,dayone	SourceDocumentInformation								
+INFECT	PERFORATION_IN_24H	Note,Section,Certainty,Temporality,Anatomic,Surgery	PERFORATION	chest,certain,dayone	PresentHistory								
+INFECT	PERFORATION_IN_24H	Note,Section,Certainty,Temporality,Anatomic,Surgery	PERFORATION	abdomen,certain,dayone	PresentHistory								
+INFECT	PERFORATION_IN_24H	Note,Section,Certainty,Temporality,Anatomic,Surgery	PERFORATION	chest,certain,dayone	Procedure								
+INFECT	PERFORATION_IN_24H	Note,Section,Certainty,Temporality,Anatomic,Surgery	PERFORATION	abdomen,certain,dayone	Procedure								
+INFECT	INFECTIOUS_PERFORATION	Note,Section,Certainty,Temporality,Anatomic,Surgery	PERFORATION	chest,certain,dayone	SourceDocumentInformation								
+INFECT	INFECTIOUS_PERFORATION	Note,Section,Certainty,Temporality,Anatomic,Surgery	PERFORATION	abdomen,certain,dayone	SourceDocumentInformation								
+													
+													
+INFECT	HEALED_POSS_INFECTION	Note,Section,Certainty,Temporality,Anatomic,Surgery	POSS_SIGN_S_INF	certain,healed	SourceDocumentInformation								
+INFECT	HEALED_POSS_INFECTION	Note,Section,Certainty,Temporality,Anatomic,Surgery	POSS_INFECTION	certain,healed	SourceDocumentInformation								
+INFECT	HEALED_POSS_INFECTION	Note,Section,Certainty,Temporality,Anatomic,Surgery	POSS_ABD_O_INF	certain,healed	SourceDocumentInformation								
