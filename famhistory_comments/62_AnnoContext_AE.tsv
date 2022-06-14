@@ -1,0 +1,69 @@
+@processer:	annocontext
+@splitter:								
+@version:2								
+@casesensitive:	true							
+#keep this comment for documentation purpose								
+#The following inference rules will follow this format:								
+#To define a conclusion annotation with features and corresponding default values:								
+#@ConclusionConcept	SuperTypeName	Feature1:defaultValue1	Feature2:defaultValue2...
+
+@CONCEPT_FEATURES	IGN_DX_CONCEPT	CODE_CONCEPT	Note: 	FAM_REL_CODE: 	GEN_DEGREE: 	GEN_SIDE:	COUNTS:1
+@CONCEPT_FEATURES	IGN_FAM_RELATIVE	CODE_CONCEPT	Note: 	FAM_REL_CODE: 	GEN_DEGREE: 	GEN_SIDE:	COUNTS:1
+@CONCEPT_FEATURES	OTHER_AGE	Concept	Note: 	Negation:affirm	CERTAINTY:CERTAIN	Temporality:present	Experiencer:patient	Relevance:irrelevant
+@CONCEPT_FEATURES	ONSET_AGE	Concept	Note: 	Negation:affirm	CERTAINTY:CERTAIN	Temporality:present	Experiencer:patient	Relevance:irrelevant	RANGE:DECADE
+@CONCEPT_FEATURES	CC_SYNDROME	SYNDROME	Note: 	Negation:affirm	CERTAINTY:CERTAIN	Temporality:present	Experiencer:patient CUI:null	LABEL:null	SNOMEDCT:null	N_CODE:null	N_CODE2:null
+@CONCEPT_FEATURES	RECTAL	SYNDROME	Note: 	Negation:affirm	CERTAINTY:CERTAIN	Temporality:present	Experiencer:patient CUI:null	LABEL:null	SNOMEDCT:null	N_CODE:null	N_CODE2:null
+@CONCEPT_FEATURES	COLON	SYNDROME	Note: 	Negation:affirm	CERTAINTY:CERTAIN	Temporality:present	Experiencer:patient CUI:null	LABEL:null	SNOMEDCT:null	N_CODE:null	N_CODE2:null
+
+@FEATURE_VALUES	Structural	notstructural	isstructural
+@FEATURE_VALUES	FAM_REL_CODE	UNK_REL
+@FEATURE_VALUES	Negation	affirm	negated
+@FEATURE_VALUES	CERTAINTY	CERTAIN	UNCERTAIN
+@FEATURE_VALUES	Temporality	present	historical	hypothetical
+@FEATURE_VALUES	Experiencer	patient	nonpatient
+@FEATURE_VALUES	Relevance	relevant	irrelevant	decease
+
+#topic	conclusion <->	copy features	<-> source anno	<-> context annos(separated by ,) <->	scope
+FAM	IGN_FAM_RELATIVE	FAM_REL_CODE,GEN_DEGREE,GEN_SIDE,CERTAINTY	STR_UNK_FAM_RELATIVE	COM_FAM_RELATIVE	Sentence
+FAM	IGN_FAM_RELATIVE	FAM_REL_CODE,GEN_DEGREE,GEN_SIDE,CERTAINTY	STR_FAM_RELATIVE	COM_FAM_RELATIVE	Sentence
+FAM	IGN_FAM_RELATIVE	FAM_REL_CODE,GEN_DEGREE,GEN_SIDE,CERTAINTY	COM_UNK_FAM_RELATIVE	STR_FAM_RELATIVE	Sentence
+FAM	IGN_FAM_RELATIVE	FAM_REL_CODE,GEN_DEGREE,GEN_SIDE,CERTAINTY	COM_UNK_FAM_RELATIVE	COM_FAM_RELATIVE	Sentence
+FAM	IGN_FAM_RELATIVE	FAM_REL_CODE,GEN_DEGREE,GEN_SIDE,CERTAINTY	STR_FAM_RELATIVE	COM_FAM_RELATIVE	Sentence
+
+
+DIAG	IGN_DX_CONCEPT	N_CODE,Structural,LABEL,CERTAINTY	STR_COLON	CC_SYNDROME	Sentence
+DIAG	IGN_DX_CONCEPT	N_CODE,Structural,LABEL,CERTAINTY	STR_COLON	RECTAL	Sentence
+DIAG	IGN_DX_CONCEPT	N_CODE,Structural,LABEL,CERTAINTY	STR_COLON	COLON	Sentence
+DIAG	IGN_DX_CONCEPT	N_CODE,Structural,LABEL,CERTAINTY	STR_RECTAL	COLON	Sentence
+DIAG	IGN_DX_CONCEPT	N_CODE,Structural,LABEL,CERTAINTY	STR_RECTAL	RECTAL	Sentence
+
+DIAG	CC_SYNDROME	N_CODE,Structural,LABEL,CERTAINTY	CC_SYNDROME	STR_COLON	Sentence
+
+AOO	OTHER_AGE	Negation,CERTAINTY,CERTAINTY,Temporality,Experiencer,Relevance	ONSET_RANGE	ONSET_AGE	Sentence
+AOO	OTHER_AGE	Negation,CERTAINTY,CERTAINTY,Temporality,Experiencer,Relevance	ONSET_STRING	STR_ONSET_AGE	Sentence
+AOO	OTHER_AGE	Negation,CERTAINTY,CERTAINTY,Temporality,Experiencer,Relevance	ONSET_PERIOD	STR_ONSET_AGE	Sentence
+AOO	OTHER_AGE	Negation,CERTAINTY,CERTAINTY,Temporality,Experiencer,Relevance	STR_ONSET_AGE	ONSET_AGE	Sentence
+AOO	OTHER_AGE	Negation,CERTAINTY,CERTAINTY,Temporality,Experiencer,Relevance	STR_ONSET_AGE	ONSET_RANGE	Sentence
+
+AOO	OTHER_AGE	Negation,CERTAINTY,CERTAINTY,Temporality,Experiencer,Relevance	DECEASED_AGE	ONSET	Sentence
+AOO	OTHER_AGE	Negation,CERTAINTY,CERTAINTY,Temporality,Experiencer,Relevance	DECEASED_AGE	STR_ONSET_AGE	Sentence
+AOO	OTHER_AGE	Negation,CERTAINTY,CERTAINTY,Temporality,Experiencer,Relevance	DECEASED_AGE	ONSET_RANGE	Sentence
+
+AOO	OTHER_AGE	Negation,CERTAINTY,CERTAINTY,Temporality,Experiencer,Relevance	DECEASED_RANGE	ONSET	Sentence
+AOO	OTHER_AGE	Negation,CERTAINTY,CERTAINTY,Temporality,Experiencer,Relevance	DECEASED_RANGE	STR_ONSET_AGE	Sentence
+AOO	OTHER_AGE	Negation,CERTAINTY,CERTAINTY,Temporality,Experiencer,Relevance	DECEASED_RANGE	ONSET_RANGE	Sentence
+
+AOO	OTHER_AGE	Negation,CERTAINTY,CERTAINTY,Temporality,Experiencer,Relevance	DECEASED_PERIOD	DECEASED_AGE	Sentence
+AOO	OTHER_AGE	Negation,CERTAINTY,CERTAINTY,Temporality,Experiencer,Relevance	DECEASED_PERIOD	STR_ONSET_AGE	Sentence
+AOO	OTHER_AGE	Negation,CERTAINTY,CERTAINTY,Temporality,Experiencer,Relevance	DECEASED_PERIOD	ONSET_AGE	Sentence
+AOO	OTHER_AGE	Negation,CERTAINTY,CERTAINTY,Temporality,Experiencer,Relevance	DECEASED_PERIOD	ONSET_RANGE	Sentence
+AOO	OTHER_AGE	Negation,CERTAINTY,CERTAINTY,Temporality,Experiencer,Relevance	DECEASED_PERIOD	ONSET_STRING	Sentence
+AOO	OTHER_AGE	Negation,CERTAINTY,CERTAINTY,Temporality,Experiencer,Relevance	DECEASED_PERIOD	ONSET_PERIOD	Sentence
+
+AOO	OTHER_AGE	Negation,CERTAINTY,CERTAINTY,Temporality,Experiencer,Relevance	DECEASED_STRING	STR_ONSET_AGE	Sentence
+AOO	OTHER_AGE	Negation,CERTAINTY,CERTAINTY,Temporality,Experiencer,Relevance	DECEASED_STRING	ONSET_AGE	Sentence
+AOO	OTHER_AGE	Negation,CERTAINTY,CERTAINTY,Temporality,Experiencer,Relevance	DECEASED_STRING	ONSET_RANGE	Sentence
+AOO	OTHER_AGE	Negation,CERTAINTY,CERTAINTY,Temporality,Experiencer,Relevance	DECEASED_STRING	ONSET_STRING	Sentence
+AOO	OTHER_AGE	Negation,CERTAINTY,CERTAINTY,Temporality,Experiencer,Relevance	DECEASED_STRING	ONSET_PERIOD	Sentence
+
+

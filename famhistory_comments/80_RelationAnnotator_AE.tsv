@@ -1,0 +1,31 @@
+&CONCEPT_FEATURES	FX_CANCER	Relation	FAM_REL_CODE:unknown_member	N_CODE:unknown_observation	GEN_SIDE:UNK_SIDE
+&CONCEPT_FEATURES	FX_SYNDROME	Relation	FAM_REL_CODE:unknown_member	N_CODE:unknown_observation	GEN_SIDE:UNK_SIDE
+&CONCEPT_FEATURES	FX_GENE_MUT	Relation	FAM_REL_CODE:unknown_member	N_CODE:unknown_observation	GEN_SIDE:UNK_SIDE
+&CONCEPT_FEATURES	FX_ONSET	Relation	FAM_REL_CODE:unknown_member	FXONSET:unknown_status	ONSET_TYPE:unknown_onset_type	RANGE:unknown_onset_range	GEN_SIDE:UNK_SIDE
+
+&FEATURE_VALUES	FAM_REL_CODE	unknown_member		
+&FEATURE_VALUES	N_CODE	unknown_status		
+&FEATURE_VALUES	Negation	affirm	negated
+@FEATURE_VALUES	GEN_SIDE	UNK_SIDE	MATERNAL	PATERNAL	BOTH_SIDE
+
+
+&RELATION_DEFINITION	FX_CANCER	FAM_REL_CODE:FAM_RELATIVE,GEN_SIDE:FAM_RELATIVE,N_CODE:DX_CONCEPT	FAM_RELATIVE,DX_CONCEPT	SourceDocumentInformation
+&RELATION_DEFINITION	FX_SYNDROME	FAM_REL_CODE:FAM_RELATIVE,GEN_SIDE:FAM_RELATIVE,N_CODE:SYNDROME	FAM_RELATIVE,SYNDROME	SourceDocumentInformation
+&RELATION_DEFINITION	FX_GENE_MUT	FAM_REL_CODE:FAM_RELATIVE,GEN_SIDE:FAM_RELATIVE,N_CODE:GENE_MUT	FAM_RELATIVE,GENE_MUT	SourceDocumentInformation
+&RELATION_DEFINITION	FX_ONSET	FAM_REL_CODE:FAM_RELATIVE,GEN_SIDE:FAM_RELATIVE,FXONSET:ONSET:CoveredText,ONSET_TYPE:ONSET:SimpleType,RANGE:ONSET	FAM_RELATIVE,ONSET	SourceDocumentInformation
+				
+#rule string	direction	trigger type	modifier	window size
+ 	forward	trigger	FX_CANCER	500
+ 	backward	trigger	FX_CANCER	500
+ 	forward	trigger	FX_SYNDROME	500
+ 	backward	trigger	FX_SYNDROME	500
+ 	forward	trigger	FX_GENE_MUT	500
+ 	backward	trigger	FX_GENE_MUT	500
+ 	forward	trigger	FX_ONSET	500
+ 	backward	trigger	FX_ONSET	500
+
+				
+#<DX_CONCEPT> <FAM_RELATIVE>	forward	termination	FX_Observation	500
+#<DX_CONCEPT> <ONSET>	forward	termination	FX_ONSET	500
+
+#<FAM_RELATIVE> <ONSET>	forward	termination	FX_ONSET	500

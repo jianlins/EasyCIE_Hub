@@ -1,0 +1,31 @@
+@processer:	annocontext
+@splitter:								
+@version:2								
+@casesensitive:	true							
+#keep this comment for documentation purpose								
+#The following inference rules will follow this format:								
+#To define a conclusion annotation with features and corresponding default values:								
+#@ConclusionConcept	SuperTypeName	Feature1:defaultValue1	Feature2:defaultValue2...					
+								
+@CONCEPT_FEATURES	IGN_FAM_RELATIVE	CODE_CONCEPT	Note: 	FAM_REL_CODE: 	GEN_DEGREE: 	GEN_SIDE:	COUNTS:1
+@CONCEPT_FEATURES	OTHER_AGE	Concept	Note: 	Negation:affirm	CERTAINTY:CERTAIN	Temporality:present	Experiencer:patient	Relevance:irrelevant
+
+@FEATURE_VALUES	Structural	notstructural	isstructural
+@FEATURE_VALUES	FAM_REL_CODE	UNK_REL
+@FEATURE_VALUES	Negation	affirm	negated
+@FEATURE_VALUES	CERTAINTY	CERTAIN	UNCERTAIN
+@FEATURE_VALUES	Temporality	present	historical	hypothetical
+@FEATURE_VALUES	Experiencer	patient	nonpatient
+@FEATURE_VALUES	Relevance	relevant	irrelevant	decease
+
+#topic	conclusion <->	copy features	<-> source anno	<-> context annos(separated by ,) <->	scope
+FAM	IGN_FAM_RELATIVE	FAM_REL_CODE,GEN_DEGREE,GEN_SIDE,CERTAINTY	STR_UNK_FAM_RELATIVE	COM_FAM_RELATIVE	Sentence
+#FAM	IGN_FAM_RELATIVE	FAM_REL_CODE,GEN_DEGREE,GEN_SIDE,CERTAINTY	STR_FAM_RELATIVE	COM_FAM_RELATIVE	Sentence
+FAM	IGN_FAM_RELATIVE	FAM_REL_CODE,GEN_DEGREE,GEN_SIDE,CERTAINTY	COM_UNK_FAM_RELATIVE	STR_FAM_RELATIVE	Sentence
+FAM	IGN_FAM_RELATIVE	FAM_REL_CODE,GEN_DEGREE,GEN_SIDE,CERTAINTY	COM_UNK_FAM_RELATIVE	COM_FAM_RELATIVE	Sentence
+#FAM	IGN_FAM_RELATIVE	FAM_REL_CODE,GEN_DEGREE,GEN_SIDE,CERTAINTY	STR_FAM_RELATIVE	COM_FAM_RELATIVE	Sentence
+FAM	IGN_FAM_RELATIVE	FAM_REL_CODE,GEN_DEGREE,GEN_SIDE,CERTAINTY	STR_COLON	CC_SYNDROME	Sentence
+
+AOO	OTHER_AGE	Negation,CERTAINTY,CERTAINTY,Temporality,Experiencer,Relevance	DECEASED_AGE	ONSET	Sentence
+
+

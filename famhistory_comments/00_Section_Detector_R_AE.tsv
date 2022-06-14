@@ -1,0 +1,292 @@
+#specify the rule type
+@fastcner
+#define section header type names: all header types derive from type "SectionHeader", and must be ended with "Header".
+#All section body types derive from type "SectionBody", and must have the name of the corresponding header name without "Header" suffix.
+#So that all of them can be queried easily through this parent type name, and section body name can be inferred from the header name.
+
+#Problems can include both current and past diagnoses, which may not be included in some use cases.
+@ProblemHeader	SectionHeader
+@IndicationHeader	SectionHeader
+@ProcedureHeader	SectionHeader
+@TechniqueHeader	SectionHeader
+@FindingsHeader	SectionHeader
+@ImpressionHeader	SectionHeader
+@HPIHeader	SectionHeader
+@PastHistoryHeader	SectionHeader
+@DiscussionHeader	SectionHeader
+@PlanHeader	SectionHeader
+@MedicationHeader	SectionHeader
+@InstructionHeader	SectionHeader
+@SocialHistoryHeader	SectionHeader
+@DiagnosisHeader	SectionHeader
+@AssessmentHeader	SectionHeader
+@FamilyHistoryHeader	SectionHeader
+@LabHeader	SectionHeader
+@AllergyHeader	SectionHeader
+@ChiefComplaintHeader	SectionHeader
+
+
+@Problem	SectionBody
+@Indication	SectionBody
+@Procedure	SectionBody
+@Technique	SectionBody
+@Findings	SectionBody
+@Impression	SectionBody
+@HPI	SectionBody
+@PastHistory	SectionBody
+@Discussion	SectionBody
+@Plan	SectionBody
+@Medication	SectionBody
+@Instruction	SectionBody
+@SocialHistory	SectionBody
+@Diagnosis	SectionBody
+@Assessment	SectionBody
+@FamilyHistory	SectionBody
+@Lab	SectionBody
+@Allergy	SectionBody
+@ChiefComplaint	SectionBody
+
+
+#matching rules
+INDICATION):	0.5	IndicationHeader
+Indication):	0.5	IndicationHeader
+INDICATIONS):	0.5	IndicationHeader
+Indications):	0.5	IndicationHeader
+PROCEDURE):	0.5	ProcedureHeader
+Procedure):	0.5	ProcedureHeader
+TECHNIQUE):	0.5	TechniqueHeader
+Technique):	0.5	TechniqueHeader
+FINDINGS):	0.5	FindingsHeader
+Findings):	0.5	FindingsHeader
+IMPRESSION):	0.5	ImpressionHeader
+Impression):	0.5	ImpressionHeader
+IMPRESSIONS):	0.5	ImpressionHeader
+Impressions):	0.5	ImpressionHeader
+Comment):	0.5	ImpressionHeader
+Comments):	0.5	ImpressionHeader
+COMMENT):	0.5	ImpressionHeader
+Comments):	0.5	ImpressionHeader
+
+HISTORY):	0.5	HPIHeader
+History):	0.5	HPIHeader
+HISTORY OF PRESENT ILLNESS)	0.5	HPIHeader
+History Of Present Illness)	0.5	HPIHeader
+History Of Present Illness)	0.5	HPIHeader
+History Of Present Illness)	0.5	HPIHeader
+
+
+History of Present Illness)	0.5	HPIHeader
+History of Present Illness)	0.5	HPIHeader
+History of Present Illness)	0.5	HPIHeader
+
+
+PRESENT HISTORY):	0.5	HPIHeader
+Present History):	0.5	HPIHeader
+Present history):	0.5	HPIHeader
+\n[| +](HPI)\n	0.5	HPIHeader
+HPI):\n	0.5	HPIHeader
+HOSPITAL COURSE)\n	0.5	HPIHeader
+HOSPITAL COURSE):	0.5	HPIHeader
+HOSPITAL COURSE)	0.5	HPIHeader
+Hospital Course)\n	0.5	HPIHeader
+Hospital Course):	0.5	HPIHeader
+Hospital Course)	0.5	HPIHeader
+Chief Complaint)	0.5	HPIHeader
+CHIEF COMPLAINT)	0.5	HPIHeader
+Physical examination	0.5	HPIHeader
+PHYSICAL EXAMINATION	0.5	HPIHeader
+Physical Examination	0.5	HPIHeader
+Review of systems	0.5	HPIHeader
+Review of Systems	0.5	HPIHeader
+Physical Exam)[| +]\n	0.5	HPIHeader
+Physical Exam)[| +][|:][| +]\n	0.5	HPIHeader
+PMH[| +]):[| +]\n	0.5	HPIHeader
+
+PAST HISTORY):	0.5	PastHistoryHeader
+Past History):	0.5	PastHistoryHeader
+Past history):	0.5	PastHistoryHeader
+HISTORY OF PAST ILLNESS):	0.5	PastHistoryHeader
+History of past illness):	0.5	PastHistoryHeader
+History of Past Illness):	0.5	PastHistoryHeader
+History Of Past Illness):	0.5	PastHistoryHeader
+Past Medical History)	0.5	PastHistoryHeader
+PAST MEDICAL HISTORY)	0.5	PastHistoryHeader
+MEDICAL HISTORY)	0.5	PastHistoryHeader
+Past medical history)	0.5	PastHistoryHeader
+
+\s\s+Discuss)	0.4	DiscussionHeader
+\s\s+We discuss	0.4	DiscussionHeader
+#Reviewed options for dealing with symptoms - OCP, Mirena IUD, non hormonal options - gabapentin, clonidine, Effexor.
+\s\s+Reviewed options	0.4	DiscussionHeader
+
+
+\w+(Assessment and Plan):	0.4	AssessmentHeader
+\w+(ASSESSMENT AND PLAN):	0.4	AssessmentHeader
+\w(A/P)\p	0.4	AssessmentHeader
+\w(A/P)\s	0.4	AssessmentHeader
+\w(P):	0.4	PlanHeader
+\w+(Plan):	0.4	PlanHeader
+\w+(Plan):	0.4	PlanHeader
+\w+(PLAN):	0.4	PlanHeader
+
+
+
+\w+(ros):	0.4	FindingsHeader
+\w+(ROS):	0.4	FindingsHeader
+\w+(REVIEW OF SYSTEM):	0.4	FindingsHeader
+\w+(REVIEW OF SYSTEMS):	0.4	FindingsHeader
+\w(Review of System):	0.4	FindingsHeader
+\w(Review of Systems):	0.4	FindingsHeader
+\w(Review Of System):	0.4	FindingsHeader
+\w(Review of Systems):	0.4	FindingsHeader
+
+\C\c+\w+Instruction)\w\w\w	0.4	InstructionHeader
+\C\c+\w+Instructions)\w\w\w	0.4	InstructionHeader
+\C\C+\w+INSTRUCTION)\w\w\w	0.4	InstructionHeader
+\C\C+\w+INSTRUCTIONS)\w\w\w	0.4	InstructionHeader
+
+
+\C\C+ MEDICATIONS):	0.4	MedicationHeader
+\C\C+ MEDICATIONS):	0.4	MedicationHeader
+\nMedications)\n	0.4	MedicationHeader
+\nMedications) +\n	0.4	MedicationHeader
+\nMedications): +\n	0.4	MedicationHeader
+\nMedications):\n	0.4	MedicationHeader
+Current Medications	0.4	MedicationHeader
+MEDICATIONS \C+ \C+ +\n	0.4	MedicationHeader
+Medications \a+)[| +]\n	0.4	MedicationHeader
+Medications \a+ \a+)[| +]\n	0.4	MedicationHeader
+Medications[| +][|:][| +]\n	0.4	MedicationHeader
+
+Medication Orders[| +]\n	0.4	MedicationHeader
+Medication Orders[| +]:[| +]	0.4	MedicationHeader
+
+MEDICATION ORDERS[| +]\n	0.4	MedicationHeader
+MEDICATION ORDERS[| +]:[| +]	0.4	MedicationHeader
+
+SOCIAL HISTORY):	0.4	SocialHistoryHeader
+Social History):	0.4	SocialHistoryHeader
+SocHx	0.4	SocialHistoryHeader
+Soc Hx	0.4	SocialHistoryHeader
+Social Hx	0.4	SocialHistoryHeader
+\n(SH)[| +]:	0.4	SocialHistoryHeader
+
+\C\C+ DIAGNOS\CS):	0.4	DiagnosisHeader
+\C\c+ Diagnos\cs):	0.4	DiagnosisHeader
+\C\C+ DIAGNOS\CS)\n	0.4	DiagnosisHeader
+\C\c+ Diagnos\cs)\n	0.4	DiagnosisHeader
+\C\C+ DIAGNOS\CS)\s+\n	0.4	DiagnosisHeader
+\C\c+ Diagnos\cs)\s+\n	0.4	DiagnosisHeader
+
+
+\n(DIAGNOS\CS)\n	0.4	DiagnosisHeader
+\n(DIAGNOS\CS)\s+\n	0.4	DiagnosisHeader
+\n\s+(DIAGNOS\CS)\n	0.4	DiagnosisHeader
+\n\s+(DIAGNOS\CS)\s+\n	0.4	DiagnosisHeader
+
+\n(Diagnos\cs)\n	0.4	DiagnosisHeader
+\n(Diagnos\cs)\s+\n	0.4	DiagnosisHeader
+\n\s+(Diagnos\cs)\n	0.4	DiagnosisHeader
+\n\s+(Diagnos\cs)\s+\n	0.4	DiagnosisHeader
+
+\w+(Following up):	0.4	PlanHeader
+\w+(Follow up):	0.4	PlanHeader
+\w+(Following Up):	0.4	PlanHeader
+\w+(Follow Up):	0.4	PlanHeader
+Assessment and plan)	0.4	PlanHeader
+
+
+# PLAN   RTC 1 week.  IUD for BC  Epidural  Going to her pediatrician in utah valley.
+\w+PLAN\w+	0.3	PlanHeader
+Plan[| +]):[| +]\n	0.3	PlanHeader
+\n\n(Plan)[| +]\n	0.3	PlanHeader
+
+
+Family History)\n	0.5	FamilyHistoryHeader
+Family History) +\n	0.5	FamilyHistoryHeader
+Family history)\n	0.5	FamilyHistoryHeader
+Family history) +\n	0.5	FamilyHistoryHeader
+Family History):\n	0.5	FamilyHistoryHeader
+Family History): +\n	0.5	FamilyHistoryHeader
+Family History) +:\n	0.5	FamilyHistoryHeader
+Family history):\n	0.5	FamilyHistoryHeader
+Family history): +\n	0.5	FamilyHistoryHeader
+Family history) +:\n	0.5	FamilyHistoryHeader
+FAMILY HISTORY)[| +][|:][| +]\n	0.5	FamilyHistoryHeader
+
+
+
+
+Problems):\n	0.5	ProblemHeader
+Problems): +\n	0.5	ProblemHeader
+Problems)\n	0.5	ProblemHeader
+Problems +\n	0.5	ProblemHeader
+PROBLEMS):\n	0.5	ProblemHeader
+PROBLEMS): +\n	0.5	ProblemHeader
+PROBLEMS)\n	0.5	ProblemHeader
+PROBLEMS +\n	0.5	ProblemHeader
+
+
+\n(PE)\n	0.5	FindingsHeader
+\n(PE) +\n	0.5	FindingsHeader
+\n(PE):\n	0.5	FindingsHeader
+\n(PE): +\n	0.5	FindingsHeader
+\n(VS)\n	0.5	FindingsHeader
+\n(VS) +\n	0.5	FindingsHeader
+\n(VS):	0.5	FindingsHeader
+\n\nAssessment[| +]\n	0.4	FindingsHeader
+\n\nassessment[| +]\n	0.4	FindingsHeader
+
+
+
+Labs\n	0.5	LabHeader
+Labs +\n	0.5	LabHeader
+Labs:\n	0.5	LabHeader
+Labs: +\n	0.5	LabHeader
+Laboratory \C\c+)[|:][| +]\n	0.5	LabHeader
+LABORATORY DATA):	0.5	LabHeader
+Laboratory Data):	0.5	LabHeader
+Laboratory data):	0.5	LabHeader
+Chemistry)[| +]\n	0.5	LabHeader
+
+\n[| +](Allergies)[| +][|:][| +]\n	0.5	AllergyHeader
+\n[| +](Allergies)[| +]:[| +]	0.5	AllergyHeader
+\n[| +](Allergy)[| +][|:][| +]\n	0.5	AllergyHeader
+\n[| +](allergies)[| +]:[| +]	0.5	AllergyHeader
+\n[| +](allergies)[| +]:[| +]\n	0.5	AllergyHeader
+\n[| +](allergy)[| +]:[| +]\n	0.5	AllergyHeader
+\n[| +](allergy)[| +]:[| +]	0.5	AllergyHeader
+
+\n[| +](Chief complaint)[| +][|:][| +]\n	0.5	ChiefComplaintHeader
+\n[| +](Chief Complaint)[| +][|:][| +]\n	0.5	ChiefComplaintHeader
+\n[| +](chief complaint)[| +][|:][| +]\n	0.5	ChiefComplaintHeader
+\n[| +](CHIEF COMPLAINT)[| +][|:][| +]\n	0.5	ChiefComplaintHeader
+
+\n(Exam):\n	0.5	FindingsHeader
+\n(Exams):\n	0.5	FindingsHeader
+\n(Exam):\s+\n	0.5	FindingsHeader
+\n(Exams):\s+\n	0.5	FindingsHeader
+
+\n\s+(Exam):\n	0.5	FindingsHeader
+\n\s+(Exams):\n	0.5	FindingsHeader
+\n\s+(Exam):\s+\n	0.5	FindingsHeader
+\n\s+(Exams):\s+\n	0.5	FindingsHeader
+
+\n(EXAM):\n	0.5	FindingsHeader
+\n(EXAMS):\n	0.5	FindingsHeader
+\n(EXAM):\s+\n	0.5	FindingsHeader
+\n(EXAMS):\s+\n	0.5	FindingsHeader
+
+\n\s+(EXAM):\n	0.5	FindingsHeader
+\n\s+(EXAMS):\n	0.5	FindingsHeader
+\n\s+(EXAM):\s+\n	0.5	FindingsHeader
+\n\s+(EXAMS):\s+\n	0.5	FindingsHeader
+
+
+\n(EXAMINATION):	0.5	FindingsHeader
+\n\s+(EXAMINATION):	0.5	FindingsHeader
+
+
+\n(INDICATIONS):	0.5	FindingsHeader
+\n\s+(INDICATIONS):	0.5	FindingsHeader
+

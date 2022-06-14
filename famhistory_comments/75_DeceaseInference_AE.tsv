@@ -1,0 +1,36 @@
+@processer:	featureinferencer							
+@splitter:								
+@version:2								
+@casesensitive:	true							
+#keep this comment for documentation purpose								
+#The following inference rules will follow this format:								
+#To define a conclusion annotation with features and corresponding default values:								
+#@ConclusionConcept	SuperTypeName	Feature1:defaultValue1	Feature2:defaultValue2...					
+								
+@CONCEPT_FEATURES	OTHER_AGE	Concept	Note: 	Negation:affirm	CERTAINTY:CERTAIN	Temporality:present	Experiencer:patient	Relevance:irrelevant
+@CONCEPT_FEATURES	ONSET_AGE	Concept	Note: 	Negation:affirm	CERTAINTY:CERTAIN	Temporality:present	Experiencer:patient	Relevance:irrelevant
+@CONCEPT_FEATURES	ONSET_RANGE	Concept	Note: 	Negation:affirm	CERTAINTY:CERTAIN	Temporality:present	Experiencer:patient	Relevance:irrelevant	RANGE:DECADE
+@CONCEPT_FEATURES	ONSET_PERIOD	Concept	Note: 	Negation:affirm	CERTAINTY:CERTAIN	Temporality:present	Experiencer:patient	Relevance:irrelevant
+@CONCEPT_FEATURES	ONSET_STRING	Concept	Note: 	Negation:affirm	CERTAINTY:CERTAIN	Temporality:present	Experiencer:patient	Relevance:irrelevant
+								
+@FEATURE_VALUES	Negation	affirm	negated					
+@FEATURE_VALUES	CERTAINTY	CERTAIN	UNCERTAIN					
+@FEATURE_VALUES	Temporality	present	historical	hypothetical				
+@FEATURE_VALUES	Experiencer	patient	nonpatient					
+@FEATURE_VALUES	Relevance	relevant	irrelevant	decease
+@FEATURE_VALUES	Structural	notstructural	isstructural					
+@FEATURE_VALUES	RANGE	DECADE	AROUND	EARLY	LATE	MID	BEFORE	AFTER
+
+								
+
+
+#tmp converting for evaluation purpose
+ONSET	ONSET_RANGE	RANGE:BEFORE	ONSET_AGE	decease	SourceDocumentInformation
+ONSET	ONSET_RANGE	RANGE:BEFORE	ONSET_RANGE	decease	SourceDocumentInformation
+ONSET	OTHER_AGE	Relevance:decease	ONSET_PERIOD	decease	SourceDocumentInformation
+ONSET	OTHER_AGE	Relevance:decease	ONSET_STRING	decease	SourceDocumentInformation
+
+ONSET	ONSET_RANGE	RANGE:BEFORE	DECEASED_AGE		SourceDocumentInformation
+ONSET	ONSET_RANGE	RANGE:BEFORE	DECEASED_RANGE		SourceDocumentInformation
+ONSET	ONSET_PERIOD	RANGE:BEFORE	DECEASED_PERIOD		SourceDocumentInformation
+ONSET	ONSET_STRING	RANGE:BEFORE	DECEASED_STRING		SourceDocumentInformation

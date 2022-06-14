@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--This configuration is used for paper submission to evaluate how many more information can be  extracted by NLP
+using data from 06/26/2014 to 06/26/2021 inside the DSS_DATASET schema
+-->
+<configurations> 
+  <import> 
+    <documents> 
+      <corpusDir memo="The directory that stores the txt files" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigDirectoryChooser">data/train/se-hee</corpusDir>  
+      <includeFileTypes memo="Filter files by extension names (separate by comma). If not filter defined, all files will be read">txt</includeFileTypes> 
+    </documents>  
+    <annotations memo="support Brat and eHOST format, the format will be automatically detected."> 
+      <projectDir memo="the directory that hosts the eHOST project" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigDirectoryChooser">data/train/se-hee</projectDir>  
+      <includeAnnotationTypes memo="import annotation type filter configuration file" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser" openClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileOpener">conf/132_famhis_v6/dbconfig/import_types.csv</includeAnnotationTypes>  
+      <defaultRelations memo="default relations inference configuration file" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser" openClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileOpener">conf/132_famhis_v6/dbconfig/simplified_default_relation.tsv</defaultRelations>  
+      <enableSentenceSnippet>true</enableSentenceSnippet>  
+      <overWriteAnnotatorName memo="if a name is set, all the annotations' annotator will be overwritten by this name">gold</overWriteAnnotatorName> 
+    </annotations>  
+    <executes> 
+      <ImportDocuments memo="Import corpus to database">edu.utah.bmi.simple.gui.task.Import txt</ImportDocuments>  
+      <ViewImportedDocs memo="View the imported files in database">edu.utah.bmi.simple.gui.task.ViewImportDB</ViewImportedDocs>  
+      <ImportAnnotations memo="Import annotations into the output table">edu.utah.bmi.simple.gui.task.Import anno</ImportAnnotations>  
+      <ViewImportedAnnotations memo="View the imported annotations in database">edu.utah.bmi.simple.gui.task.ViewOutputDB ref</ViewImportedAnnotations> 
+    </executes> 
+  </import>  
+  <easycie> 
+    <pipeLineSetting> 
+      <CpeDescriptor memo="location of CPE descriptor" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser" openClick="edu.utah.bmi.simple.gui.doubleclick.RunCpmFrame">desc/cpe/faircode5_cpe_2struct.xml</CpeDescriptor>  
+      <Section_Detector_R_AE> 
+        <RuleFileOrStr memo="section detector rule file" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser" openClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileOpener">conf/132_famhis_v6/00_Section_Detector_R_AE.tsv</RuleFileOrStr> 
+      </Section_Detector_R_AE>  
+      <RuSH_AE> 
+        <RuleFileOrStr memo="sentence segmentation rules" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser" openClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileOpener">conf/132_famhis_v6/10_RuSH_AE.tsv</RuleFileOrStr> 
+      </RuSH_AE>  
+      <FastCNER_AE> 
+        <RuleFileOrStr memo="Context detection" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser" openClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileOpener">conf/132_famhis_v6/15_FastCNER_AE.tsv</RuleFileOrStr> 
+      </FastCNER_AE>  
+      <FastNER_AE> 
+        <RuleFileOrStr memo="Context detection" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser" openClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileOpener">conf/132_famhis_v6/20_FastNER_AE.tsv</RuleFileOrStr>  
+        <IncludeSections memo="Only check the following sections"/>  
+        <LogRuleInfo>true</LogRuleInfo> 
+      </FastNER_AE>  
+      <NERCoordinator> 
+        <RuleFileOrStr memo="Context detection" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser" openClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileOpener">conf/132_famhis_v6/30_NERCoordinator.tsv</RuleFileOrStr> 
+      </NERCoordinator>  
+      <FastContext_AE> 
+        <RuleFileOrStr memo="Context detection" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser" openClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileOpener">conf/132_famhis_v6/40_FastContext_AE.txt</RuleFileOrStr> 
+      </FastContext_AE>  
+      <TemporalAnnotator> 
+        <RuleFileOrStr memo="" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser" openClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileOpener"/>  
+        <RecordDateColumnName memo="The column name that contains the note date information, default is DATE">DATE</RecordDateColumnName>  
+        <ReferenceDateColumnName memo="The column name that contains the reference date information, default is REF_DTM">REF_DTM</ReferenceDateColumnName>  
+        <AroundConcepts memo="Around which concepts types will this annotator try to detect temporal mentions">Concept</AroundConcepts> 
+      </TemporalAnnotator>  
+      <TemporalContext> 
+        <RuleFileOrStr memo="" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser" openClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileOpener"/>  
+        <InferTemporalStatusForAllTargetConcept memo="">false</InferTemporalStatusForAllTargetConcept>  
+        <RecordDateColumnName memo="The column name that contains the note date information, default is DATE">DATE</RecordDateColumnName>  
+        <ReferenceDateColumnName memo="The column name that contains the reference date information, default is REF_DTM">REF_DTM</ReferenceDateColumnName>  
+        <SaveDateDifference memo="Whether save the hours difference after reference date">true</SaveDateDifference>  
+        <DatePriority memo="Priority to solve multiple date mentions in context,either EARLYFIRST or LATEFIRST">CLOSEFIRST</DatePriority> 
+      </TemporalContext>  
+      <FeatureInference_AE> 
+        <RuleFileOrStr memo="Infer annotation types based on modifiers" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser" openClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileOpener">conf/132_famhis_v6/60_FeatureInference_AE.tsv</RuleFileOrStr> 
+      </FeatureInference_AE>  
+      <FeatureMerger_AE> 
+        <RuleFileOrStr memo="Infer annotation types based on modifiers" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser" openClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileOpener"/> 
+      </FeatureMerger_AE>  
+      <AnnoMultiplier_AE> 
+        <RuleFileOrStr memo="Infer annotation types based on modifiers" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser" openClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileOpener">conf/132_famhis_v6/65_Multiplier_AE.tsv</RuleFileOrStr> 
+      </AnnoMultiplier_AE>  
+      <AnnoContextAnnotator> 
+        <RuleFileOrStr memo="Infer annotation types based on modifiers" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser" openClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileOpener">conf/132_famhis_v6/62_AnnoContext_AE.tsv</RuleFileOrStr> 
+      </AnnoContextAnnotator>  
+      <DX_Consolidate_AE> 
+        <RuleFileOrStr memo="Consolidate DX between comments and structured data" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser" openClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileOpener">conf/132_famhis_v6/70_DX_Consolidate_AE.tsv</RuleFileOrStr>  
+        <AnnotatePosition>FIRSTEVIDENCE</AnnotatePosition>  
+        <Replacing>true</Replacing> 
+      </DX_Consolidate_AE>  
+      <ConvertStrOnset_AE> 
+        <RuleFileOrStr memo="Infer annotation types based on modifiers" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser" openClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileOpener">conf/132_famhis_v6/72_ConvertStrOnset_AE.tsv</RuleFileOrStr> 
+      </ConvertStrOnset_AE>  
+      <DeceaseInference_AE> 
+        <RuleFileOrStr memo="Infer deceased age as onset range (before)" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser" openClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileOpener">conf/132_famhis_v6/75_DeceaseInference_AE.tsv</RuleFileOrStr> 
+      </DeceaseInference_AE>  
+      <RelationAnnotator> 
+        <RuleFileOrStr memo="Infer annotation types based on modifiers" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser" openClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileOpener">conf/132_famhis_v6/80_RelationAnnotator_AE.tsv</RuleFileOrStr> 
+      </RelationAnnotator>  
+      <DocInference_AE> 
+        <RuleFileOrStr memo="Infer sentence types based on the mention level annotations" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser" openClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileOpener">conf/132_famhis_v6/90_DocInference_AE.tsv</RuleFileOrStr> 
+      </DocInference_AE>  
+      <StructFHXWriter> 
+        <BUNCH_COLUMN_NAME memo="The column name to differentiate different patients">EHR_PAT_ID</BUNCH_COLUMN_NAME>  
+        <DBConfigFile memo="" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser" openClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileOpener">conf/132_famhis_v6/dbconfig/oracle_inputdb_example.xml</DBConfigFile>
+        <DocTableName memo="The table name to save the NLP output">N_PAT_FHX_NLP</DocTableName>  
+        <Version memo="Version id">76</Version>  
+        <Annotator memo="">76</Annotator>  
+        <CodeMapFile memo="the file contains the config for mapping NLP output to target codes" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser" openClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileOpener">conf/132_famhis_v5/nlp-code-set-canon-map.csv</CodeMapFile>  
+        <CutoffAge memo="The age to differentiate between include and exclude">45</CutoffAge>  
+        <IncludeUncertain memo="Wheter include uncertain cases">true</IncludeUncertain>
+      </StructFHXWriter>  
+      <report memo="whether report the processing details at the end">f</report> 
+    </pipeLineSetting>  
+    <annotators> 
+      <current memo="Mark current annotations with annotator: ">77</current> 
+    </annotators>  
+    <view> 
+      <queryName>DocSnippet</queryName> 
+    </view>  
+    <executes> 
+      <RunEasyCIE memo="Run Preannotator using current rules">edu.utah.bmi.simple.gui.task.RunCPEDescriptorTask</RunEasyCIE>  
+      <ViewOutputInDB memo="View the output in database">edu.utah.bmi.simple.gui.task.ViewOutputDB</ViewOutputInDB> 
+    </executes> 
+  </easycie>  
+  <compare> 
+    <compare> 
+      <targetAnnotator memo="Compare annotations from annotator (leave it blank will use easycie's current annotator as default)">132</targetAnnotator>  
+      <targetRunId memo="run id of target annotator. Default is the latest run id when leave blank"/>  
+      <referenceAnnotator memo="Compare annotations against annotator: ">gold</referenceAnnotator>  
+      <referenceRunId memo="run id of reference annotator. Default is the latest run id when leave blank"/>  
+      <referenceTable>GOLD</referenceTable>  
+      <strictCompare>false</strictCompare>  
+      <typeFilter memo="limit the comparison to a certain type">FAMILYMEMBER</typeFilter> 
+    </compare>  
+    <executes> 
+      <Compare memo="Compare the difference between two annotators">edu.utah.bmi.simple.gui.task.CompareBDSTask</Compare>  
+      <ViewComparedResults memo="View the output in database">edu.utah.bmi.simple.gui.task.ViewDiffDB</ViewComparedResults> 
+    </executes> 
+  </compare>  
+  <debug> 
+    <log> 
+      <Section_Detector_R_AE memo="display types of sections">SectionBody, SectionHeader</Section_Detector_R_AE>  
+      <RuSH_AE memo="display types of RuSH (sentence segmentor and tokenizer) output">Token,Sentence</RuSH_AE>  
+      <FastCNER_AE memo="display types of FastCNER_AE output"/>  
+      <FastNER_AE memo="display types of FastNER_AE output">Concept</FastNER_AE>  
+      <NERCoordinator memo="display types of NERCoordinator output">Concept</NERCoordinator>  
+      <FastContext_AE memo="display types of FastContext_AE                                                                                                                  output">Concept</FastContext_AE>  
+      <TemporalContext_AE memo="display types of TemporalContext_AE output">Concept</TemporalContext_AE>  
+      <FeatureInference_AE memo="display types of FeatureInference_AE output">Concept</FeatureInference_AE>  
+      <FeatureMerger_AE memo="display types of FeatureMerger_AE output">Concept</FeatureMerger_AE>  
+      <AnnoMultiplier_AE memo="display types of AnnoMultiplier_AE output">Concept</AnnoMultiplier_AE>  
+      <AnnoContextAnnotator memo="display types of AnnoContextAnnotator output">Concept</AnnoContextAnnotator>  
+      <DX_Consolidate_AE memo="display types of DX_Consolidate_AE output">Concept</DX_Consolidate_AE>  
+      <ConvertStrOnset_AE memo="display types of DX_Consolidate_AE output">Concept</ConvertStrOnset_AE>  
+      <DeceaseInference_AE memo="display types of FeatureInference_AE output">ONSET,STR_ONSET_AGE,OTHER_AGE,DX_CONCEPT</DeceaseInference_AE>  
+      <RelationAnnotator memo="display types of RelationAnnotator output">Relation</RelationAnnotator>  
+      <DocInference_AE memo="display types of DocInference_AE output">Doc_Base</DocInference_AE>  
+      <metaStr memo="manually add metadata for debugging">DOC_ID,-1|DATASETID,-1|DOC_NAME,debug.dco|DATE,2085-01-01 00:00:00|REF_DATE,2085-06-05 00:00:00</metaStr>  
+      <ShowUimaViewer memo="if true then display UIMA annotation viewer after execution">f</ShowUimaViewer> 
+    </log>  
+    <executes> 
+      <RunEasyCIEDebugger memo="Debug using string input">edu.utah.bmi.simple.gui.task.RunCPEDescriptorDebugTask</RunEasyCIEDebugger>  
+      <RefreshDebugPipe memo="After change the configuration files, you need manually refresh the pipeline">edu.utah.bmi.simple.gui.task.RefreshDebugPipe</RefreshDebugPipe> 
+    </executes> 
+  </debug>  
+  <export> 
+    <format> 
+      <ehost memo="the directory to save the exported ehost files" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigDirectoryChooser">data/output/ehost</ehost>  
+      <brat memo="the directory to save the exported brat files" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigDirectoryChooser">data/output/brat</brat>  
+      <uima memo="the directory to save the exported uima xmi files" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigDirectoryChooser">data/output/xmi</uima>  
+      <exportTypes memo="If specified, then only these types will be displayed(separate by comma). If not, only Concepts will be saved. To save document conclusion, add type Doc_BASE">Concept,Doc_Base</exportTypes> 
+    </format>  
+    <excel> 
+      <!--<sql>SELECT CN.PAT_ID,OUTPUT.DOC_NAME,TYPE,SNIPPET,BEGIN,END,FEATURES,NC.`TEXT` FROM IRB00097336.OUTPUT JOIN (SELECT DISTINCT DOC_NAME from IRB00097336.`OUTPUT` OU join ClinicNotes CN on OU.DOC_NAME=CN.NOTE_ID INNER JOIN NP_CN_PTIDS NP ON CN.PAT_ID=NP.PAT_ID WHERE OU.TYPE='Pos_Doc' AND annotator='v1' AND RUN_ID=43 ORDER BY RAND() LIMIT 500) DOCLIST ON OUTPUT.DOC_NAME=DOCLIST.DOC_NAME join ClinicNotes CN on OUTPUT.DOC_NAME=CN.NOTE_ID join NoteContent NC on OUTPUT.DOC_NAME=NC.NOTE_ID WHERE annotator='v2' AND RUN_ID=45</sql>  -->  
+      <!--<count>SELECT count(*) FROM IRB00097336.OUTPUT JOIN (SELECT DISTINCT DOC_NAME from IRB00097336.`OUTPUT` OU join ClinicNotes CN on OU.DOC_NAME=CN.NOTE_ID INNER JOIN NP_CN_PTIDS NP ON CN.PAT_ID=NP.PAT_ID WHERE OU.TYPE='Pos_Doc' AND annotator='v1' AND RUN_ID=43 LIMIT 500) DOCLIST ON OUTPUT.DOC_NAME=DOCLIST.DOC_NAME join ClinicNotes CN on OUTPUT.DOC_NAME=CN.NOTE_ID WHERE annotator='v2' AND RUN_ID=45</count>  -->  
+      <sql/>  
+      <directory memo="The dirctory to save the exported excel files">data/output/excel</directory>  
+      <sampleSize memo="If &gt;0, then easyCIE will randomly sample the defined number of documents">600</sampleSize> 
+    </excel>  
+    <executes> 
+      <ExportEhost memo="Run Preannotator and export the annotation to eHOST format">edu.utah.bmi.simple.gui.task.ExportEhostFromDB</ExportEhost>  
+      <OpenEhost memo="Open ehost to view the exported annotations">edu.utah.bmi.simple.gui.task.ExecuteOsCommand java -jar lib/ehost.jar -x export/format/ehost</OpenEhost>  
+      <ExportEhost memo="Run Preannotator and export the annotation to eHOST format">edu.utah.bmi.simple.gui.task.ExportEhostFromDB</ExportEhost>  
+      <OpenEhost memo="Open ehost to view the exported annotations">edu.utah.bmi.simple.gui.task.ExecuteOsCommand java -jar lib/ehost.jar -x export/format/ehost</OpenEhost> 
+    </executes> 
+  </export>  
+  <settings> 
+    <import> 
+      <dbFile memo="the db file(or configuration file) used to saved the txt corpus" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser">conf/132_famhis_v6/dbconfig/oracle_inputdb_example.xml</dbFile>  
+      <table memo="the table used to saved the txt corpus">MZ_105797_NCIU24_FH_VW</table>  
+      <datasetId memo="data set id (Default is '0'. Use to differentiate different dataset in the same table.)">1</datasetId>  
+      <overwrite memo="if the table exist, whether overwrite it">true</overwrite> 
+    </import>  
+    <nlpComponents> 
+      <rush memo="sentence segmentation rules" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser" openClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileOpener">conf/132_famhis_v6/10_RuSH_AE.tsv</rush> 
+    </nlpComponents>  
+    <reference> 
+      <table>GOLD</table> 
+    </reference>  
+    <output> 
+      <dbFile memo="the db file(or configuration file) used to saved the outputs" doubleClick="edu.utah.bmi.simple.gui.doubleclick.ConfigFileChooser">conf/132_famhis_v6/dbconfig/sqliteconfig_example.xml</dbFile>
+      <snippetResultTable memo="the table used to saved the annotations">NLP_RESULT_SNIPPET</snippetResultTable>  
+      <docResultTable memo="the table used to saved the annotations">KMM_DM_LOAD.N_PAT_FHX_NLP</docResultTable>  
+      <bunchResultTable memo="the table used to saved the annotations">NLP_RESULT_VISIT</bunchResultTable>  
+      <compareTable memo="the table used to saved the annotations">DIFF</compareTable> 
+    </output>  
+    <debug> 
+      <class>edu.utah.bmi.nlp.uima.AdaptableCPEDescriptorStringDebugger</class> 
+    </debug>  
+    <viewer> 
+      <preTag>&lt;html&gt;&lt;head&gt; &lt;script&gt; function scrollToId() { var elmnt = document.getElementById("highlighter"); elmnt.scrollIntoView(); } &lt;/script&gt; &lt;/head&gt;&lt;body onload='scrollToId()' style="margin: 0; padding: 0"&gt; &lt;div id="mydiv"&gt;</preTag>  
+      <postTag>&lt;/div&gt; &lt;/body&gt;&lt;/html&gt;</postTag>  
+      <highlighter_begin memo="Set default color to FFFFF, then the viewer will pick one from the color pool below.">&lt;span id="highlighter" style="background-color: #ffffff"&gt;</highlighter_begin>  
+      <highlighter_end>&lt;/span&gt;</highlighter_end>  
+      <snippet_length>90</snippet_length>  
+      <limit_records>300</limit_records>  
+      <random_pick_color memo="whether randomly pick a color from the color pool below or pick in order">f</random_pick_color>  
+      <color_pool>ffa94d|efdecd|ffbf00|00ffff|9966cc|ed872d|a3c13d|a4c659|8db600|89cff0|fb8e51|7fffd4|e9d66b|87a96b|ff9966|21abcd|deb887|848482|f4c2c2|ff2052|a1caf1|007fff|b2beb5|5d8aa8</color_pool>  
+      <width memo="The column width in view table"> 
+        <ID>120</ID>  
+        <DOC_NAME>50</DOC_NAME>  
+        <BUNCH_TYPE>140</BUNCH_TYPE>  
+        <DOC_TYPE>100</DOC_TYPE>  
+        <TYPE>140</TYPE>  
+        <SNIPPET>300</SNIPPET>  
+        <DATE>100</DATE>  
+        <REF_DATE/> 
+      </width> 
+    </viewer>  
+    <help>https://github.com/jianlins/EasyCIE_GUI/wiki</help>  
+    <issues>https://github.com/jianlins/EasyCIE_GUI/issues</issues> 
+  </settings> 
+</configurations>

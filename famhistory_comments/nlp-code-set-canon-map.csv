@@ -1,0 +1,93 @@
+NCODE,SET_BINDING,CODE_BINDING,CODE_SYSTEM,CODE,CODE_LABEL
+ATM_GENE_MUTATION,BC_GENE_MUTATION,ATM_GENE_MUTATION,http://utah.edu/rehr/nccn/canonical,ATM_GENE_MUTATION,ATM_GENE_MUTATION
+BRCA_1_GENE_MUTATION,BC_GENE_MUTATION,BRCA_1_GENE_MUTATION,http://snomed.info/sct,412734009,BRCA1 gene mutation positive (finding)
+BRCA_2_GENE_MUTATION,BC_GENE_MUTATION,BRCA_2_GENE_MUTATION,http://snomed.info/sct,412738007,BRCA2 gene mutation positive (finding)
+CDH1_GENE_MUTATION,BC_GENE_MUTATION,CDH1_GENE_MUTATION,http://utah.edu/rehr/nccn/canonical,CDH1_GENE_MUTATION,CDH1_GENE_MUTATION
+CHEK2_GENE_MUTATION,BC_GENE_MUTATION,CHEK2_GENE_MUTATION,http://utah.edu/rehr/nccn/canonical,CHEK2_GENE_MUTATION,CHEK2_GENE_MUTATION
+COWDEN_SYNDROME,BC_GENE_MUTATION,COWDEN_SYNDROME,http://snomed.info/sct,58037000,Cowden syndrome
+LI_FRAUMENI_SYNDROME,BC_GENE_MUTATION,LI_FRAUMENI_SYNDROME,http://snomed.info/sct,428850001,Li-Fraumeni syndrome
+PALB2_GENE_MUTATION,BC_GENE_MUTATION,PALB2_GENE_MUTATION,http://utah.edu/rehr/nccn/canonical,PALB2_GENE_MUTATION,PALB2_GENE_MUTATION
+PTEN_GENE_MUTATION,BC_GENE_MUTATION,PTEN_GENE_MUTATION,http://utah.edu/rehr/nccn/canonical,PTEN_GENE_MUTATION,PTEN_GENE_MUTATION
+TP53_GENE_MUTATION,BC_GENE_MUTATION,TP53_GENE_MUTATION,http://utah.edu/rehr/nccn/canonical,TP53_GENE_MUTATION,TP53_GENE_MUTATION
+BREAST,BC_JEWISH_CA_RISK,CANCER_BREAST,http://snomed.info/sct,254837009,Malignant neoplasm of breast (disorder)
+OVARIAN,BC_JEWISH_CA_RISK,CANCER_OVARIAN,http://snomed.info/sct,363443007,Malignant tumor of ovary (disorder)
+PANCREAS,BC_JEWISH_CA_RISK,CANCER_PANCREAS,http://snomed.info/sct,363418001,Malignant tumor of pancreas (disorder)
+PROSTATE,BC_JEWISH_CA_RISK,CANCER_PROSTATE,http://snomed.info/sct,399068003,Malignant tumor of prostate (disorder)
+BLADDER,CO_ADD_RISK,CANCER_BLADDER,http://snomed.info/sct,399326009,Malignant tumor of urinary bladder (disorder)
+BRAIN,CO_ADD_RISK,CANCER_BRAIN,http://snomed.info/sct,109912006,Overlapping malignant neoplasm of brain (disorder)
+COLON,CO_ADD_RISK,CANCER_COLON,http://snomed.info/sct,363406005,Malignant neoplasm of colon (disorder)
+KIDNEY,CO_ADD_RISK,CANCER_KIDNEY,http://snomed.info/sct,363518003,Malignant tumor of kidney (disorder)
+OVARIAN,CO_ADD_RISK,CANCER_OVARIAN,http://snomed.info/sct,363443007,Malignant tumor of ovary (disorder)
+PANCREAS,CO_ADD_RISK,CANCER_PANCREAS,http://snomed.info/sct,363418001,Malignant tumor of pancreas (disorder)
+RECTAL,CO_ADD_RISK,CANCER_RECTAL,http://snomed.info/sct,363351006,Malignant tumor of rectum (disorder)
+INTESTINE,CO_ADD_RISK,CANCER_SMALL_INTESTINE,http://snomed.info/sct,363509000,Malignant tumor of small intestine (disorder)
+STOMACH,CO_ADD_RISK,CANCER_STOMACH,http://snomed.info/sct,363349007,Malignant tumor of stomach (disorder)
+URETERAL,CO_ADD_RISK,CANCER_URETERAL,http://snomed.info/sct,363458004,Malignant tumor of ureter (disorder)
+URETHRAL,CO_ADD_RISK,CANCER_URETHRAL,http://snomed.info/sct,363459007,Malignant tumor of urethra (disorder)
+UTERINE,CO_ADD_RISK,CANCER_UTERINE,http://snomed.info/sct,371973000,Malignant neoplasm of uterus (disorder)
+UTERINE_OR_ENDOMETRIAL,CO_ADD_RISK,CANCER_UTERINE,http://snomed.info/sct,371973000,Malignant neoplasm of uterus (disorder)
+LYNCH_SYNDROME,CO_ADD_RISK,LYNCH_SYNDROME,http://snomed.info/sct,716318002,Lynch syndrome (disorder)
+APC_GENE_MUTATION,CO_GENE_MUTATION,APC_GENE_MUTATION,http://utah.edu/rehr/nccn/canon,APC_GENE_MUTATION,APC_GENE_MUTATION
+EPCAM_GENE_MUTATION,CO_GENE_MUTATION,EPCAM_GENE_MUTATION,http://utah.edu/rehr/nccn/canon,EPCAM_GENE_MUTATION,EPCAM_GENE_MUTATION
+FAMILIAL_ADENOMATOUS_POLYPOSIS,CO_GENE_MUTATION,FAMILIAL_ADENOMATOUS_POLYPOSIS,http://snomed.info/sct,72900001,Familial multiple polyposis syndrome (disorder)
+HEREDITARY_NONPOLYPOSIS_COLON_CANCER,CO_GENE_MUTATION,HEREDITARY_NONPOLYPOSIS_COLON_CANCER,http://snomed.info/sct,315058005,Hereditary nonpolyposis colon cancer (disorder)
+LYNCH_SYNDROME,CO_GENE_MUTATION,LYNCH_SYNDROME,http://snomed.info/sct,716318002,Lynch syndrome (disorder)
+MLH1_GENE_MUTATION,CO_GENE_MUTATION,MLH1_GENE_MUTATION,http://utah.edu/rehr/nccn/canon,MLH1_GENE_MUTATION,MLH1_GENE_MUTATION
+MSH2_GENE_MUTATION,CO_GENE_MUTATION,MSH2_GENE_MUTATION,http://utah.edu/rehr/nccn/canon,MSH2_GENE_MUTATION,MSH2_GENE_MUTATION
+MSH6_GENE_MUTATION,CO_GENE_MUTATION,MSH6_GENE_MUTATION,http://utah.edu/rehr/nccn/canon,MSH6_GENE_MUTATION,MSH6_GENE_MUTATION
+MUTYH_GENE_MUTATION,CO_GENE_MUTATION,MUTYH_GENE_MUTATION,http://utah.edu/rehr/nccn/canon,MUTYH_GENE_MUTATION,MUTYH_GENE_MUTATION
+PMS2_GENE_MUTATION,CO_GENE_MUTATION,PMS2_GENE_MUTATION,http://utah.edu/rehr/nccn/canon,PMS2_GENE_MUTATION,PMS2_GENE_MUTATION
+SERRATED_POLYPOSIS,CO_GENE_MUTATION,SERRATED_POLYPOSIS,http://snomed.info/sct,763536006,Hyperplastic polyposis syndrome (disorder)
+OVARIAN,FEMALE_DX,CANCER_OVARIAN,http://snomed.info/sct,363443007,Malignant tumor of ovary (disorder)
+UTERINE,FEMALE_DX,CANCER_UTERINE,http://snomed.info/sct,371973000,Malignant neoplasm of uterus (disorder)
+AUNT,FEMALE_RELATIVE,AUNT,http://hl7.org/fhir/ValueSet/v3-FamilyMember,AUNT,aunt
+DAUGHTER,FEMALE_RELATIVE,DAUGHTER,http://hl7.org/fhir/ValueSet/v3-FamilyMember,DAU,natural daughter
+GRANDMOTHER,FEMALE_RELATIVE,GRANDMOTHER,http://hl7.org/fhir/ValueSet/v3-FamilyMember,GRFTH,grandfather
+HALF_SISTER,FEMALE_RELATIVE,HALF_SISTER,http://hl7.org/fhir/ValueSet/v3-FamilyMember,HSIS,half sister
+MATERNAL_AUNT,FEMALE_RELATIVE,MATERNAL_AUNT,http://hl7.org/fhir/ValueSet/v3-FamilyMember,MAUNT,maternal aunt
+MATERNAL_GRANDMOTHER,FEMALE_RELATIVE,MATERNAL_GRANDMOTHER,http://hl7.org/fhir/ValueSet/v3-FamilyMember,MGRMTH,maternal grandmother
+MATERNAL_HALF_SISTER,FEMALE_RELATIVE,MATERNAL_HALF_SISTER,http://snomed.info/sct,719765007,Maternal half sister
+MOTHER,FEMALE_RELATIVE,MOTHER,http://hl7.org/fhir/ValueSet/v3-FamilyMember,NMTH,natural mother
+PATERNAL_AUNT,FEMALE_RELATIVE,PATERNAL_AUNT,http://hl7.org/fhir/ValueSet/v3-FamilyMember,PAUNT,paternal aunt
+PATERNAL_GRANDMOTHER,FEMALE_RELATIVE,PATERNAL_GRANDMOTHER,http://hl7.org/fhir/ValueSet/v3-FamilyMember,PGRMTH,paternal grandmother
+PATERNAL_HALF_SISTER,FEMALE_RELATIVE,PATERNAL_HALF_SISTER,http://snomed.info/sct,719764006,Paternal half sister
+SISTER,FEMALE_RELATIVE,SISTER,http://hl7.org/fhir/ValueSet/v3-FamilyMember,SIS,sister
+BROTHER,FIRST_DEG_RELATIVE,BROTHER,http://hl7.org/fhir/ValueSet/v3-FamilyMember,BRO,brother
+DAUGHTER,FIRST_DEG_RELATIVE,DAUGHTER,http://hl7.org/fhir/ValueSet/v3-FamilyMember,DAU,natural daughter
+FATHER,FIRST_DEG_RELATIVE,FATHER,http://hl7.org/fhir/ValueSet/v3-FamilyMember,NFTH,natural father
+HALF_BROTHER,FIRST_DEG_RELATIVE,HALF_BROTHER,http://hl7.org/fhir/ValueSet/v3-FamilyMember,HBRO,half brother
+HALF_SISTER,FIRST_DEG_RELATIVE,HALF_SISTER,http://hl7.org/fhir/ValueSet/v3-FamilyMember,HSIS,half sister
+MATERNAL_HALF_BROTHER,FIRST_DEG_RELATIVE,MATERNAL_HALF_BROTHER,http://snomed.info/sct,719766008,Maternal half brother
+MATERNAL_HALF_SISTER,FIRST_DEG_RELATIVE,MATERNAL_HALF_SISTER,http://snomed.info/sct,719765007,Maternal half sister
+MOTHER,FIRST_DEG_RELATIVE,MOTHER,http://hl7.org/fhir/ValueSet/v3-FamilyMember,NMTH,natural mother
+PATERNAL_HALF_BROTHER,FIRST_DEG_RELATIVE,PATERNAL_HALF_BROTHER,http://snomed.info/sct,719762005,Paternal half brother
+PATERNAL_HALF_SISTER,FIRST_DEG_RELATIVE,PATERNAL_HALF_SISTER,http://snomed.info/sct,719764006,Paternal half sister
+SISTER,FIRST_DEG_RELATIVE,SISTER,http://hl7.org/fhir/ValueSet/v3-FamilyMember,SIS,sister
+SON,FIRST_DEG_RELATIVE,SON,http://hl7.org/fhir/ValueSet/v3-FamilyMember,SON,natural son
+CANCER_PROSTATE,MALE_DX,CANCER_PROSTATE,http://snomed.info/sct,399068003,Malignant tumor of prostate (disorder)
+BROTHER,MALE_RELATIVE,BROTHER,http://hl7.org/fhir/ValueSet/v3-FamilyMember,BRO,brother
+FATHER,MALE_RELATIVE,FATHER,http://hl7.org/fhir/ValueSet/v3-FamilyMember,NFTH,natural father
+GRANDFATHER,MALE_RELATIVE,GRANDFATHER,http://hl7.org/fhir/ValueSet/v3-FamilyMember,GRMTH,grandmother
+HALF_BROTHER,MALE_RELATIVE,HALF_BROTHER,http://hl7.org/fhir/ValueSet/v3-FamilyMember,HBRO,half brother
+MATERNAL_GRANDFATHER,MALE_RELATIVE,MATERNAL_GRANDFATHER,http://hl7.org/fhir/ValueSet/v3-FamilyMember,MGRFTH,maternal grandfather
+MATERNAL_HALF_BROTHER,MALE_RELATIVE,MATERNAL_HALF_BROTHER,http://snomed.info/sct,719766008,Maternal half brother
+MATERNAL_UNCLE,MALE_RELATIVE,MATERNAL_UNCLE,http://hl7.org/fhir/ValueSet/v3-FamilyMember,MUNCLE,maternal uncle
+PATERNAL_GRANDFATHER,MALE_RELATIVE,PATERNAL_GRANDFATHER,http://hl7.org/fhir/ValueSet/v3-FamilyMember,PGRFTH,paternal grandfather
+PATERNAL_HALF_BROTHER,MALE_RELATIVE,PATERNAL_HALF_BROTHER,http://snomed.info/sct,719762005,Paternal half brother
+PATERNAL_UNCLE,MALE_RELATIVE,PATERNAL_UNCLE,http://hl7.org/fhir/ValueSet/v3-FamilyMember,PUNCLE,paternal uncle
+SON,MALE_RELATIVE,SON,http://hl7.org/fhir/ValueSet/v3-FamilyMember,SON,natural son
+UNCLE,MALE_RELATIVE,UNCLE,http://hl7.org/fhir/ValueSet/v3-FamilyMember,UNCLE,uncle
+DOUBLE_COUSIN,MATERNAL_SECOND_DEG_RELATIVE,DOUBLE_COUSIN,http://utah.edu/rehr/nccn/canon,DOUBLE_COUSIN,double cousin
+MATERNAL_AUNT,MATERNAL_SECOND_DEG_RELATIVE,MATERNAL_AUNT,http://hl7.org/fhir/ValueSet/v3-FamilyMember,MAUNT,maternal aunt
+MATERNAL_GRANDFATHER,MATERNAL_SECOND_DEG_RELATIVE,MATERNAL_GRANDFATHER,http://hl7.org/fhir/ValueSet/v3-FamilyMember,MGRFTH,maternal grandfather
+MATERNAL_GRANDMOTHER,MATERNAL_SECOND_DEG_RELATIVE,MATERNAL_GRANDMOTHER,http://hl7.org/fhir/ValueSet/v3-FamilyMember,MGRMTH,maternal grandmother
+MATERNAL_HALF_BROTHER,MATERNAL_SECOND_DEG_RELATIVE,MATERNAL_HALF_BROTHER,http://snomed.info/sct,719766008,Maternal half brother
+MATERNAL_HALF_SISTER,MATERNAL_SECOND_DEG_RELATIVE,MATERNAL_HALF_SISTER,http://snomed.info/sct,719765007,Maternal half sister
+MATERNAL_UNCLE,MATERNAL_SECOND_DEG_RELATIVE,MATERNAL_UNCLE,http://hl7.org/fhir/ValueSet/v3-FamilyMember,MUNCLE,maternal uncle
+DOUBLE_COUSIN,PATERNAL_SECOND_DEG_RELATIVE,DOUBLE_COUSIN,http://utah.edu/rehr/nccn/canon,DOUBLE_COUSIN,double cousin
+PATERNAL_AUNT,PATERNAL_SECOND_DEG_RELATIVE,PATERNAL_AUNT,http://hl7.org/fhir/ValueSet/v3-FamilyMember,PAUNT,paternal aunt
+PATERNAL_GRANDFATHER,PATERNAL_SECOND_DEG_RELATIVE,PATERNAL_GRANDFATHER,http://hl7.org/fhir/ValueSet/v3-FamilyMember,PGRFTH,paternal grandfather
+PATERNAL_GRANDMOTHER,PATERNAL_SECOND_DEG_RELATIVE,PATERNAL_GRANDMOTHER,http://hl7.org/fhir/ValueSet/v3-FamilyMember,PGRMTH,paternal grandmother
+PATERNAL_HALF_BROTHER,PATERNAL_SECOND_DEG_RELATIVE,PATERNAL_HALF_BROTHER,http://snomed.info/sct,719762005,Paternal half brother
+PATERNAL_HALF_SISTER,PATERNAL_SECOND_DEG_RELATIVE,PATERNAL_HALF_SISTER,http://snomed.info/sct,719764006,Paternal half sister
+PATERNAL_UNCLE,PATERNAL_SECOND_DEG_RELATIVE,PATERNAL_UNCLE,http://hl7.org/fhir/ValueSet/v3-FamilyMember,PUNCLE,paternal uncle

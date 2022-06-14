@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright  2017  Department of Biomedical Informatics, University of Utah
+  ~ <p>
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~ <p>
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~ <p>
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<config>
+    <username>XXXXX</username>
+    <server>jdbc:oracle:thin:@(DESCRIPTION= (ADDRESS = (PROTOCOL = TCP)(HOST = xxxxxx)(PORT = 1521)))
+    </server>
+    <password>ENC(XXXXXXXX)</password>
+    <databaseName>DSS_DATASETS</databaseName>
+    <driver>oracle.jdbc.driver.OracleDriver</driver>
+    <concurUpdatable>true</concurUpdatable>
+    <createTables>
+        <item>
+            <name>NLP_LOG</name>
+            <sql>
+                <item>
+                    CREATE TABLE "KMM_DM_LOAD"."NLP_LOG"
+                    ("RUN_ID" NUMBER(22,0),
+                    "ANNOTATOR" VARCHAR2(50),
+                    "PIPELINE_ID" NUMBER(22,0),
+                    "START_DTM" DATE,
+                    "END_DTM" DATE,
+                    "NUM_NOTES" NUMBER(22,0),
+                    "NUM_VISITS" NUMBER(22,0),
+                    "NUM_POSITIVE" NUMBER(22,0),
+                    "COMMENTS" VARCHAR2(500)
+                    )
+                </item>
+            </sql>
+        </item>
+    </createTables>
+    <dropTables>
+        <item>
+            <name>NLP_LOG</name>
+            <sql>
+                <item>DROP TABLE KMM_DM_LOAD.LOG</item>
+            </sql>
+        </item>
+    </dropTables>
+    <queryStatements>
+        <item>
+            <name>queryDocs</name>
+            <sql>SELECT BUNCH_ID PAT_ID, BUNCH_ID, NOTE_ID DOC_ID, NOTE_ID DOC_NAME, TEXT, N.RPT_TYPE_CD, PROC_DT
+                "DATE", OPERATION_DATE REF_DTM, ROUND(N.PROC_DT-S.OPERATION_DATE) DIFF_DTM,'0' DATASET_ID
+                FROM {tableName}
+                WHERE STATUS IN ('F','AU') AND LENGTH(TEXT)>50 AND DATASET_ID=?
+                ORDER BY BUNCH_ID,"DATE",NOTE_ID
+            </sql>
+        </item>
+        <item>
+            <name>queryAnnos</name>
+            <sql>SELECT ID,DOC_NAME,TYPE,SNIPPET,BEGIN,END,SNIPPET_BEGIN,TEXT,FEATURES,COMMENTS,ANNOTATOR,RUN_ID FROM
+                {tableName} RS
+            </sql>
+        </item>
+        <item>
+            <name>querySnippetAnnos</name>
+            <sql>SELECT RS.ID,RS.DOC_NAME, RS.TYPE,RS.SNIPPET, RS.BEGIN,RS.END,RS.SNIPPET_BEGIN,IT.TEXT DOC_TEXT,
+                RS.FEATURES,IT.DATE, IT.REF_DATE,RS.COMMENTS,RS.ANNOTATOR,RS.RUN_ID FROM
+                {tableName} RS JOIN {inputTable} IT ON RS.DOC_NAME=IT.DOC_NAME
+            </sql>
+        </item>
+        <item>
+            <name>queryDocSnippetAnnos</name>
+            <sql>
+                SELECT RD.ID,RD.DOC_NAME,RD."TYPE" DOC_TYPE, RD.FEATURES DOC_FEATURES, RS.ID RSID,
+                RS."TYPE",RS.SNIPPET,RS.BEGIN,RS.END,RS.SNIPPET_BEGIN,
+                RS.FEATURES, RS.COMMENTS,RD.ANNOTATOR,RD.RUN_ID
+                FROM {docResultTable} RD LEFT OUTER JOIN {tableName} RS ON RD.DOC_NAME=RS.DOC_NAME WHERE ROWNUM&lt;100
+            </sql>
+        </item>
+        <item>
+            <name>queryBunchDocSnippetAnnos</name>
+            <sql>SELECT RD.ID ,IT.BUNCH_ID BID,RD.DOC_NAME,RD.DOC_NAME DID,RB.TYPE BUNCH_TYPE, RD.TYPE DOC_TYPE,
+                RS.TYPE,RS.SNIPPET,RS.BEGIN,RS.END,RS.SNIPPET_BEGIN,
+                RS.FEATURES,IT.DATE, IT.REF_DATE,RS.COMMENTS,RS.ANNOTATOR,RB.RUN_ID
+                FROM {bunchResultTable} RB JOIN
+                IT ON RB.DOC_NAME=IT.BUNCH_ID
+                JOIN {docResultTable} RD ON IT.DOC_NAME=RD.DOC_NAME
+                LEFT OUTER JOIN {tableName} RS ON RD.DOC_NAME=RS.DOC_NAME
+            </sql>
+        </item>
+        <item>
+            <name>exportExcel</name>
+            <sql>SELECT ID,{tableName}.DOC_NAME,TYPE,SNIPPET,BEGIN,END,FEATURES FROM {tableName}</sql>
+        </item>
+        <item>
+            <name>queryCount</name>
+            <sql>SELECT COUNT(*) FROM {tableName}</sql>
+        </item>
+        <item>
+            <name>queryAnnotators</name>
+            <sql>SELECT ANNOTATOR FROM ANNOTATORS</sql>
+        </item>
+        <item>
+            <name>checkAnnotatorExist</name>
+            <sql>SELECT COUNT(*) FROM ANNOTATORS WHERE ANNOTATOR=?</sql>
+        </item>
+        <item>
+            <name>getColumnsInfo</name>
+            <sql>SELECT column_name, data_type, data_length FROM all_tab_columns WHERE table_name = ?</sql>
+        </item>
+        <item>
+            <name>checkTableExists</name>
+            <sql>
+                SELECT COUNT(*) FROM DUAL WHERE EXISTS (SELECT * FROM ALL_OBJECTS WHERE OBJECT_TYPE =
+                &apos;TABLE&apos;
+                AND OWNER = ? AND OBJECT_NAME= ?)
+            </sql>
+        </item>
+        <item>
+            <name>lastIdofNLP_LOG</name>
+            <sql>SELECT NVL(MAX(RUN_ID),0) FROM {databaseName}.NLP_LOG</sql>
+        </item>
+        <item>
+            <name>masterInputQuery</name>
+            <sql>
+                SELECT ROWNUM  PAT_FHX_ID, ROWNUM  DOC_NAME, ROWNUM DOC_ID, F.MRN EHR_PAT_ID,
+                MEDICAL_HX_LABEL EHR_COND_LABEL, 9999 EHR_ENC_ID,
+                RELATION_LABEL EHR_REL_LABEL, CONTACT_DATE EHR_REC_DT,
+                AGE_OF_ONSET EHR_COND_ONSET_AGE,COMMENTS EHR_COMMENTS, ( '{{' || MEDICAL_HX_LABEL || '}} ' || COMMENTS || ' {{' ||
+                RELATION_LABEL || '}} ' || ' {{' || AGE_OF_ONSET || '}}' ) TEXT
+                FROM DSS_DATASETS.{tableName} F
+                WHERE DATASET_ID=?
+            </sql>
+        </item>
+        <item>
+            <name>masterCountQuery</name>
+            <sql>
+<!--                SELECT 20 FROM DSS_DATASETS.{tableName} npfn WHERE '1'=? and rownum &lt; 2-->
+                SELECT COUNT(*) FROM DSS_DATASETS.{tableName} F
+                WHERE DATASET_ID=?
+            </sql>
+        </item>
+        <item>
+            <name>maxRunIDofAnnotator</name>
+            <sql>SELECT MAX(RUN_ID) FROM {tableName} WHERE ANNOTATOR=?</sql>
+        </item>
+        <item>
+            <name>lastLogRunID</name>
+            <sql>SELECT MAX(RUN_ID) FROM KMM_DM_LOAD.NLP_LOG WHERE PIPELINE_ID=?</sql>
+        </item>
+        <item>
+            <name>logQuery</name>
+            <sql>SELECT RUN_ID, START_DTM, END_DTM, NUM_NOTES, COMMENTS FROM KMM_DM_LOAD.NLP_LOG WHERE RUN_ID=?
+            </sql>
+        </item>
+        <item>
+            <name>maxRunID</name>
+            <sql>SELECT MAX(RUN_ID) FROM {tableName} WHERE ANNOTATOR=?</sql>
+        </item>
+        <!--<item>-->
+        <!--<sql>SELECT DOC_NAME, TYPE, ANNO_TEXT, FEATURES,SNIPPET, ANNOTATOR,BEGIN, END,SNIPPET_BEGIN,-->
+        <!--SNIPPET_END,TEXT-->
+        <!--FROM OUTPUT JOIN DOCUMENTS ON OUTPUT.DOC_ID=DOCUMENTS.DOC_ID-->
+        <!--</sql>-->
+        <!--</item>-->
+    </queryStatements>
+
+    <insertStatements>
+        <item>
+            <name>KMM_DM_LOAD.N_PAT_FHX_NLP</name>
+            <sql>INSERT INTO KMM_DM_LOAD.N_PAT_FHX_NLP
+                (PAT_FHX_ID,EHR_PAT_ID,EHR_ENC_ID,EHR_REC_ID,EHR_REC_DT,EHR_COND_CODE_SYSTEM,EHR_COND_CODE,EHR_COND_LABEL,
+                CAN_COND_CODE_SYSTEM,CAN_COND_CODE,CAN_COND_LABEL,INT_COND_CD,
+                EHR_REL_CODE_SYSTEM,EHR_REL_CODE,EHR_REL_LABEL,CAN_REL_CODE_SYSTEM,CAN_REL_CODE,CAN_REL_LABEL,INT_REL_CD,EHR_COND_ONSET_AGE,EHR_COMMENTS,
+                OUT_ID
+                ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+            </sql>
+        </item>
+        <item>
+            <name>NLP_LOG</name>
+            <returnKey>RUN_ID</returnKey>
+            <sql>INSERT INTO {databaseName}.NLP_LOG (RUN_ID, START_DTM, END_DTM, NUM_NOTES, COMMENTS) VALUES (?,?,?,?,?)
+            </sql>
+        </item>
+        <item>
+            <name>ANNOTATORS</name>
+            <returnKey>ID</returnKey>
+            <sql>INSERT INTO ANNOTATORS (ANNOTATOR, ADD_DTM) VALUES (?,CURRENT_TIMESTAMP)
+            </sql>
+        </item>
+    </insertStatements>
+    <updateStatements>
+        <item>
+            <name>NLP_LOG</name>
+            <sql>UPDATE KMM_DM_LOAD.NLP_LOG SET PIPELINE_ID=?,START_DTM=?, END_DTM=?, NUM_NOTES=?, COMMENTS=? WHERE RUN_ID=?
+            </sql>
+        </item>
+    </updateStatements>
+    <templates>
+        <item>
+            <name>ANNOTATION_TABLE</name>
+            <sql>
+                <item>
+                    CREATE TABLE {databaseName}.{tableName} (
+                    ID NUMBER(22,0) GENERATED ALWAYS AS IDENTITY,
+                    DOC_NAME VARCHAR2(150),
+                    ANNOTATOR VARCHAR2(20),
+                    RUN_ID NUMBER(3,0),
+                    TYPE VARCHAR2(60),
+                    BEGIN NUMBER(8,0),
+                    END NUMBER(8,0),
+                    SNIPPET_BEGIN NUMBER(8,0),
+                    TEXT CLOB,
+                    FEATURES VARCHAR2(1000),
+                    SNIPPET CLOB,
+                    COMMENTS VARCHAR2(1000),
+                    CREATE_DTM DATE default sysdate not null)
+                </item>
+                <item>
+                    CREATE INDEX {tableName}_SN_ID_IND ON {tableName} (ID)
+                </item>
+                <item>
+                    CREATE INDEX {tableName}_DOC_NAME_IND ON {tableName} (DOC_NAME)
+                </item>
+            </sql>
+            <insert>INSERT INTO {tableName} (DOC_NAME,ANNOTATOR, RUN_ID,TYPE,BEGIN,END,SNIPPET_BEGIN, TEXT,
+                FEATURES,SNIPPET,COMMENTS)
+                VALUES (?,?,?,?,?,?,?,?,?,?,?)
+            </insert>
+            <query>SELECT * FROM {tableName} WHERE ANNOTATOR=?</query>
+            <drop>
+                <item>DROP TABLE {tableName}</item>
+            </drop>
+        </item>
+
+        <item>
+            <!--this should be a view in production env, the table is only for testing purposes-->
+            <name>DOCUMENTS_TABLE</name>
+            <sql>
+                <item>
+                    CREATE TABLE {tableName} (
+                    DOC_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                    DATASET_ID CHAR(10),
+                    BUNCH_ID INTEGER,
+                    DOC_NAME TEXT,
+                    TEXT TEXT,
+                    DATE DATETIME,
+                    REF_DATE DATETIME,
+                    INSERT_DTM DATETIME)
+                </item>
+                <item>
+                    CREATE INDEX IF NOT EXISTS {tableName}_DOC_IND ON {tableName} (DOC_NAME)
+                </item>
+                <item>
+                    CREATE INDEX IF NOT EXISTS {tableName}_DATATSET_IND ON {tableName} (DATASET_ID)
+                </item>
+                <item>
+                    CREATE INDEX IF NOT EXISTS {tableName}_BUNCH_IND ON {tableName} (BUNCH_ID)
+                </item>
+            </sql>
+            <insert>INSERT INTO {tableName} (DATASET_ID, BUNCH_ID,DOC_NAME, TEXT,DATE,REF_DATE,INSERT_DTM) VALUES
+                (?,?,?,?,?,?,CURRENT_TIMESTAMP)
+            </insert>
+            <query>
+                SELECT PAT_FHX_ID, PAT_FHX_ID DOC_NAME,EHR_PAT_ID,EHR_ENC_ID,EHR_REC_ID,EHR_REC_DT,
+                EHR_COND_CODE_SYSTEM,EHR_COND_CODE,EHR_COND_LABEL,CAN_COND_CODE_SYSTEM,
+                EHR_REL_CODE_SYSTEM,EHR_REL_CODE,EHR_REL_LABEL,
+                EHR_COND_ONSET_AGE,EHR_COMMENTS,VRSN, ( '{{' || EHR_COND_LABEL || '}} ' || EHR_COMMENTS || ' {{' ||
+                EHR_REL_LABEL || '}} ' || ' {{' || EHR_COND_ONSET_AGE || '}}' ) TEXT
+                FROM KMM_DM_LOAD.{tableName} npfn WHERE VRSN=0 AND PAT_FHX_ID=?
+            </query>
+            <drop>
+                <item>DROP TABLE {tableName}</item>
+            </drop>
+        </item>
+    </templates>
+    <syntax>
+        <item>
+            <name>limit</name>
+            <sql>LIMIT</sql>
+        </item>
+    </syntax>
+
+</config>
