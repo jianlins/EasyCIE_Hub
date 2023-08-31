@@ -1,0 +1,38 @@
+@processer:	featureinferencer						
+@splitter:
+@casesensitive:	true						
+#keep this comment for documentation purpose							
+#The following inference rules will follow this format:							
+#To define a conclusion annotation with features and corresponding default values:							
+#@ConclusionConcept	SuperTypeName	Feature1:defaultValue1	Feature2:defaultValue2...				
+#To define an inference rule:							
+#ConclusionConcept	Feature1:value1,Feature2:value2	EvidenceConcept	FeatureA:valueB, FeatureB:valueB	ScopeTypeName			
+#ConclusionConcept	Feature1:$FeatureA,Feature2:$FeatureB	EvidenceConcept	FeatureA:valueB, FeatureB:valueB	ScopeTypeName			
+
+
+@Negated_PE	Concept	Section:DocumentAnnotation	Certainty:certain	ImpressionCertainty:imcertain	Temporality:present	ImpressionCertainty:imuncertain	DiagnosticMention:yes	Acute:acute	Chronic:chro_no	ArteryMain:main_no	Left:left_no	Right:right_no	Right:right_no	ArteryInterlobar:inter_no	ArteryLobar:lobar_no	ArterySegmental:seg_no	ArterySubSegmental:subseg_no
+@Nondiagnostic_PE	Concept	Section:DocumentAnnotation
+@Uncertain_PE	Concept	Section:DocumentAnnotation	Negation:affirm	Certainty:certain	Temporality:present	ImpressionCertainty:imuncertain	DiagnosticMention:yes	Acute:acute	Chronic:chro_no	ArteryMain:main_no	Left:left_no	Right:right_no	ArteryInterlobar:inter_no	ArteryLobar:lobar_no	ArterySegmental:seg_no	ArterySubSegmental:subseg_no
+@Possible_PE	Concept	Section:DocumentAnnotation	Negation:affirm	Certainty:uncertain	Temporality:present	ImpressionCertainty:imcertain	DiagnosticMention:yes	Acute:acute	Chronic:chro_no	ArteryMain:main_no	Left:left_no	Right:right_no	ArteryInterlobar:inter_no	ArteryLobar:lobar_no	ArterySegmental:seg_no	ArterySubSegmental:subseg_no
+@Historical_PE	Concept	Section:DocumentAnnotation	Negation:affirm	Certainty:certain	Temporality:historical	ImpressionCertainty:imcertain	DiagnosticMention:yes	Acute:acute	Chronic:chro_no	ArteryMain:main_no	Left:left_no	Right:right_no	ArteryInterlobar:inter_no	ArteryLobar:lobar_no	ArterySegmental:seg_no	ArterySubSegmental:subseg_no
+@Uncertain_PESITE	Concept	Section:DocumentAnnotation	Negation:affirm	Certainty:certain	Temporality:present	ImpressionCertainty:imuncertain	DiagnosticMention:yes	ArteryMain:main_no	Left:left_no	Right:right_no	ArteryInterlobar:inter_no	ArteryLobar:lobar_no	ArterySegmental:seg_no	ArterySubSegmental:subseg_no
+
+#Move unrelated PE to
+Negated_PE	Section,Certainty,ImpressionCertainty,ArteryMain,Left,Right,ArteryInterlobar,ArteryLobar,ArterySegmental,ArterySubSegmental	PE	Negation:negated,DiagnosticMention:yes	DocumentAnnotation
+Uncertain_PE	Section,Negation,Certainty,ImpressionCertainty,Temporality,DiagnosticMention,Acute,Chronic,ArteryMain,Left,Right,ArteryInterlobar,ArteryLobar,ArterySegmental,ArterySubSegmental:$ArterySubSegmental	PE	Temporality:present,ImpressionCertainty:imuncertain	DocumentAnnotation
+Nondiagnostic_PE	Section:$Section	PE	DiagnosticMention:no	DocumentAnnotation
+Nondiagnostic_PE	Section:Indication	PE	DiagnosticMention:yes	Indication
+Nondiagnostic_PE	Section:PresentHistory	PE	DiagnosticMention:yes	PresentHistory
+Nondiagnostic_PE	Section:PastHistory	PE	DiagnosticMention:yes	PastHistory
+Nondiagnostic_PE	Section:$Section	PE	Negation:affirm,Temporality:hypothetical	DocumentAnnotation
+Possible_PE	Section,Negation,Certainty:uncertain,Temporality,ImpressionCertainty,DiagnosticMention,Acute,Chronic,ArteryMain,Left,Right,ArteryInterlobar,ArteryLobar,ArterySegmental,ArterySubSegmental:$ArterySubSegmental	PE	Negation:affirm,Certainty:uncertain,Temporality:present,DiagnosticMention:yes	DocumentAnnotation
+Historical_PE	Section,Negation:affirm,Certainty:certain,Temporality:historical,ImpressionCertainty,DiagnosticMention,Acute,Chronic,ArteryMain,Left,Right,ArteryInterlobar,ArteryLobar,ArterySegmental,ArterySubSegmental:$ArterySubSegmental	PE	Negation:affirm,Certainty:certain,Temporality:historical,DiagnosticMention:yes	DocumentAnnotation
+
+
+Uncertain_PESITE	Section,Negation,Certainty,Temporality,ImpressionCertainty,DiagnosticMention,ArteryMain,Left,Right,ArteryInterlobar,ArteryLobar,ArterySegmental:seg_yes,ArterySubSegmental:$ArterySubSegmental	Seg_Art	Negation:affirm,Temporality:present,ImpressionCertainty:imuncertain	DocumentAnnotation
+Uncertain_PESITE	Section,Negation,Certainty,Temporality,ImpressionCertainty,DiagnosticMention,ArteryMain,Left,Right,ArteryInterlobar,ArteryLobar,ArterySegmental,ArterySubSegmental:subseg_yes	Subseg_Art	Negation:affirm,Temporality:present,ImpressionCertainty:imuncertain	DocumentAnnotation
+Uncertain_PESITE	Section,Negation,Certainty,Temporality,ImpressionCertainty,DiagnosticMention,ArteryMain,Left,Right,ArteryInterlobar:inter_yes,ArteryLobar,ArterySegmental,ArterySubSegmental:$ArterySubSegmental	Inter_Art	Negation:affirm,Temporality:present,ImpressionCertainty:imuncertain	DocumentAnnotation
+Uncertain_PESITE	Section,Negation,Certainty,Temporality,ImpressionCertainty,DiagnosticMention,ArteryMain,Left,Right,ArteryInterlobar,ArteryLobar:lobar_yes,ArterySegmental,ArterySubSegmental:$ArterySubSegmental	Lobar_Art	Negation:affirm,Temporality:present,ImpressionCertainty:imuncertain	DocumentAnnotation
+Uncertain_PESITE	Section,Negation,Certainty,Temporality,ImpressionCertainty,DiagnosticMention,ArteryMain,Left,Right,ArteryInterlobar,ArteryLobar,ArterySegmental,ArterySubSegmental:$ArterySubSegmental	PE_Site	Negation:affirm,Temporality:present,ImpressionCertainty:imuncertain	DocumentAnnotation
+
+

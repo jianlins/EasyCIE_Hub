@@ -1,0 +1,41 @@
+#   ******************************************************************************
+#   * Copyright  2017  Department of Biomedical Informatics, University of Utah
+#   * <p>
+#   * Licensed under the Apache License, Version 2.0 (the "License");
+#   * you may not use this file except in compliance with the License.
+#   * You may obtain a copy of the License at
+#   * <p>
+#   * http://www.apache.org/licenses/LICENSE-2.0
+#   * <p>
+#   * Unless required by applicable law or agreed to in writing, software
+#   * distributed under the License is distributed on an "AS IS" BASIS,
+#   * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   * See the License for the specific language governing permissions and
+#   * limitations under the License.
+#   ******************************************************************************
+
+
+#Define which features will be merged values in an annotation type
+@CONCEPT_FEATURES|Merged_PE|PE|Negation|Certainty|Temporality|Experiencer|ImpressionCertainty|DiagnosticMention|Acute|Chronic|ArteryMain|Left|Right|ArteryInterlobar|ArteryLobar|ArterySegmental|ArterySubSegmental
+@CONCEPT_FEATURES|Merged_Uncertain_PE|Uncertain_PE|Negation|Certainty|Temporality|Experiencer|ImpressionCertainty|DiagnosticMention|Acute|Chronic|ArteryMain|Left|Right|ArteryInterlobar|ArteryLobar|ArterySegmental|ArterySubSegmental
+@CONCEPT_FEATURES|Merged_Possible_PE|Possible_PE|Negation|Certainty|Temporality|Experiencer|ImpressionCertainty|DiagnosticMention|Acute|Chronic|ArteryMain|Left|Right|ArteryInterlobar|ArteryLobar|ArterySegmental|ArterySubSegmental
+@CONCEPT_FEATURES|Merged_Uncertain_PESITE|Uncertain_PESITE|Negation|Certainty|Temporality|Experiencer|ImpressionCertainty|DiagnosticMention|ArteryMain|Left|Right|ArteryInterlobar|ArteryLobar|ArterySegmental|ArterySubSegmental
+
+#The following definitions will be used as priority dictionary when merging.
+@FEATURE_VALUES|Negation|negated|affirm
+@FEATURE_VALUES|Certainty|uncertain|certain
+@FEATURE_VALUES|Temporality|historical|hypothetical|present
+@FEATURE_VALUES|Experiencer|nonpatient|patient
+@FEATURE_VALUES|ImpressionCertainty|imcertain|imuncertain
+@FEATURE_VALUES|DiagnosticMention|no|yes
+
+@FEATURE_VALUES|Acute|acut_no|acute
+@FEATURE_VALUES|Chronic|chro_no|chronic
+
+@FEATURE_VALUES|Left|left_no|left_yes
+@FEATURE_VALUES|Right|right_no|right_yes
+@FEATURE_VALUES|ArteryMain|main_no|main_yes
+@FEATURE_VALUES|ArteryInterlobar|inter_no|inter_yes
+@FEATURE_VALUES|ArteryLobar|lobar_no|lobar_yes
+@FEATURE_VALUES|ArterySegmental|seg_no|seg_yes
+@FEATURE_VALUES|ArterySubSegmental|subseg_no|subseg_yes

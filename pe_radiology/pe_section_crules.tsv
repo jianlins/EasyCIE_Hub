@@ -1,0 +1,56 @@
+#specify the rule type
+@fastcner
+#define section header type names: all header types derive from type "SectionHeader", and must be ended with "Header".
+#All section body types derive from type "SectionBody", and must have the name of the corresponding header name without "Header" suffix.
+#So that all of them can be queried easily through this parent type name, and section body name can be inferred from the header name.
+
+@IndicationHeader	SectionHeader
+@ProcedureHeader	SectionHeader
+@TechniqueHeader	SectionHeader
+@FindingsHeader	SectionHeader
+@ImpressionHeader	SectionHeader
+@PresentHistoryHeader	SectionHeader
+@PastHistoryHeader	SectionHeader
+
+@Indication	SectionBody
+@Procedure	SectionBody
+@Technique	SectionBody
+@Findings	SectionBody
+@Impression	SectionBody
+@PresentHistory	SectionBody
+@PastHistory	SectionBody
+
+
+#matching rules
+INDICATION):	0.5	IndicationHeader
+Indication):	0.5	IndicationHeader
+INDICATIONS):	0.5	IndicationHeader
+Indications):	0.5	IndicationHeader
+PROCEDURE):	0.5	ProcedureHeader
+Procedure):	0.5	ProcedureHeader
+TECHNIQUE):	0.5	TechniqueHeader
+Technique):	0.5	TechniqueHeader
+FINDINGS):	0.5	FindingsHeader
+Findings):	0.5	FindingsHeader
+IMPRESSION):	0.5	ImpressionHeader
+Impression):	0.5	ImpressionHeader
+IMPRESSIONS):	0.5	ImpressionHeader
+Impressions):	0.5	ImpressionHeader
+
+HISTORY):	0.5	PresentHistoryHeader
+History):	0.5	PresentHistoryHeader
+HISTORY OF PRESENT ILLNESS):	0.5	PresentHistoryHeader
+History of present illness):	0.5	PresentHistoryHeader
+History of Present Illness):	0.5	PresentHistoryHeader
+History Of Present Illness):	0.5	PresentHistoryHeader
+PRESENT HISTORY):	0.5	PresentHistoryHeader
+Present History):	0.5	PresentHistoryHeader
+Present history):	0.5	PresentHistoryHeader
+
+PAST HISTORY):	0.5	PastHistoryHeader
+Past History):	0.5	PastHistoryHeader
+Past history):	0.5	PastHistoryHeader
+HISTORY OF PAST ILLNESS):	0.5	PastHistoryHeader
+History of past illness):	0.5	PastHistoryHeader
+History of Past Illness):	0.5	PastHistoryHeader
+History Of Past Illness):	0.5	PastHistoryHeader
