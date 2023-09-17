@@ -1,0 +1,44 @@
+@fastner
+@CONCEPT_FEATURES	BASE_CONCEPT	Concept
+@CONCEPT_FEATURES	PE	BASE_CONCEPT
+@CONCEPT_FEATURES	PE_Site	BASE_CONCEPT
+@CONCEPT_FEATURES	Inter_Art	PE_Site
+@CONCEPT_FEATURES	Lobar_Art	PE_Site
+@CONCEPT_FEATURES	Seg_Art	PE_Site
+@CONCEPT_FEATURES	Subseg_Art	PE_Site
+
+pulmonary embolism	PE	ACTUAL
+pulmonary embolisms	PE	ACTUAL
+pulmonary emboli	PE	ACTUAL
+pulmonary embolus	PE	ACTUAL
+pulmonary thrombus	PE	ACTUAL
+pulmonary thromboembolism	PE	ACTUAL
+pulmonary \w+ thromboembolism	PE	ACTUAL
+pulmonary \w+ embolism	PE	ACTUAL
+pulmonary \w+ embolisms	PE	ACTUAL
+pulmonary \w+ emboli	PE	ACTUAL
+pulmonary \w+ embolus	PE	ACTUAL
+pulmonary \w+ thrombus	PE	ACTUAL
+embolus	PE	ACTUAL
+emboli	PE	ACTUAL
+embolism	PE	ACTUAL
+embolisms	PE	ACTUAL
+thromboembolism	PE	ACTUAL
+pe	PE	ACTUAL
+embolism protocol	PE	PSEUDO
+pulmonary embolism protocol	PE	PSEUDO
+filling defects	PE	ACTUAL
+filling defect	PE	ACTUAL
+
+pulmonary embolism care pathway	PE	PSEUDO
+
+
+segmental	Seg_Art	ACTUAL
+subsegmental	Subseg_Art	ACTUAL
+pulmonary arteries	PE_Site	ACTUAL
+pulmonary artery	PE_Site	ACTUAL
+
+interlobar	Inter_Art	ACTUAL
+lobar	Lobar_Art	ACTUAL
+
+

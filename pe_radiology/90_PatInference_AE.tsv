@@ -1,0 +1,5 @@
+#Tag this default rule:	conclusion topic	default conclusion
+&DEFAULT_DOC_TYPE	PAT	NO_PE_PAT
+#question name	conclusion type	evidence type		scope
+PAT	PE_PAT	Pulmonary_Embolism_Doc
+PAT	NO_PE_PAT	Neg_Pulmonary_Embolism_Doc
